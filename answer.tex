@@ -1,0 +1,301 @@
+\documentclass{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings,jlisting}
+\usepackage{siunitx}
+\usepackage{theorem}
+\title{解析入門　解答}
+\author{河村遼}
+\begin{document}
+\maketitle{}
+\section*{第I章実数と連続}
+\subsection*{$\S$1 実数}
+問1(i)
+
+$a,b\in K$が両方(R3)を満たす0であると仮定する.
+
+$a$が(R3)を満たす$0$なので
+$b+a=b$
+
+$b$も(R3)を満たす$0$なので
+$a+b=a$
+
+また(R1)より
+$a+b=b+a$
+
+
+以上より
+$a=b$
+で(R3)を満たす0は唯一
+
+
+(ii)
+
+$a\in K$に対し$b,c\in K$を両方(R4)を満たす$-a$であると仮定する.
+
+$a+b = 0$より(R3)と合わせ
+$c+(a+b)=c+0=c$
+
+また
+$a+c=0$
+
+
+(R1)より
+$a+c=c+a$
+なので
+$c+a=0$
+
+
+より
+\begin{align*}
+b &= b+0 \ (\because (R3))\\
+&= 0+b \ (\because (R1))\\
+&= (c+a)+b\\
+&= c+(a+b) \ (\because (R2))\\
+&= c \\
+\end{align*}
+つまり(R4)を満たす$-a$は唯一
+
+
+(iii)
+
+$a\in K$に対し(R4)より
+$a+(-a)=0$
+
+
+(R1)より
+$(-a)+a=a+(-a)$
+で
+$(-a)+a=0$だ.
+
+より(ii)から
+$-(-a)=a$
+
+(iv)
+
+$\ast$注意
+
+$a\in K$がある$b\in K$に対して
+$b+a=b$
+なら
+$a=0$
+だ.
+
+なぜなら
+\begin{align*}
+0 &= b+(-b) \ (\because (R4))\\
+&= (b+a)+(-b)\\
+&= (a+b)+(-b) \ (\because (R1) より b+a=a+b)\\
+&= a+(b+(-b)) \ (\because (R2))\\
+&= a+0 \ (\because (R4) より b+(-b)=0)\\
+&= a \ (\because (R3))
+\end{align*}
+以下これは暗黙の了解として使う.
+
+$a\in K$に対し
+\begin{align*}
+0a+0a &=(0+0)a \ (\because (R7)) \\
+&= 0a \ (\because (R3)より0+0=0)
+\end{align*}
+より$0a=0$
+
+(v)
+
+$a\in K$に対し
+\begin{align*}
+a+(-1)a &= a1+(-1)a \ (\because (R8)よりa=a1)\\
+&= 1a+(-1)a \ (\because (R5)よりa1=1a)\\
+&= (1+(-1))a \ (\because (R7))\\
+&= 0a \ (\because (R7))\\
+&= 0 \ (\because (iv))\\
+\end{align*}
+より(ii)から(以下(ii)も暗黙の了解として使う)$(-1)a=-a$
+
+
+(vi)
+
+\begin{align*}
+(-1)(-1) &= -(-1) \ (\because (v))\\
+&= 1 \ (\because (iii))\\
+\end{align*}
+
+(vii)
+
+\begin{align*}
+ab+a(-b) &= a(b+(-b)) \ (\because (R7))\\
+&= a0 \ (\because (R4)よりb+(-b)=0)\\
+&= 0a \ (\because (R5))\\
+&= 0 \ (\because (iv))\\
+\end{align*}
+より
+$a(-b) = -ab$
+\begin{align*}
+ab+(-a)b &= (a+(-a))b \ (\because (R7))\\
+&= 0b \ (\because (R4)よりa+(-a)=0)\\
+&= 0 \ (\because (iv))\\
+\end{align*}
+より
+$(-a)b = -ab$
+
+(viii)
+
+\begin{align*}
+(-a)(-b) &= -a(-b) \ (\because (vii))\\
+&= -(-ab) \ (\because (vii)よりa(-b)=-ab)\\
+&= ab \ (\because (iii))\\
+\end{align*}
+
+(ix)
+
+$b\neq 0$と仮定する.$b^{-1}$が存在し$bb^{-1}=1$.
+
+
+この時
+\begin{align*}
+a &= a1 \ (\because (R8))\\
+&= a(bb^{-1}) \ (\because bb^{-1}=1)\\
+&= ab(b^{-1}) \ (\because (R6))\\
+&= 0b^{-1}\\
+&= 0 \ (\because (iv))
+\end{align*}
+つまり$a=0$または$b=0$
+
+(x)
+
+\begin{align*}
+(-a)(-(a^{-1})) &= aa^{-1} \ (\because (R8))\\
+&= 1 \ (\because (R8))\\
+\end{align*}
+(ii)と同様に(R9)を満たす$a^{-1}$は各$a\in K,a\neq 0$に対し唯一なので(以下これは暗黙の了解として使う).
+$(-a)^{-1}=-(a^{-1})$
+
+(xi)
+
+\begin{align*}
+(ab)(b^{-1}a^{-1})&=((ab)b^{-1})a^{-1} \ (\because (R6))\\
+&=(a(bb^{-1}))a^{-1} \ (\because (R6) より(ab)b^{-1}=a(bb^{-1}))\\
+&=(a1)a^{-1} \ (\because (R9) よりbb^{-1}=1)\\
+&=aa^{-1} \ (\because (R8) よりa1=a)\\
+&=1 \ (\because (R9))\\
+\end{align*}
+より
+$(ab)^{-1}=b^{-1}a^{-1}$
+
+
+問2(i)
+
+$\Rightarrow$
+
+
+$a\leqq b$
+と(R15)より
+$a+(-a)\leqq b+(-a)$
+
+より
+$0\leqq b-a$
+
+
+$\Leftarrow$
+
+
+$0\leqq b-a$
+と(R15)より
+$0+a\leqq (b-a)+a$
+より
+$a\leqq b$
+
+
+(ii)
+
+
+(i)より
+$a\leqq b \Leftrightarrow 0\leqq b-a$
+
+さらに(i)より
+$-b\leqq -a \Leftrightarrow 0\leqq -a-(-b)$
+
+以上より$-a-(-b)=b-a$と合わせて
+$a\leqq b \Leftrightarrow -b\leqq -a$
+
+
+(iii)
+
+
+(i)と$a\leqq b$より
+$b-a \geqq 0$
+
+(i)と$c\leqq 0,-0=0$より
+$-c\geqq 0$
+
+より(R16)から
+$(b-a)(-c)\geqq 0$で
+$(b-a)(-c)=ac-bc$と(i)から
+$ac\geqq bc$
+
+
+(iv)
+
+$a^{-1}\leqq 0$と仮定する.
+
+$-a^{-1}\geqq 0$で
+$a\geqq 0$とあわせ(R16)から
+$a(-a^{-1})\geqq 0$
+
+より
+$-1\geqq 0$
+(ii)より
+$0\geqq 1$
+となり矛盾.
+
+背理法から
+$a^{-1}>0$
+
+
+(v)
+
+$a\leqq b$と(R15)より
+$a+c \leqq b+c$
+
+$c\leqq d$と(R15)より
+$c+b \leqq d+b$
+
+$b+c=c+b,b+d=d+b$より
+$b+c \leqq b+d$
+
+(R13)より
+$a+c\leqq b+d$
+
+
+(vi)
+
+
+(v)より
+$a+c\leqq b+d$
+は言える.
+
+$a+c\neq b+d$
+を言えばいい.
+
+$a+c = b+d$
+と仮定する.
+
+(R11)より
+$b+d\leqq a+c$
+
+また$a\leqq b$と(ii)より
+$-b\leqq -a$
+
+(v)より$-b+(b+d)=d,-a+(a+c)=c$と合わせて
+$d\leqq c$
+
+$c<d$に矛盾し背理法から$a+c\neq b+d$
+
+
+以上より
+$a+c < b+d$
+
+
+
+
+\end{document}
