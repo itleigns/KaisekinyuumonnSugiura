@@ -185,6 +185,7 @@ $(ab)^{-1}=b^{-1}a^{-1}$
 
 問2(i)
 
+
 $\Rightarrow$
 
 
@@ -296,6 +297,300 @@ $c<d$に矛盾し背理法から$a+c\neq b+d$
 $a+c < b+d$
 
 
+\subsection*{$\S$2 実数列の極限}
+1)(i)
+
+$N>|a|$となる$N\in\mathbb{N}$が存在.
+
+$n>N$の時$|a_n| = |a_{n-1}|\frac{|a|}{n},\frac{|a|}{n}<1$ で
+\[|a_n| < |a_{n-1}|\]
+これを繰り返し用いると$n\geqq N$で
+\[|a_n| \leqq |a_N|\]
+$\epsilon > 0$に対し$n \geqq max(N+1,\frac{|aa_N|}{\epsilon}+1)$とすると
+\begin{align*}
+|a_n| &= |a_{n-1}|\frac{|a|}{n}\\
+       &\leqq \frac{|aa_N|}{n} \\
+       &< \epsilon
+\end{align*}
+より
+\[a_n\to0 \ (n\to \infty)\]
 
 
+(ii)
+
+$\epsilon > 0$に対し$\epsilon'=min(1,\epsilon)$とする.
+
+$0\leqq 1-\epsilon' < 1$なので例6より
+$lim_{n\to \infty}(1-\epsilon')^n = 0$
+
+より$a>0$より$N\in\mathbb{N}$が存在し
+\[n\geqq N \Rightarrow (1-\epsilon')^n < a\]
+
+より$n\geqq N$の時
+$-\epsilon \leqq -\epsilon' < \sqrt[n]{a}-1$
+
+また二項定理より$n\geqq 1$で
+\[(1+\epsilon)^n = \sum_{k=0}^n \ _nC_k  \epsilon ^k > n\epsilon\]
+$M > \frac{a}{\epsilon}$を満たすように$M\in \mathbb{N}$を取ると
+
+$n\geqq M$で
+\[a < n\epsilon < (1+\epsilon)^n\]
+より$\sqrt[n]{a}-1 < \epsilon$
+
+$n\geqq max(N,M)$の時$|\sqrt[n]{a}-1| < \epsilon$で
+\[a_n\to1 \ (n\to \infty)\]
+
+(iii)
+
+$k=2,\cdots,n$で$\frac{k}{n}\leqq 1$なので辺々掛け合わせて
+\[\frac{n!}{n^{n-1}}\leqq 1\]
+より$0<a_n\leqq \frac{1}{n}$
+
+また$\lim_{n\to \infty}\frac{1}{n}=0$なのではさみうちの原理から
+\[a_n\to 0 \ (n\to \infty)\]
+
+(iv)
+
+二項定理より$n\geqq 2$で
+\[2^n =\sum_{k=0}^n \ _nC_k > \frac{n(n-1)}{2}\]
+より$0<a_n<\frac{2}{n-1}$
+
+また$\lim_{n\to \infty}\frac{2}{n-1}=0$なのではさみうちの原理から
+\[a_n\to 0 \ (n\to \infty)\]
+
+(v)
+
+$\epsilon > 0$に対し$N>\frac{1}{\epsilon ^2}$となる$N\in \mathbb{N}$が存在.
+
+$n\geqq N$で
+\[a_n=\frac{1}{\sqrt{n+1}+\sqrt{n}}<\frac{1}{\sqrt{n}}<\epsilon\]
+$a_n>0$も合わせて$n\geqq N$で$|a_n|<\epsilon$なので
+\[a_n\to 0 \ (n\to \infty)\]
+
+2)
+
+$-1\leqq \cos(n!\pi x) \leqq 1$だ.
+
+$\cos(n!\pi x) = \pm 1$の時$(\cos(n!\pi x))^{2m} = 1$なので$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
+
+$-1<\cos(n!\pi x) < 1$の時$0 \leqq (\cos(n!\pi x))^2 < 1$なので例6より$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
+
+$\cos(n!\pi x) = \pm 1\Leftrightarrow n!x \in \mathbb{Z} $だ.
+
+$x$が有理数の時$x=\frac{p}{q},q\in \mathbb{N},p\in \mathbb{Z}$とおけ$n\geqq q$の時
+\[n!x = n\cdots (q+1)\cdot (q-1) \cdots  1 \cdot p \in \mathbb{Z}\]
+より$n\geqq q$で$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
+
+より$\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 1$
+
+$x$が無理数の時
+
+$n!x$が整数と仮定する.
+
+$x=\frac{n!x}{n!}$で分母と分子が整数なので$x$が有理数となり矛盾.
+
+より
+$n!x$は整数でなく$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
+
+より$\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 0$
+
+以上より
+\[f(x) = \begin{cases}
+1 & xが有理数 \\
+0 & xが無理数 \\
+\end{cases}\]
+
+3)
+
+$\epsilon > 0$とする.
+
+$\lim_{n\to \infty}a_n=a$なので$n\geqq N'$なら$|a_n-a|<\frac{\epsilon}{2}$となる$N'\in \mathbb{N}$が存在.
+
+$N=max(1,N')$とする.
+
+$n\geqq max(N,\frac{2}{\epsilon}|\sum_{k=1}^{N-1}(a_k-a)|)$の時
+\[
+|\frac{1}{n}\sum_{k=1}^n a_k - a| \leqq \frac{1}{n}|\sum_{k=1}^{N-1}(a_k-a)|+\frac{1}{n}\sum_{k=N}^{n}|a_k-a|<\frac{\epsilon}{2} + \frac{n-N+1}{2n}\epsilon<\epsilon
+\]
+より$\lim_{n\to \infty}\frac{a_1+a_2+\cdots+a_n}{n}=a$
+
+4)
+
+$a_k\neq0$なので$a_n=a_1\cdot \frac{a_2}{a_1}\cdot \frac{a_3}{a_2}\cdots \frac{a_n}{a_{n-1}}$
+
+より$a_k>0$に注意し
+$\log a_n = \log a_1 + \log \frac{a_2}{a_1}+\log \frac{a_3}{a_2}+\cdots +\log \frac{a_n}{a_{n-1}}$
+
+$n\in\mathbb{N}$に対し$a_n > 0$なので$b_n=\log \frac{a_{n+1}}{a_n}$とおける.
+
+\[\log \sqrt[n]{a_n}=\frac{b_1+b_2+\cdots +b_n}{n} - \frac{b_n}{n}+\frac{\log a_1}{n}\]
+
+$\lim_{n\to \infty}\frac{a_{n+1}}{a_n}=a$と$\log x$が連続なので$\lim_{n\to \infty}b_n=\log a$
+
+より3)より$\lim _{n\to \infty}\frac{b_1+b_2+\cdots +b_n}{n} = \log a$
+
+また$n\geqq N$で$|b_n - \log a|<1$となる$N\in\mathbb{N}$が存在.
+
+$n\geqq N$で$\frac{\log a -1}{n}\leqq \frac{b_n}{n} \leqq \frac{\log a+1}{n}$で$\lim_{n\to\infty}\frac{\log a -1}{n} = \lim_{n\to\infty}\frac{\log a +1}{n}=0$なのではさみうちの原理から
+$\lim_{n\to\infty} \frac{b_n}{n} = 0$
+
+さらに$\lim_{n\to\infty} \frac{\log a_1}{n} = 0$なので
+
+
+\[\lim_{n\to\infty}\log \sqrt[n]{a_n} = \log a\]
+$e^x$は連続なので$\lim_{n\to\infty}\sqrt[n]{a_n} = e^{\log a} = a$
+
+5)
+
+$H = A\cup \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$とする.
+
+$H$が継承的であることを示す.
+
+$\{0\}\subset H$なので$0\in H$
+
+$x\in H$とする
+
+$x = 0,\cdots , m-2$の時$\{x+1\}\subset H$なので$x+1\in H$
+
+$x = m-1$の時イ)より$m\in A$で$A\subset H$なので$x+1=m\in H$
+
+$x\in A$の時イ)より$x\geqq m$
+
+$x\in A,x\geqq m$なのでロ)より$x+1\in A$で$A\subset H$なので$x+1\in H$
+
+以上より$H$は継承的.
+
+より$\mathbb{N}\subset H$
+
+$n\in \mathbb{N}$で$n\geqq m$とする.
+
+$\mathbb{N}\subset H$より$n\in H$.
+
+また$n\geqq m$なので$n \neq 0,1,\cdots , m-1$で$n\notin  \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$
+
+より$n\in A$で$\{n\in \mathbb{N}|n\geqq m\}\subset A$
+
+次に$n\in A$とする.
+
+$A\subset \mathbb{N}$なので$n\in\mathbb{N}$
+
+イ)より$n\geqq m$
+
+より$n\in \{n\in \mathbb{N}|n\geqq m\}$で$A\subset \{n\in \mathbb{N}|n\geqq m\}$
+
+以上より$A=\{n\in \mathbb{N}|n\geqq m\}$
+
+6)
+
+$n\in \mathbb{N}$に対し$A_n=\{x\in \mathbb{R}|x+n\in\mathbb{N}\}$とする.
+
+$A_n$が継承的であることを示す.
+
+$n\in \mathbb{N}$なので$0+n\in \mathbb{N}$で$0\in A_n$
+
+$x\in A_n$とする.
+
+$x+n\in \mathbb{N}$で$\mathbb{N}$が継承的なので$x+1+n\in \mathbb{N}$
+
+より$x+1\in A_n$
+
+以上より$A_n$は継承的で$\mathbb{N} \subset A_n$
+
+$m\in \mathbb{N}$なら$m\in A_n$で$m+n\in\mathbb{N}$
+
+$n\in \mathbb{N}$に対し$B_n=\{x\in \mathbb{R}|xn\in\mathbb{N}\}$とする.
+
+$B_n$が継承的であることを示す.
+
+$0n = 0\in \mathbb{N}$なので$0\in B_n$
+
+$x\in B_n$とする.
+
+$xn,n\in \mathbb{N}$なので上の結果より$xn+n=(x+1)n\in \mathbb{N}$
+
+より$x+1\in B_n$
+
+以上より$B_n$は継承的で$\mathbb{N} \subset B_n$
+
+$m\in \mathbb{N}$なら$m\in B_n$で$mn\in\mathbb{N}$
+
+$C=\{0\}\cup \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$
+とする.
+
+$C$が継承的であることを示す.
+
+$\{0\}\subset C$より$0\in C$
+
+$x\in C$とする.
+
+$x\in\{0\},x\in \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$いずれの場合も$x\in\mathbb{N}$
+
+$\mathbb{N}$は継承的なので$x+1\in\mathbb{N}$
+
+また$x+1-1=x\in \mathbb{N}$なので$x+1\in C$
+
+以上より$C$は継承的で$\mathbb{N} \subset C$
+
+$m\in \mathbb{N}$に対し$D_m=\{x\in \mathbb{N}|m< x または m-x\in\mathbb{N}\}$とする.
+
+$D_m$が継承的であることを示す.
+
+$m\in \mathbb{N}$なので$m-0\in \mathbb{N}$で$0\in D_m$
+
+$x\in D_m$とする.
+
+$m\leqq x$の時$m<x+1$なので$x+1\in D_m$
+
+$m>x$の時$m-x\in \mathbb{N}\subset C$
+
+さらに$m-x\neq 0$なので$m-x-1\in\mathbb{N}$
+
+より$x+1\in D_m$
+
+いずれの場合も$x+1\in D_m$で$0\in D_m$と合わせて
+$D_m$は継承的で$\mathbb{N} \subset D_m$
+
+より$n\in \mathbb{N},m\geqq n$なら$m-n\in\mathbb{N}$
+
+7)
+
+$\mathbb{R}_+$は継承的なので$\mathbb{N}\subset \mathbb{R}_+$で$n\in \mathbb{N}$なら$n\geqq 0$なことに注意する.
+
+$n\in \mathbb{N}$に対して$E_n=\{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$
+とする.
+
+また$F=\{n\in \mathbb{N}|\mathbb{N}\subset E_n\}$
+とする.
+
+$F$が継承的であることを示したい.
+
+まず$E_0$が継承的なことを示す.
+
+$0\in \mathbb{N}$で$0\leqq 0$より$0\in E_0$
+
+$x\in E_0$とする.$x\in \mathbb{N}$で$x+1\in\mathbb{N}$
+
+また$x\geqq 0$なので$1\leqq x+1$で$x+1\in E_0$
+
+より$E_0$は継承的で$0\in F$
+
+次に$n\in F$を仮定して$n+1\in F$を示す.
+
+$n\in F \subset \mathbb{N}$なので$n\geqq 0$で$0\leqq n+1$で$0\in E_{n+1}$
+
+$x\in E_{n+1}$とする.$x \in \mathbb{N} \subset E_n$なので$x\leqq n $または$n+1\leqq x$
+
+より$x+1\leqq n+1$または$n+2\leqq x+1$
+
+より$x+1\in E_{n+1}$
+
+以上より$E_{n+1}$は継承的で$\mathbb{N}\subset E_{n+1}$
+
+より$n+1\in F$
+
+以上より$F$は継承的で$\mathbb{N}\subset F$
+
+より$n\in \mathbb{N}$なら$\mathbb{N}\subset \{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$で
+
+$n<k<n+1$となる自然数は存在しない.
 \end{document}
