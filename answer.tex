@@ -1,596 +1,816 @@
 \documentclass{jsarticle}
-\usepackage{amsmath,amssymb}
-\usepackage{bm}
-\usepackage[dvipdfmx]{graphicx}
-\usepackage{listings,jlisting}
-\usepackage{siunitx}
-\usepackage{theorem}
-\title{解析入門　解答}
-\author{河村遼}
-\begin{document}
-\maketitle{}
-\section*{第I章実数と連続}
-\subsection*{$\S$1 実数}
-問1(i)
-
-$a,b\in K$が両方(R3)を満たす0であると仮定する.
-
-$a$が(R3)を満たす$0$なので
-$b+a=b$
-
-$b$も(R3)を満たす$0$なので
-$a+b=a$
-
-また(R1)より
-$a+b=b+a$
-
-
-以上より
-$a=b$
-で(R3)を満たす0は唯一
-
-
-(ii)
-
-$a\in K$に対し$b,c\in K$を両方(R4)を満たす$-a$であると仮定する.
-
-$a+b = 0$より(R3)と合わせ
-$c+(a+b)=c+0=c$
-
-また
-$a+c=0$
-
-
-(R1)より
-$a+c=c+a$
-なので
-$c+a=0$
-
-
-より
-\begin{align*}
-b &= b+0 \ (\because (R3))\\
-&= 0+b \ (\because (R1))\\
-&= (c+a)+b\\
-&= c+(a+b) \ (\because (R2))\\
-&= c \\
-\end{align*}
-つまり(R4)を満たす$-a$は唯一
-
-
-(iii)
-
-$a\in K$に対し(R4)より
-$a+(-a)=0$
-
-
-(R1)より
-$(-a)+a=a+(-a)$
-で
-$(-a)+a=0$だ.
-
-より(ii)から
-$-(-a)=a$
-
-(iv)
-
-$\ast$注意
-
-$a\in K$がある$b\in K$に対して
-$b+a=b$
-なら
-$a=0$
-だ.
-
-なぜなら
-\begin{align*}
-0 &= b+(-b) \ (\because (R4))\\
-&= (b+a)+(-b)\\
-&= (a+b)+(-b) \ (\because (R1) より b+a=a+b)\\
-&= a+(b+(-b)) \ (\because (R2))\\
-&= a+0 \ (\because (R4) より b+(-b)=0)\\
-&= a \ (\because (R3))
-\end{align*}
-以下これは暗黙の了解として使う.
-
-$a\in K$に対し
-\begin{align*}
-0a+0a &=(0+0)a \ (\because (R7)) \\
-&= 0a \ (\because (R3)より0+0=0)
-\end{align*}
-より$0a=0$
-
-(v)
-
-$a\in K$に対し
-\begin{align*}
-a+(-1)a &= a1+(-1)a \ (\because (R8)よりa=a1)\\
-&= 1a+(-1)a \ (\because (R5)よりa1=1a)\\
-&= (1+(-1))a \ (\because (R7))\\
-&= 0a \ (\because (R4)より1+(-1)=0)\\
-&= 0 \ (\because (iv))\\
-\end{align*}
-より(ii)から(以下(ii)も暗黙の了解として使う)$(-1)a=-a$
-
-
-(vi)
-
-\begin{align*}
-(-1)(-1) &= -(-1) \ (\because (v))\\
-&= 1 \ (\because (iii))\\
-\end{align*}
-
-(vii)
-
-\begin{align*}
-ab+a(-b) &= a(b+(-b)) \ (\because (R7))\\
-&= a0 \ (\because (R4)よりb+(-b)=0)\\
-&= 0a \ (\because (R5))\\
-&= 0 \ (\because (iv))\\
-\end{align*}
-より
-$a(-b) = -ab$
-\begin{align*}
-ab+(-a)b &= (a+(-a))b \ (\because (R7))\\
-&= 0b \ (\because (R4)よりa+(-a)=0)\\
-&= 0 \ (\because (iv))\\
-\end{align*}
-より
-$(-a)b = -ab$
-
-(viii)
-
-\begin{align*}
-(-a)(-b) &= -a(-b) \ (\because (vii))\\
-&= -(-ab) \ (\because (vii)よりa(-b)=-ab)\\
-&= ab \ (\because (iii))\\
-\end{align*}
-
-(ix)
-
-$b\neq 0$と仮定する.$b^{-1}$が存在し$bb^{-1}=1$.
-
-
-この時
-\begin{align*}
-a &= a1 \ (\because (R8))\\
-&= a(bb^{-1}) \ (\because bb^{-1}=1)\\
-&= ab(b^{-1}) \ (\because (R6))\\
-&= 0b^{-1}\\
-&= 0 \ (\because (iv))
-\end{align*}
-つまり$a=0$または$b=0$
-
-(x)
-
-\begin{align*}
-(-a)(-(a^{-1})) &= aa^{-1} \ (\because (viii))\\
-&= 1 \ (\because (R9))\\
-\end{align*}
-(ii)と同様に(R9)を満たす$a^{-1}$は各$a\in K,a\neq 0$に対し唯一なので(以下これは暗黙の了解として使う).
-$(-a)^{-1}=-(a^{-1})$
-
-(xi)
-
-\begin{align*}
-(ab)(b^{-1}a^{-1})&=((ab)b^{-1})a^{-1} \ (\because (R6))\\
-&=(a(bb^{-1}))a^{-1} \ (\because (R6) より(ab)b^{-1}=a(bb^{-1}))\\
-&=(a1)a^{-1} \ (\because (R9) よりbb^{-1}=1)\\
-&=aa^{-1} \ (\because (R8) よりa1=a)\\
-&=1 \ (\because (R9))\\
-\end{align*}
-より
-$(ab)^{-1}=b^{-1}a^{-1}$
-
-
-問2(i)
-
-
-$\Rightarrow$
-
-
-$a\leqq b$
-と(R15)より
-$a+(-a)\leqq b+(-a)$
-
-より
-$0\leqq b-a$
-
-
-$\Leftarrow$
-
-
-$0\leqq b-a$
-と(R15)より
-$0+a\leqq (b-a)+a$
-より
-$a\leqq b$
-
-
-(ii)
-
-
-(i)より
-$a\leqq b \Leftrightarrow 0\leqq b-a$
-
-さらに(i)より
-$-b\leqq -a \Leftrightarrow 0\leqq -a-(-b)$
-
-以上より$-a-(-b)=b-a$と合わせて
-$a\leqq b \Leftrightarrow -b\leqq -a$
-
-
-(iii)
-
-
-(i)と$a\leqq b$より
-$b-a \geqq 0$
-
-(i)と$c\leqq 0,0-c=-c$より
-$-c\geqq 0$
-
-より(R16)から
-$(b-a)(-c)\geqq 0$で
-$(b-a)(-c)=ac-bc$と(i)から
-$ac\geqq bc$
-
-
-(iv)
-
-$a^{-1}\leqq 0$と仮定する.
-
-$-a^{-1}\geqq 0$で
-$a\geqq 0$とあわせ(R16)から
-$a(-a^{-1})\geqq 0$
-
-より
-$-1\geqq 0$
-(ii)より
-$0\geqq 1$
-となり矛盾.
-
-背理法から
-$a^{-1}>0$
-
-
-(v)
-
-$a\leqq b$と(R15)より
-$a+c \leqq b+c$
-
-$c\leqq d$と(R15)より
-$c+b \leqq d+b$
-
-$b+c=c+b,b+d=d+b$より
-$b+c \leqq b+d$
-
-(R13)より
-$a+c\leqq b+d$
-
-
-(vi)
-
-
-(v)より
-$a+c\leqq b+d$
-は言える.
-
-$a+c\neq b+d$
-を言えばいい.
-
-$a+c = b+d$
-と仮定する.
-
-(R11)より
-$b+d\leqq a+c$
-
-また$a\leqq b$と(ii)より
-$-b\leqq -a$
-
-(v)より$-b+(b+d)=d,-a+(a+c)=c$と合わせて
-$d\leqq c$
-
-$c<d$に矛盾し背理法から$a+c\neq b+d$
-
-
-以上より
-$a+c < b+d$
-
-
-\subsection*{$\S$2 実数列の極限}
-1)(i)
-
-$N>|a|$となる$N\in\mathbb{N}$が存在.
-
-$n>N$の時$|a_n| = |a_{n-1}|\frac{|a|}{n},\frac{|a|}{n}<1$ で
-\[|a_n| < |a_{n-1}|\]
-これを繰り返し用いると$n\geqq N$で
-\[|a_n| \leqq |a_N|\]
-$\epsilon > 0$に対し$n \geqq max(N+1,\frac{|aa_N|}{\epsilon}+1)$とすると
-\begin{align*}
-|a_n| &= |a_{n-1}|\frac{|a|}{n}\\
-       &\leqq \frac{|aa_N|}{n} \\
-       &< \epsilon
-\end{align*}
-より
-\[a_n\to0 \ (n\to \infty)\]
-
-
-(ii)
-
-$\epsilon > 0$に対し$\epsilon'=min(1,\epsilon)$とする.
-
-$0\leqq 1-\epsilon' < 1$なので例6より
-$lim_{n\to \infty}(1-\epsilon')^n = 0$
-
-より$a>0$より$N\in\mathbb{N}$が存在し
-\[n\geqq N \Rightarrow (1-\epsilon')^n < a\]
-
-より$n\geqq N$の時
-$-\epsilon \leqq -\epsilon' < \sqrt[n]{a}-1$
-
-また二項定理より$n\geqq 1$で
-\[(1+\epsilon)^n = \sum_{k=0}^n \ _nC_k  \epsilon ^k > n\epsilon\]
-$M > \frac{a}{\epsilon}$を満たすように$M\in \mathbb{N}$を取ると
-
-$n\geqq M$で
-\[a < n\epsilon < (1+\epsilon)^n\]
-より$\sqrt[n]{a}-1 < \epsilon$
-
-$n\geqq max(N,M)$の時$|\sqrt[n]{a}-1| < \epsilon$で
-\[a_n\to1 \ (n\to \infty)\]
-
-(iii)
-
-$k=2,\cdots,n$で$\frac{k}{n}\leqq 1$なので辺々掛け合わせて
-\[\frac{n!}{n^{n-1}}\leqq 1\]
-より$0<a_n\leqq \frac{1}{n}$
-
-また$\lim_{n\to \infty}\frac{1}{n}=0$なのではさみうちの原理から
-\[a_n\to 0 \ (n\to \infty)\]
-
-(iv)
-
-二項定理より$n\geqq 2$で
-\[2^n =\sum_{k=0}^n \ _nC_k > \frac{n(n-1)}{2}\]
-より$0<a_n<\frac{2}{n-1}$
-
-また$\lim_{n\to \infty}\frac{2}{n-1}=0$なのではさみうちの原理から
-\[a_n\to 0 \ (n\to \infty)\]
-
-(v)
-
-$\epsilon > 0$に対し$N>\frac{1}{\epsilon ^2}$となる$N\in \mathbb{N}$が存在.
-
-$n\geqq N$で
-\[a_n=\frac{1}{\sqrt{n+1}+\sqrt{n}}<\frac{1}{\sqrt{n}}<\epsilon\]
-$a_n>0$も合わせて$n\geqq N$で$|a_n|<\epsilon$なので
-\[a_n\to 0 \ (n\to \infty)\]
-
-2)
-
-$-1\leqq \cos(n!\pi x) \leqq 1$だ.
-
-$\cos(n!\pi x) = \pm 1$の時$(\cos(n!\pi x))^{2m} = 1$なので$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
-
-$-1<\cos(n!\pi x) < 1$の時$0 \leqq (\cos(n!\pi x))^2 < 1$なので例6より$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
-
-$\cos(n!\pi x) = \pm 1\Leftrightarrow n!x \in \mathbb{Z} $だ.
-
-$x$が有理数の時$x=\frac{p}{q},q\in \mathbb{N},p\in \mathbb{Z}$とおけ$n\geqq q$の時
-\[n!x = n\cdots (q+1)\cdot (q-1) \cdots  1 \cdot p \in \mathbb{Z}\]
-より$n\geqq q$で$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
-
-より$\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 1$
-
-$x$が無理数の時
-
-$n!x$が整数と仮定する.
-
-$x=\frac{n!x}{n!}$で分母と分子が整数なので$x$が有理数となり矛盾.
-
-より
-$n!x$は整数でなく$\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
-
-より$\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 0$
-
-以上より
-\[f(x) = \begin{cases}
-1 & xが有理数 \\
-0 & xが無理数 \\
-\end{cases}\]
-
-3)
-
-$\epsilon > 0$とする.
-
-$\lim_{n\to \infty}a_n=a$なので$n\geqq N'$なら$|a_n-a|<\frac{\epsilon}{2}$となる$N'\in \mathbb{N}$が存在.
-
-$N=max(1,N')$とする.
-
-$n\geqq max(N,\frac{2}{\epsilon}|\sum_{k=1}^{N-1}(a_k-a)|)$の時
-\[
-|\frac{1}{n}\sum_{k=1}^n a_k - a| \leqq \frac{1}{n}|\sum_{k=1}^{N-1}(a_k-a)|+\frac{1}{n}\sum_{k=N}^{n}|a_k-a|<\frac{\epsilon}{2} + \frac{n-N+1}{2n}\epsilon<\epsilon
-\]
-より$\lim_{n\to \infty}\frac{a_1+a_2+\cdots+a_n}{n}=a$
-
-4)
-
-$a_k\neq0$なので$a_n=a_1\cdot \frac{a_2}{a_1}\cdot \frac{a_3}{a_2}\cdots \frac{a_n}{a_{n-1}}$
-
-より$a_k>0$に注意し
-$\log a_n = \log a_1 + \log \frac{a_2}{a_1}+\log \frac{a_3}{a_2}+\cdots +\log \frac{a_n}{a_{n-1}}$
-
-$n\in\mathbb{N}$に対し$a_n > 0$なので$b_n=\log \frac{a_{n+1}}{a_n}$とおける.
-
-\[\log \sqrt[n]{a_n}=\frac{b_1+b_2+\cdots +b_n}{n} - \frac{b_n}{n}+\frac{\log a_1}{n}\]
-
-$\lim_{n\to \infty}\frac{a_{n+1}}{a_n}=a$と$\log x$が連続なので$\lim_{n\to \infty}b_n=\log a$
-
-より3)より$\lim _{n\to \infty}\frac{b_1+b_2+\cdots +b_n}{n} = \log a$
-
-また$n\geqq N$で$|b_n - \log a|<1$となる$N\in\mathbb{N}$が存在.
-
-$n\geqq N$で$\frac{\log a -1}{n}\leqq \frac{b_n}{n} \leqq \frac{\log a+1}{n}$で$\lim_{n\to\infty}\frac{\log a -1}{n} = \lim_{n\to\infty}\frac{\log a +1}{n}=0$なのではさみうちの原理から
-$\lim_{n\to\infty} \frac{b_n}{n} = 0$
-
-さらに$\lim_{n\to\infty} \frac{\log a_1}{n} = 0$なので
-
-
-\[\lim_{n\to\infty}\log \sqrt[n]{a_n} = \log a\]
-$e^x$は連続なので$\lim_{n\to\infty}\sqrt[n]{a_n} = e^{\log a} = a$
-
-5)
-
-$H = A\cup \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$とする.
-
-$H$が継承的であることを示す.
-
-$\{0\}\subset H$なので$0\in H$
-
-$x\in H$とする
-
-$x = 0,\cdots , m-2$の時$\{x+1\}\subset H$なので$x+1\in H$
-
-$x = m-1$の時イ)より$m\in A$で$A\subset H$なので$x+1=m\in H$
-
-$x\in A$の時イ)より$x\geqq m$
-
-$x\in A,x\geqq m$なのでロ)より$x+1\in A$で$A\subset H$なので$x+1\in H$
-
-以上より$H$は継承的.
-
-より$\mathbb{N}\subset H$
-
-$n\in \mathbb{N}$で$n\geqq m$とする.
-
-$\mathbb{N}\subset H$より$n\in H$.
-
-また$n\geqq m$なので$n \neq 0,1,\cdots , m-1$で$n\notin  \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$
-
-より$n\in A$で$\{n\in \mathbb{N}|n\geqq m\}\subset A$
-
-次に$n\in A$とする.
-
-$A\subset \mathbb{N}$なので$n\in\mathbb{N}$
-
-イ)より$n\geqq m$
-
-より$n\in \{n\in \mathbb{N}|n\geqq m\}$で$A\subset \{n\in \mathbb{N}|n\geqq m\}$
-
-以上より$A=\{n\in \mathbb{N}|n\geqq m\}$
-
-6)
-
-$n\in \mathbb{N}$に対し$A_n=\{x\in \mathbb{R}|x+n\in\mathbb{N}\}$とする.
-
-$A_n$が継承的であることを示す.
-
-$n\in \mathbb{N}$なので$0+n\in \mathbb{N}$で$0\in A_n$
-
-$x\in A_n$とする.
-
-$x+n\in \mathbb{N}$で$\mathbb{N}$が継承的なので$x+1+n\in \mathbb{N}$
-
-より$x+1\in A_n$
-
-以上より$A_n$は継承的で$\mathbb{N} \subset A_n$
-
-$m\in \mathbb{N}$なら$m\in A_n$で$m+n\in\mathbb{N}$
-
-$n\in \mathbb{N}$に対し$B_n=\{x\in \mathbb{R}|xn\in\mathbb{N}\}$とする.
-
-$B_n$が継承的であることを示す.
-
-$0n = 0\in \mathbb{N}$なので$0\in B_n$
-
-$x\in B_n$とする.
-
-$xn,n\in \mathbb{N}$なので上の結果より$xn+n=(x+1)n\in \mathbb{N}$
-
-より$x+1\in B_n$
-
-以上より$B_n$は継承的で$\mathbb{N} \subset B_n$
-
-$m\in \mathbb{N}$なら$m\in B_n$で$mn\in\mathbb{N}$
-
-$C=\{0\}\cup \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$
-とする.
-
-$C$が継承的であることを示す.
-
-$\{0\}\subset C$より$0\in C$
-
-$x\in C$とする.
-
-$x\in\{0\},x\in \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$いずれの場合も$x\in\mathbb{N}$
-
-$\mathbb{N}$は継承的なので$x+1\in\mathbb{N}$
-
-また$x+1-1=x\in \mathbb{N}$なので$x+1\in C$
-
-以上より$C$は継承的で$\mathbb{N} \subset C$
-
-$m\in \mathbb{N}$に対し$D_m=\{x\in \mathbb{N}|m< x または m-x\in\mathbb{N}\}$とする.
-
-$D_m$が継承的であることを示す.
-
-$m\in \mathbb{N}$なので$m-0\in \mathbb{N}$で$0\in D_m$
-
-$x\in D_m$とする.
-
-$m\leqq x$の時$m<x+1$なので$x+1\in D_m$
-
-$m>x$の時$m-x\in \mathbb{N}\subset C$
-
-さらに$m-x\neq 0$なので$m-x-1\in\mathbb{N}$
-
-より$x+1\in D_m$
-
-いずれの場合も$x+1\in D_m$で$0\in D_m$と合わせて
-$D_m$は継承的で$\mathbb{N} \subset D_m$
-
-より$n\in \mathbb{N},m\geqq n$なら$m-n\in\mathbb{N}$
-
-7)
-
-$\mathbb{R}_+$は継承的なので$\mathbb{N}\subset \mathbb{R}_+$で$n\in \mathbb{N}$なら$n\geqq 0$なことに注意する.
-
-$n\in \mathbb{N}$に対して$E_n=\{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$
-とする.
-
-また$F=\{n\in \mathbb{N}|\mathbb{N}\subset E_n\}$
-とする.
-
-$F$が継承的であることを示したい.
-
-まず$E_0$が継承的なことを示す.
-
-$0\in \mathbb{N}$で$0\leqq 0$より$0\in E_0$
-
-$x\in E_0$とする.$x\in \mathbb{N}$で$x+1\in\mathbb{N}$
-
-また$x\geqq 0$なので$1\leqq x+1$で$x+1\in E_0$
-
-より$E_0$は継承的で$0\in F$
-
-次に$n\in F$を仮定して$n+1\in F$を示す.
-
-$n\in F \subset \mathbb{N}$なので$n\geqq 0$で$0\leqq n+1$で$0\in E_{n+1}$
-
-$x\in E_{n+1}$とする.$x \in \mathbb{N} \subset E_n$なので$x\leqq n $または$n+1\leqq x$
-
-より$x+1\leqq n+1$または$n+2\leqq x+1$
-
-より$x+1\in E_{n+1}$
-
-以上より$E_{n+1}$は継承的で$\mathbb{N}\subset E_{n+1}$
-
-より$n+1\in F$
-
-以上より$F$は継承的で$\mathbb{N}\subset F$
-
-より$n\in \mathbb{N}$なら$\mathbb{N}\subset \{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$で
-
-$n<k<n+1$となる自然数は存在しない.
-\end{document}
+       \usepackage{amsmath,amssymb}
+       \usepackage{bm}
+       \usepackage[dvipdfmx]{graphicx}
+       \usepackage{listings,jlisting}
+       \usepackage{siunitx}
+       \usepackage{theorem}
+       \title{解析入門　解答}
+       \author{itleigns}
+       \begin{document}
+       \maketitle{}
+       \section*{第I章実数と連続}
+       \subsection*{$\S$1 実数}
+       問1(i)
+       
+       $a,b\in K$が両方(R3)を満たす0であると仮定する.
+       
+       $a$が(R3)を満たす$0$なので
+       $b+a=b$
+       
+       $b$も(R3)を満たす$0$なので
+       $a+b=a$
+       
+       また(R1)より
+       $a+b=b+a$
+       
+       
+       以上より
+       $a=b$
+       で(R3)を満たす0は唯一
+       
+       
+       (ii)
+       
+       $a\in K$に対し$b,c\in K$を両方(R4)を満たす$-a$であると仮定する.
+       
+       $a+b = 0$より(R3)と合わせ
+       $c+(a+b)=c+0=c$
+       
+       また
+       $a+c=0$
+       
+       
+       (R1)より
+       $a+c=c+a$
+       なので
+       $c+a=0$
+       
+       
+       より
+       \begin{align*}
+       b &= b+0 \ (\because (R3))\\
+       &= 0+b \ (\because (R1))\\
+       &= (c+a)+b\\
+       &= c+(a+b) \ (\because (R2))\\
+       &= c \\
+       \end{align*}
+       つまり(R4)を満たす$-a$は唯一
+       
+       
+       (iii)
+       
+       $a\in K$に対し(R4)より
+       $a+(-a)=0$
+       
+       
+       (R1)より
+       $(-a)+a=a+(-a)$
+       で
+       $(-a)+a=0$だ.
+       
+       より(ii)から
+       $-(-a)=a$
+       
+       (iv)
+       
+       $\ast$注意
+       
+       $a\in K$がある$b\in K$に対して
+       $b+a=b$
+       なら
+       $a=0$
+       だ.
+       
+       なぜなら
+       \begin{align*}
+       0 &= b+(-b) \ (\because (R4))\\
+       &= (b+a)+(-b)\\
+       &= (a+b)+(-b) \ (\because (R1) より b+a=a+b)\\
+       &= a+(b+(-b)) \ (\because (R2))\\
+       &= a+0 \ (\because (R4) より b+(-b)=0)\\
+       &= a \ (\because (R3))
+       \end{align*}
+       以下これは暗黙の了解として使う.
+       
+       $a\in K$に対し
+       \begin{align*}
+       0a+0a &=(0+0)a \ (\because (R7)) \\
+       &= 0a \ (\because (R3)より0+0=0)
+       \end{align*}
+       より$0a=0$
+       
+       (v)
+       
+       $a\in K$に対し
+       \begin{align*}
+       a+(-1)a &= a1+(-1)a \ (\because (R8)よりa=a1)\\
+       &= 1a+(-1)a \ (\because (R5)よりa1=1a)\\
+       &= (1+(-1))a \ (\because (R7))\\
+       &= 0a \ (\because (R4)より1+(-1)=0)\\
+       &= 0 \ (\because (iv))\\
+       \end{align*}
+       より(ii)から(以下(ii)も暗黙の了解として使う)$(-1)a=-a$
+       
+       
+       (vi)
+       
+       \begin{align*}
+       (-1)(-1) &= -(-1) \ (\because (v))\\
+       &= 1 \ (\because (iii))\\
+       \end{align*}
+       
+       (vii)
+       
+       \begin{align*}
+       ab+a(-b) &= a(b+(-b)) \ (\because (R7))\\
+       &= a0 \ (\because (R4)よりb+(-b)=0)\\
+       &= 0a \ (\because (R5))\\
+       &= 0 \ (\because (iv))\\
+       \end{align*}
+       より
+       $a(-b) = -ab$
+       \begin{align*}
+       ab+(-a)b &= (a+(-a))b \ (\because (R7))\\
+       &= 0b \ (\because (R4)よりa+(-a)=0)\\
+       &= 0 \ (\because (iv))\\
+       \end{align*}
+       より
+       $(-a)b = -ab$
+       
+       (viii)
+       
+       \begin{align*}
+       (-a)(-b) &= -a(-b) \ (\because (vii))\\
+       &= -(-ab) \ (\because (vii)よりa(-b)=-ab)\\
+       &= ab \ (\because (iii))\\
+       \end{align*}
+       
+       (ix)
+       
+       $b\neq 0$と仮定する.$b^{-1}$が存在し$bb^{-1}=1$.
+       
+       
+       この時
+       \begin{align*}
+       a &= a1 \ (\because (R8))\\
+       &= a(bb^{-1}) \ (\because bb^{-1}=1)\\
+       &= ab(b^{-1}) \ (\because (R6))\\
+       &= 0b^{-1}\\
+       &= 0 \ (\because (iv))
+       \end{align*}
+       つまり$a=0$または$b=0$
+       
+       (x)
+       
+       \begin{align*}
+       (-a)(-(a^{-1})) &= aa^{-1} \ (\because (viii))\\
+       &= 1 \ (\because (R9))\\
+       \end{align*}
+       (ii)と同様に(R9)を満たす$a^{-1}$は各$a\in K,a\neq 0$に対し唯一なので(以下これは暗黙の了解として使う).
+       $(-a)^{-1}=-(a^{-1})$
+       
+       (xi)
+       
+       \begin{align*}
+       (ab)(b^{-1}a^{-1})&=((ab)b^{-1})a^{-1} \ (\because (R6))\\
+       &=(a(bb^{-1}))a^{-1} \ (\because (R6) より(ab)b^{-1}=a(bb^{-1}))\\
+       &=(a1)a^{-1} \ (\because (R9) よりbb^{-1}=1)\\
+       &=aa^{-1} \ (\because (R8) よりa1=a)\\
+       &=1 \ (\because (R9))\\
+       \end{align*}
+       より
+       $(ab)^{-1}=b^{-1}a^{-1}$
+       
+       
+       問2(i)
+       
+       
+       $\Rightarrow$
+       
+       
+       $a\leqq b$
+       と(R15)より
+       $a+(-a)\leqq b+(-a)$
+       
+       より
+       $0\leqq b-a$
+       
+       
+       $\Leftarrow$
+       
+       
+       $0\leqq b-a$
+       と(R15)より
+       $0+a\leqq (b-a)+a$
+       より
+       $a\leqq b$
+       
+       
+       (ii)
+       
+       
+       (i)より
+       $a\leqq b \Leftrightarrow 0\leqq b-a$
+       
+       さらに(i)より
+       $-b\leqq -a \Leftrightarrow 0\leqq -a-(-b)$
+       
+       以上より$-a-(-b)=b-a$と合わせて
+       $a\leqq b \Leftrightarrow -b\leqq -a$
+       
+       
+       (iii)
+       
+       
+       (i)と$a\leqq b$より
+       $b-a \geqq 0$
+       
+       (i)と$c\leqq 0,0-c=-c$より
+       $-c\geqq 0$
+       
+       より(R16)から
+       $(b-a)(-c)\geqq 0$で
+       $(b-a)(-c)=ac-bc$と(i)から
+       $ac\geqq bc$
+       
+       
+       (iv)
+       
+       $a^{-1}\leqq 0$と仮定する.
+       
+       $-a^{-1}\geqq 0$で
+       $a\geqq 0$とあわせ(R16)から
+       $a(-a^{-1})\geqq 0$
+       
+       より
+       $-1\geqq 0$
+       (ii)より
+       $0\geqq 1$
+       となり矛盾.
+       
+       背理法から
+       $a^{-1}>0$
+       
+       
+       (v)
+       
+       $a\leqq b$と(R15)より
+       $a+c \leqq b+c$
+       
+       $c\leqq d$と(R15)より
+       $c+b \leqq d+b$
+       
+       $b+c=c+b,b+d=d+b$より
+       $b+c \leqq b+d$
+       
+       (R13)より
+       $a+c\leqq b+d$
+       
+       
+       (vi)
+       
+       
+       (v)より
+       $a+c\leqq b+d$
+       は言える.
+       
+       $a+c\neq b+d$
+       を言えばいい.
+       
+       $a+c = b+d$
+       と仮定する.
+       
+       (R11)より
+       $b+d\leqq a+c$
+       
+       また$a\leqq b$と(ii)より
+       $-b\leqq -a$
+       
+       (v)より$-b+(b+d)=d,-a+(a+c)=c$と合わせて
+       $d\leqq c$
+       
+       $c<d$に矛盾し背理法から$a+c\neq b+d$
+       
+       
+       以上より
+       $a+c < b+d$
+       
+       
+       \subsection*{$\S$2 実数列の極限}
+       1)(i)
+       
+       $N>|a|$となる$N\in\mathbb{N}$が存在.
+       
+       $n>N$の時$|a_n| = |a_{n-1}|\frac{|a|}{n},\frac{|a|}{n}<1$ で
+       \[|a_n| < |a_{n-1}|\]
+       これを繰り返し用いると$n\geqq N$で
+       \[|a_n| \leqq |a_N|\]
+       $\epsilon > 0$に対し$n \geqq max(N+1,\frac{|aa_N|}{\epsilon}+1)$とすると
+       \begin{align*}
+       |a_n| &= |a_{n-1}|\frac{|a|}{n}\\
+              &\leqq \frac{|aa_N|}{n} \\
+              &< \epsilon
+       \end{align*}
+       より
+       \[a_n\to0 \ (n\to \infty)\]
+       
+       
+       (ii)
+       
+       $\epsilon > 0$に対し$\epsilon'=min(1,\epsilon)$とする.
+       
+       $0\leqq 1-\epsilon' < 1$なので例6より
+       $\displaystyle \lim_{n\to \infty}(1-\epsilon')^n = 0$
+       
+       より$a>0$より$N\in\mathbb{N}$が存在し
+       \[n\geqq N \Rightarrow (1-\epsilon')^n < a\]
+       
+       より$n\geqq N$の時
+       $-\epsilon \leqq -\epsilon' < \sqrt[n]{a}-1$
+       
+       また二項定理より$n\geqq 1$で
+       \[(1+\epsilon)^n = \sum_{k=0}^n \ _nC_k  \epsilon ^k > n\epsilon\]
+       $M > \frac{a}{\epsilon}$を満たすように$M\in \mathbb{N}$を取ると
+       
+       $n\geqq M$で
+       \[a < n\epsilon < (1+\epsilon)^n\]
+       より$\sqrt[n]{a}-1 < \epsilon$
+       
+       $n\geqq max(N,M)$の時$|\sqrt[n]{a}-1| < \epsilon$で
+       \[a_n\to1 \ (n\to \infty)\]
+       
+       (iii)
+       
+       $k=2,\cdots,n$で$\frac{k}{n}\leqq 1$なので辺々掛け合わせて
+       \[\frac{n!}{n^{n-1}}\leqq 1\]
+       より$0<a_n\leqq \frac{1}{n}$
+       
+       また$\displaystyle\lim_{n\to \infty}\frac{1}{n}=0$なのではさみうちの原理から
+       \[a_n\to 0 \ (n\to \infty)\]
+       
+       (iv)
+       
+       二項定理より$n\geqq 2$で
+       \[2^n =\sum_{k=0}^n \ _nC_k > \frac{n(n-1)}{2}\]
+       より$0<a_n<\frac{2}{n-1}$
+       
+       また$\displaystyle\lim_{n\to \infty}\frac{2}{n-1}=0$なのではさみうちの原理から
+       \[a_n\to 0 \ (n\to \infty)\]
+       
+       (v)
+       
+       $\epsilon > 0$に対し$N>\frac{1}{\epsilon ^2}$となる$N\in \mathbb{N}$が存在.
+       
+       $n\geqq N$で
+       \[a_n=\frac{1}{\sqrt{n+1}+\sqrt{n}}<\frac{1}{\sqrt{n}}<\epsilon\]
+       $a_n>0$も合わせて$n\geqq N$で$|a_n|<\epsilon$なので
+       \[a_n\to 0 \ (n\to \infty)\]
+       
+       2)
+       
+       $-1\leqq \cos(n!\pi x) \leqq 1$だ.
+       
+       $\cos(n!\pi x) = \pm 1$の時$(\cos(n!\pi x))^{2m} = 1$なので$\displaystyle\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
+       
+       $-1<\cos(n!\pi x) < 1$の時$0 \leqq (\cos(n!\pi x))^2 < 1$なので例6より$\displaystyle \lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
+       
+       $\cos(n!\pi x) = \pm 1\Leftrightarrow n!x \in \mathbb{Z} $だ.
+       
+       $x$が有理数の時$x=\frac{p}{q},q\in \mathbb{N},p\in \mathbb{Z}$とおけ$n\geqq q$の時
+       \[n!x = n\cdots (q+1)\cdot (q-1) \cdots  1 \cdot p \in \mathbb{Z}\]
+       より$n\geqq q$で$\displaystyle\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 1$
+       
+       より$\displaystyle\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 1$
+       
+       $x$が無理数の時
+       
+       $n!x$が整数と仮定する.
+       
+       $x=\frac{n!x}{n!}$で分母と分子が整数なので$x$が有理数となり矛盾.
+       
+       より
+       $n!x$は整数でなく$\displaystyle\lim_{m\to \infty} (\cos(n!\pi x))^{2m} = 0$
+       
+       より$\displaystyle\lim_{n\to \infty}(\lim_{m\to \infty} (\cos(n!\pi x))^{2m}) = 0$
+       
+       以上より
+       \[f(x) = \begin{cases}
+       1 & xが有理数 \\
+       0 & xが無理数 \\
+       \end{cases}\]
+       
+       3)
+       
+       $\epsilon > 0$とする.
+       
+       $\displaystyle\lim_{n\to \infty}a_n=a$なので$n\geqq N'$なら$|a_n-a|<\frac{\epsilon}{2}$となる$N'\in \mathbb{N}$が存在.
+       
+       $N=max(1,N')$とする.
+       
+       $n\geqq max(N,\frac{2}{\epsilon}|\sum_{k=1}^{N-1}(a_k-a)|)$の時
+       \[
+       |\frac{1}{n}\sum_{k=1}^n a_k - a| \leqq \frac{1}{n}|\sum_{k=1}^{N-1}(a_k-a)|+\frac{1}{n}\sum_{k=N}^{n}|a_k-a|<\frac{\epsilon}{2} + \frac{n-N+1}{2n}\epsilon<\epsilon
+       \]
+       より$\displaystyle\lim_{n\to \infty}\frac{a_1+a_2+\cdots+a_n}{n}=a$
+       
+       4)
+       
+       $a_k\neq0$なので$a_n=a_1\cdot \frac{a_2}{a_1}\cdot \frac{a_3}{a_2}\cdots \frac{a_n}{a_{n-1}}$
+       
+       より$a_k>0$に注意し
+       $\log a_n = \log a_1 + \log \frac{a_2}{a_1}+\log \frac{a_3}{a_2}+\cdots +\log \frac{a_n}{a_{n-1}}$
+       
+       $n\in\mathbb{N}$に対し$a_n > 0$なので$b_n=\log \frac{a_{n+1}}{a_n}$とおける.
+       
+       \[\log \sqrt[n]{a_n}=\frac{b_1+b_2+\cdots +b_n}{n} - \frac{b_n}{n}+\frac{\log a_1}{n}\]
+       
+       $\displaystyle\lim_{n\to \infty}\frac{a_{n+1}}{a_n}=a$と$\log x$が連続なので$\displaystyle\lim_{n\to \infty}b_n=\log a$
+       
+       より3)より$\displaystyle\lim _{n\to \infty}\frac{b_1+b_2+\cdots +b_n}{n} = \log a$
+       
+       また$n\geqq N$で$|b_n - \log a|<1$となる$N\in\mathbb{N}$が存在.
+       
+       $n\geqq N$で$\frac{\log a -1}{n}\leqq \frac{b_n}{n} \leqq \frac{\log a+1}{n}$で$\displaystyle\lim_{n\to\infty}\frac{\log a -1}{n} = \lim_{n\to\infty}\frac{\log a +1}{n}=0$なのではさみうちの原理から
+       $\displaystyle\lim_{n\to\infty} \frac{b_n}{n} = 0$
+       
+       さらに$\displaystyle\lim_{n\to\infty} \frac{\log a_1}{n} = 0$なので
+       
+       
+       \[\lim_{n\to\infty}\log \sqrt[n]{a_n} = \log a\]
+       $e^x$は連続なので$\displaystyle\lim_{n\to\infty}\sqrt[n]{a_n} = e^{\log a} = a$
+       
+       5)
+       
+       $H = A\cup \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$とする.
+       
+       $H$が継承的であることを示す.
+       
+       $\{0\}\subset H$なので$0\in H$
+       
+       $x\in H$とする
+       
+       $x = 0,\cdots , m-2$の時$\{x+1\}\subset H$なので$x+1\in H$
+       
+       $x = m-1$の時イ)より$m\in A$で$A\subset H$なので$x+1=m\in H$
+       
+       $x\in A$の時イ)より$x\geqq m$
+       
+       $x\in A,x\geqq m$なのでロ)より$x+1\in A$で$A\subset H$なので$x+1\in H$
+       
+       以上より$H$は継承的.
+       
+       より$\mathbb{N}\subset H$
+       
+       $n\in \mathbb{N}$で$n\geqq m$とする.
+       
+       $\mathbb{N}\subset H$より$n\in H$.
+       
+       また$n\geqq m$なので$n \neq 0,1,\cdots , m-1$で$n\notin  \{0\} \cup \{1\} \cup \cdots \cup \{m-1\}$
+       
+       より$n\in A$で$\{n\in \mathbb{N}|n\geqq m\}\subset A$
+       
+       次に$n\in A$とする.
+       
+       $A\subset \mathbb{N}$なので$n\in\mathbb{N}$
+       
+       イ)より$n\geqq m$
+       
+       より$n\in \{n\in \mathbb{N}|n\geqq m\}$で$A\subset \{n\in \mathbb{N}|n\geqq m\}$
+       
+       以上より$A=\{n\in \mathbb{N}|n\geqq m\}$
+       
+       6)
+       
+       $n\in \mathbb{N}$に対し$A_n=\{x\in \mathbb{R}|x+n\in\mathbb{N}\}$とする.
+       
+       $A_n$が継承的であることを示す.
+       
+       $n\in \mathbb{N}$なので$0+n\in \mathbb{N}$で$0\in A_n$
+       
+       $x\in A_n$とする.
+       
+       $x+n\in \mathbb{N}$で$\mathbb{N}$が継承的なので$x+1+n\in \mathbb{N}$
+       
+       より$x+1\in A_n$
+       
+       以上より$A_n$は継承的で$\mathbb{N} \subset A_n$
+       
+       $m\in \mathbb{N}$なら$m\in A_n$で$m+n\in\mathbb{N}$
+       
+       $n\in \mathbb{N}$に対し$B_n=\{x\in \mathbb{R}|xn\in\mathbb{N}\}$とする.
+       
+       $B_n$が継承的であることを示す.
+       
+       $0n = 0\in \mathbb{N}$なので$0\in B_n$
+       
+       $x\in B_n$とする.
+       
+       $xn,n\in \mathbb{N}$なので上の結果より$xn+n=(x+1)n\in \mathbb{N}$
+       
+       より$x+1\in B_n$
+       
+       以上より$B_n$は継承的で$\mathbb{N} \subset B_n$
+       
+       $m\in \mathbb{N}$なら$m\in B_n$で$mn\in\mathbb{N}$
+       
+       $C=\{0\}\cup \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$
+       とする.
+       
+       $C$が継承的であることを示す.
+       
+       $\{0\}\subset C$より$0\in C$
+       
+       $x\in C$とする.
+       
+       $x\in\{0\},x\in \{x\in \mathbb{N}|x-1\in\mathbb{N}\}$いずれの場合も$x\in\mathbb{N}$
+       
+       $\mathbb{N}$は継承的なので$x+1\in\mathbb{N}$
+       
+       また$x+1-1=x\in \mathbb{N}$なので$x+1\in C$
+       
+       以上より$C$は継承的で$\mathbb{N} \subset C$
+       
+       $m\in \mathbb{N}$に対し$D_m=\{x\in \mathbb{N}|m< x または m-x\in\mathbb{N}\}$とする.
+       
+       $D_m$が継承的であることを示す.
+       
+       $m\in \mathbb{N}$なので$m-0\in \mathbb{N}$で$0\in D_m$
+       
+       $x\in D_m$とする.
+       
+       $m\leqq x$の時$m<x+1$なので$x+1\in D_m$
+       
+       $m>x$の時$m-x\in \mathbb{N}\subset C$
+       
+       さらに$m-x\neq 0$なので$m-x-1\in\mathbb{N}$
+       
+       より$x+1\in D_m$
+       
+       いずれの場合も$x+1\in D_m$で$0\in D_m$と合わせて
+       $D_m$は継承的で$\mathbb{N} \subset D_m$
+       
+       より$n\in \mathbb{N},m\geqq n$なら$m-n\in\mathbb{N}$
+       
+       7)
+       
+       $\mathbb{R}_+$は継承的なので$\mathbb{N}\subset \mathbb{R}_+$で$n\in \mathbb{N}$なら$n\geqq 0$なことに注意する.
+       
+       $n\in \mathbb{N}$に対して$E_n=\{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$
+       とする.
+       
+       また$F=\{n\in \mathbb{N}|\mathbb{N}\subset E_n\}$
+       とする.
+       
+       $F$が継承的であることを示したい.
+       
+       まず$E_0$が継承的なことを示す.
+       
+       $0\in \mathbb{N}$で$0\leqq 0$より$0\in E_0$
+       
+       $x\in E_0$とする.$x\in \mathbb{N}$で$x+1\in\mathbb{N}$
+       
+       また$x\geqq 0$なので$1\leqq x+1$で$x+1\in E_0$
+       
+       より$E_0$は継承的で$0\in F$
+       
+       次に$n\in F$を仮定して$n+1\in F$を示す.
+       
+       $n\in F \subset \mathbb{N}$なので$n\geqq 0$で$0\leqq n+1$で$0\in E_{n+1}$
+       
+       $x\in E_{n+1}$とする.$x \in \mathbb{N} \subset E_n$なので$x\leqq n $または$n+1\leqq x$
+       
+       より$x+1\leqq n+1$または$n+2\leqq x+1$
+       
+       より$x+1\in E_{n+1}$
+       
+       以上より$E_{n+1}$は継承的で$\mathbb{N}\subset E_{n+1}$
+       
+       より$n+1\in F$
+       
+       以上より$F$は継承的で$\mathbb{N}\subset F$
+       
+       より$n\in \mathbb{N}$なら$\mathbb{N}\subset \{x\in \mathbb{N}|x\leqq nまたは n+1\leqq x\}$で
+       
+       $n<k<n+1$となる自然数は存在しない.
+       \subsection*{$\S$3 実数の連続性}
+       1)(i)
+       
+       \[a_n=\frac{\frac{1}{6}n(n+1)(2n+1)}{n^3}=\frac{1}{6}\cdot 1\cdot (1+\frac{1}{n})\cdot (2+\frac{1}{n})\xrightarrow[n\to \infty]{} \frac{1}{6}\cdot 1\cdot (1+0)\cdot (2+0)=\frac{1}{3}\]
+       (ii)
+       
+       $a\leqq 1$のとき$M(\in\mathbb{R})$に対し$N>\sqrt{max(0,M)}$を満たす$N(\in \mathbb{N})$が存在.
+       
+       $n\geqq N$で
+       \[a_n = \frac{n^2}{a^n}\geqq \frac{n^2}{1^n}=n^2  \geqq M\]
+       より$\displaystyle\lim_{n\to\infty}a_n=+\infty$
+       
+       $a>1$のとき二項定理より$n\geqq3$で
+       \[a^n =\sum_{k=0}^n \ _nC_k(a-1)^k\cdot 1^{n-k}>\frac{1}{6}n(n-1)(n-2)(a-1)^3\]
+       より
+       \[\frac{n^2}{a^n}<\frac{6}{(1-\frac{1}{n})(1-2\cdot\frac{1}{n})(a-1)^3}\cdot\frac{1}{n}\xrightarrow[n\to \infty]{}\frac{6}{(1-0)(1-2\cdot 0)(a-1)^3}\cdot0=0\]
+       $a_n>0$と合わせはさみうちの原理から$\displaystyle\lim_{n\to\infty}a_n=0$
+       
+       以上より
+       $\displaystyle\lim_{n\to\infty}a_n=\begin{cases}
+       +\infty & (a\leqq 1)\\
+       0 & (a> 1)\\
+       \end{cases}$
+       
+       (iii)
+       
+       $n\geqq2$のとき$\sqrt[n]{n}>1$で二項定理より
+       \[n=\sum_{k=0}^n \ _nC_k (\sqrt[n]{n}-1)^k\cdot 1^{n-k}
+       >\frac{n(n-1)}{2}(\sqrt[n]{n}-1)^2\]
+       より
+       \[|\sqrt[n]{n}-1| < \sqrt{\frac{2}{n-1}}\]
+       $\epsilon >0$に対し$N>\frac{2}{\epsilon^2}+1$を満たす$N\in\mathbb{N}$が存在.
+       
+       $n\geqq max(N,2)$で$|\sqrt[n]{n}-1| < \epsilon$
+       
+       つまり$\displaystyle\lim_{n\to\infty}a_n=1$
+       
+       (iv)
+       
+       2)より$e>1$で$n\geqq k+1$で二項定理より
+       \[e^n = \sum_{l=0}^n \ _nC_l(e-1)^l\cdot 1^{n-l}> \ _nC_{k+1}(e-1)^{k+1} > \frac{(n-k)^{k+1}}{(k+1)!}\cdot (e-1)^{k+1}\]
+       より
+       \[a_n <(\frac{1}{1-\frac{k}{n}})^k\cdot \frac{(k+1)!}{(e-1)^{k+1}}\frac{1}{n-k}\xrightarrow[n\to\infty]{}(\frac{1}{1-0})^k\cdot \frac{(k+1)!}{(e-1)^{k+1}}\cdot 0 = 0\]
+       $a_n>0$と合わせはさみうちの原理から$\displaystyle\lim_{n\to\infty}a_n=0$
+       
+       (v)
+       
+       $n\geqq 2$のとき2)の$e$を用いて
+       \[a_n=(1-\frac{1}{n^2})^n=(\frac{\frac{n+1}{n}}{\frac{n}{n-1}})^n=\frac{(1+\frac{1}{n})^n}{((1+\frac{1}{n-1})^{n-1})^\frac{1}{1-\frac{1}{n}}}\xrightarrow[n\to\infty]{}\frac{e}{e^{1}}=1\]
+       
+       (vi)
+       
+       $0<c<1$のとき
+       \[a_n < \frac{1}{c^{-n}}=c^n\xrightarrow[n\to\infty]{}0\]
+       $a_n>0$と合わせはさみうちの定理から$\displaystyle \lim_{n\to \infty}a_n=0$
+       
+       $c=1$のとき$a_n=2\xrightarrow[n\to\infty]{}2$
+       
+       $c>1$のとき$0<\frac{1}{c}<1$で$a_n=\frac{1}{(\frac{1}{c})^{-n}+(\frac{1}{c})^{n}}$なので$0<c<1$のときの結果より$\displaystyle \lim_{n\to \infty}a_n=0$
+       
+       以上より$\displaystyle \lim_{n\to \infty}a_n=\begin{cases}
+       2 & c=1\\
+       0 & c\neq 1\\
+       \end{cases}$
+       
+       (vii)
+       
+       $b_n=\frac{2\cdot4\cdot 6\cdots 2n}{3\cdot5\cdot 7\cdots (2n+1)}$とする.
+       
+       $a_n>0,b_n>0$なので両方下に有界.
+       
+       $\frac{2(n+1)-1}{2(n+1)}<1$より$a_{n+1}<a_n$
+       
+              $\frac{2(n+1)}{2(n+1)+1}<1$より$b_{n+1}<b_n$
+              
+              より$a_n,b_n$は両方単調減少で収束する.
+              
+              それぞれ$a,b$に収束するとすると$a\geqq0,b\geqq 0$
+              
+             $n\in\mathbb{N}-\{0\}$に対し$(2n)^2>(2n)^2-1\Leftrightarrow \frac{2n-1}{2n}<\frac{2n}{2n+1}$なので
+             
+             $n=1,\cdots ,k$で掛けて$a_k<b_k$より$a\leqq b$
+             
+             また$a_nb_n = \frac{1}{2n+1}\xrightarrow[n\to\infty]{}0$なので$ab=0$
+             
+             $0\leqq a^2\leqq ab = 0$より$a=0$つまり$\displaystyle \lim_{n\to\infty}a_n=0$
+       
+       2)
+       
+       二項定理より
+       \[a_n=\sum_{k=0}^n \ _nC_k (\frac{1}{n})^k,a_{n+1}=\sum_{k=0}^{n+1} \ _{n+1}C_k (\frac{1}{n+1})^k\]
+      $l=0,\cdots ,k-1$に対し$n(n+1)-nl\geqq n(n+1)-(n+1)l\Leftrightarrow \frac{n+1-l}{n+1}\geqq \frac{n-l}{n}$
+      
+      なので辺々掛けて$\frac{1}{k!}$で割り$ \ _nC_k (\frac{1}{n})^k \leqq \ _{n+1}C_k (\frac{1}{n+1})^k$
+      より
+              \[a_n=\sum_{k=0}^n \ _nC_k (\frac{1}{n})^k\leqq \sum_{k=0}^{n} \ _{n+1}C_k (\frac{1}{n+1})^k < \sum_{k=0}^{n+1} \ _{n+1}C_k (\frac{1}{n+1})^k=a_{n+1}\]
+              より$a_n$は単調増加.
+              
+              また$ \ _nC_k\leqq \frac{n^k}{k!}$なので
+               \[a_n=\sum_{k=0}^n \ _nC_k (\frac{1}{n})^k\leqq \sum_{k=0}^{n} \frac{1}{k!}\]
+               
+               $n\geqq3$で$\displaystyle \sum_{k=0}^n\frac{1}{k!} \leqq 2.9 - \frac{1}{n!}$を数学的帰納法で示す.
+               
+               i) $n=3$のとき
+               
+               $(左辺)=1+1+\frac{1}{2}+\frac{1}{6}<2.67 < 2.9-\frac{1}{6}=(右辺)$で成立.
+               
+               ii) $n=l(\in \mathbb{N})$で成立すると仮定する.$(l\geqq 3)$
+               
+               \[\sum_{k=0}^{l+1}\frac{1}{k!} \leqq 2.9-\frac{1}{l!}+\frac{1}{(l+1)!}=2.9-\frac{l}{(l+1)!}<2.9-\frac{1}{(l+1)!}\]
+               
+               より$n=l+1$も成立.
+               
+               i)ii)より示された.
+               
+               より$a_n\leqq 2.9 -  \frac{1}{n!} < 2.9$で$a_n$は上に有界.より$a_n$は$e$に収束するとしてよく$e \leqq 2.9 < 3$
+              
+              $n\geqq 2$で$a_n\geqq a_2 = \frac{9}{4}>2$
+              より$e>2$            
+              
+       9)
+       
+       $k_0+\frac{1}{k_1+\frac{1}{k_2+\cdots \frac{1}{k_n}}}$を$[k_0;k_1,k_2,\cdots,k_n]$と書く事にする.
+       
+       $k_n>0 \ (n > 0)$を満たす整数列$(k_n)_{n\in\mathbb{N}}$に対し$(p'_n)_{n\in\mathbb{N}-\{0\}},(q'_n)_{n\in\mathbb{N}-\{0\}}$を以下のように定義する.
+       \[p'_n=\begin{cases}
+       k_0 & n=1 \\
+       k_0k_1+1 & n=2 \\
+       p'_{n-1}k_{n-1}+p'_{n-2} & n\geqq 3
+       \end{cases}, \ q'_n=\begin{cases}
+       1 & n=1 \\
+       k_1 & n=2 \\
+       q'_{n-1}k_{n-1}+q'_{n-2} & n\geqq 3
+       \end{cases}\]
+       $n\in \mathbb{N}-\{0\},t>1$に対し$[k_0;\cdots ,k_n,t]=\frac{p'_{n+1}t+p'_n}{q'_{n+1}t+q'_n}$を数学的帰納法で示す.
+       
+       i) $n=1$の時
+       
+       \begin{align*}
+       [k_0;k_1,t]&=k_0+\frac{1}{k_1+\frac{1}{t}}\\
+       &=k_0+\frac{t}{tk_1+1}\\
+       &=\frac{(k_0k_1+1)t+k_0}{k_1t+1}\\
+       &=\frac{p'_2t+p'_1}{q'_2t+q'_1}
+       \end{align*}
+       
+       ii) $n=m(\in \mathbb{N}-\{0\})$の時に成立すると仮定する.
+       
+       \begin{align*}
+       [k_0;\cdots ,k_{m+1},t]&=[k_0;\cdots ,k_{m},k_{m+1}+\frac{1}{t}]\\
+       &=\frac{p'_{m+1}(k_{m+1}+\frac{1}{t})+p'_m}{q'_{m+1}(k_{m+1}+\frac{1}{t})+q'_m} \ (\because 帰納法の仮定)\\
+       &=\frac{(p'_{m+1}k_{m+1}+p'_m)t+p'_{m+1}}{(q'_{m+1}k_{m+1}+q'_m)t+q'_{m+1}}\\
+       &=\frac{p'_{m+2}t+p'_{m+1}}{q'_{m+2}t+q'_{m+1}}
+       \end{align*}
+       
+       i)ii)より示された.
+       
+       特に$t=k_{n+1}$として$[k_0;\cdots ,k_{n+1}]=\frac{p'_{n+1}k_{n+1}+p'_n}{q'_{n+1}k_{n+1}+q'_n}=\frac{p'_{n+2}}{q'_{n+2}}$
+       
+       $[k_0;]=\frac{p'_1}{q'_1},[k_0;k_1]=\frac{p'_2}{q'_2}$と合わせて
+       
+       $[k_0;\cdots ,k_n]=\frac{p'_{n+1}}{q'_{n+1}}$が任意の自然数で成り立つ.
+       
+       次に$p'_{n+2}q'_{n+1}-p'_{n+1}q'_{n+2}=(-1)^n$を数学的帰納法で示す.
+       
+       i) $n=0$の時
+       
+       $p'_2q'_1-p'_1q'_2=(k_0k_1+1)\cdot 1-k_0k_1=1=(-1)^0$で成立.
+       
+       ii) $n=m(\in \mathbb{N})$の時に成立すると仮定する.
+       \begin{align*}
+       p'_{m+3}q'_{m+2}-p'_{m+2}q'_{m+3}&=(p'_{m+2}k_{m+2}+p'_{m+1})q'_{m+2}-p'_{m+2}(q'_{m+2}k_{m+2}+q'_{m+1})\\
+       &=-(p'_{m+2}q'_{m+1}-p'_{m+1}q'_{m+2})\\
+       &=(-1)^{m+1}
+       \end{align*}
+       で$n=m+1$も成立.
+       
+       i)ii)より示された.
+       
+       より$p'_n,q'_n$の公約数は1の約数で1.つまり$p'_n,q'_n$は互いに素.
+       
+       $x\in \mathbb{R}$に対し問題文のように変数を設定すると$x$の連分数展開は$k_0=[x]$として$[k_0;\cdots,k_n,\cdots]$
+       
+       上で示したことより$a_n=\frac{q'_n}{p'_n}$
+       
+       $p'_n,q'_n$は互いに素なので$p_n=p'_n,q_n=q'_n$
+       
+       より$x=\frac{p_nx_n+p_{n-1}}{q_nx_n+q_{n-1}}$
+       
+       $q_n \geqq n-1$を数学的帰納法で示す.
+       
+       i) $n=1,2,3$の時
+       
+       $q_1=1\geqq 0$
+       
+       $k_1$は正整数なので$q_2=k_1\geqq 1$
+       
+       $k_2$は正整数なので$q_3=q_2k_2+q_1\geqq 1\cdot 1 + 1 \geqq 2$
+       
+       ii) $n=m,m+1,m+2 (m\in \mathbb{N}-\{0\})$の時に成立すると仮定する.
+       
+       $k_{m+2}$は正整数なので$q_{m+3}=q_{m+2}k_{m+2}+q_{m+1} \geqq (m+1)\cdot 1 +m = 2m+1 \geqq m+2 $
+       
+       で$n=m+3$も成立.
+       
+       i)ii)より示された.
+       
+       $n > 1$で
+       \begin{align*}
+       |x-a_n| &= |\frac{p_nx_n+p_{n-1}}{q_nx_n+q_{n-1}}-\frac{p_n}{q_n}|\\
+       &=|\frac{q_np_{n-1}-p_nq_{n-1}}{q_n(q_nx_n+q_{n-1})}|\\
+       &= |\frac{1}{q_n(q_nx_n+q_{n-1})}| \ (\because p_nq_{n-1}-p_{n-1}q_n=(-1)^{n-1})\\
+       &\leqq |\frac{1}{q_n^2}| \ (\because x_n >1 ,q_{n-1}\geqq n-2\geqq 0) 
+       \end{align*}
+       $n=0$も
+       \[|x-a_1|=x-[x]\leq 1=\frac{1}{q_1^2}\]
+       $\epsilon(>0)$に対し$N\in\mathbb{N}$が$N>\frac{1}{\sqrt{\epsilon}}+1$を満たすとする.
+       
+       $n\geqq N$なら$q_n > \frac{1}{\sqrt{\epsilon}}$で$|x-a_n|<\epsilon$
+       
+       つまり$\displaystyle\lim_{n\to \infty}a_n=x$
+       \end{document}
