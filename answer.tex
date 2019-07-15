@@ -744,18 +744,17 @@ i)ii)より示された.
 
 $\displaystyle \lim_{n\to\infty}\frac{1}{2^n}(b-a)=0,b_n-a_n\geqq 0$よりはさみうちの原理から$\displaystyle \lim_{n\to\infty}b_n-a_n=0$
 
-以上より区間縮小法より$a_n,b_n$は収束し$\displaystyle \lim_{n\to \infty}a_n=\lim_{n\to\infty}b_n$
-
+以上より区間縮小法より$a_n,b_n$は収束し$\displaystyle \lim_{n\to \infty}a_n=\lim_{n\to\infty}b_n$で
 この値を$l$とおける.
 
-$0<a<b$より$\sin x\neq 0$に注意する.
+$0<a<b$より$0<x<\frac{\pi}{2}$としてよい.
 
 $a_n = \frac{\sin x\cos \frac{x}{2^n}}{2^n\sin \frac{x}{2^n}}b,b_n= \frac{\sin x}{2^n\sin \frac{x}{2^n}}b$を数学的帰納法で示す.
 
 i) $n=0$のとき
-$a_0=b\cos x = \frac{\sin x \cos \frac{x}{2^0}}{2^0\sin\frac{x}{2^0}}b$
 
-$b_0=b = \frac{\sin x}{2^0\sin\frac{x}{2^0}}b$
+\[a_0=b\cos x = \frac{\sin x \cos \frac{x}{2^0}}{2^0\sin\frac{x}{2^0}}b,
+b_0=b = \frac{\sin x}{2^0\sin\frac{x}{2^0}}b \]
 
 より成立する.
 
@@ -770,6 +769,24 @@ i)ii)より示された.
 $\displaystyle \lim_{n\to\infty}\frac{x}{2^n}=0$より$\displaystyle \lim_{n\to\infty}\frac{\frac{x}{2^n}}{\sin \frac{x}{2^n}}=1$で
 \[b_n= \frac{\sin x}{x}\cdot\frac{\frac{x}{2^n}}{\sin \frac{x}{2^n}}b\xrightarrow[n\to\infty]{} \frac{\sin x}{x}b\]
 より$l=\frac{\sin x}{x}b$
+
+(おまけ)
+
+$a=\frac{1}{4},b=\frac{1}{2\sqrt{2}}$のとき$x=\frac{\pi}{4}$
+
+直径$1$の円の中心を$O$,この円に外接,内接する正$2^{n+2}$角形の辺の1つをそれぞれ$AB,A'B'$とする.
+
+また$AB,A'B'$の中点をそれぞれ$M,M'$とする.
+
+\[\angle AOM = \angle A'OM' = \frac{2\pi}{2\cdot 2^{n+2}}=\frac{\pi}{2^{n+2}}\]
+$MO,A'O$は円の半径で$\frac{1}{2}$
+\[AM=MO\tan \frac{\pi}{2^{n+2}} = \frac{1}{2}\tan\frac{\pi}{2^{n+2}},A'M' =A'O\sin \frac{\pi}{2^{n+2}} = \frac{1}{2}\sin\frac{\pi}{2^{n+2}}\]
+$AB=2AM,A'B'=2A'M'$で$2^{n+2}$個合わせてそれぞれ$2^{n+2}\tan\frac{\pi}{2^{n+2}},2^{n+2}\sin\frac{\pi}{2^{n+2}}$
+
+逆数を取るとそれぞれ
+\[\frac{1}{2^{n+2}\tan\frac{\pi}{ 2^{n+2}}}=\frac{\sin \frac{\pi}{4}\cos\frac{\pi}{2^{n+2}}}{2^n\sin\frac{\pi}{2^{n+2}}}\frac{1}{2\sqrt{2}}=\frac{\sin x\cos \frac{x}{2^n}}{2^n\sin\frac{x}{2^n}}b=a_n\]
+\[\frac{1}{2^{n+2}\sin\frac{\pi}{ 2^{n+2}}}=\frac{\sin \frac{\pi}{4}}{2^n\sin\frac{\pi}{2^{n+2}}}\frac{1}{2\sqrt{2}}=\frac{\sin x}{2^n\sin\frac{x}{2^n}}b=b_n\]
+また$l=\frac{\frac{1}{\sqrt{2}}}{\frac{\pi}{4}}\cdot \frac{1}{2\sqrt{2}}=\frac{1}{\pi}$
 
 9)
 
@@ -831,7 +848,7 @@ i)ii)より示された.
 
 より$p'_n,q'_n$の公約数は1の約数で1.つまり$p'_n,q'_n$は互いに素.
 
-$x\in \mathbb{R}$に対し問題文のように変数を設定すると$x$の連分数展開は$k_0=[x]$として$[k_0;\cdots,k_n,\cdots]$
+$x\in \mathbb{R}-\mathbb{Q}$に対し問題文のように変数を設定すると$x$の連分数展開は$k_0=[x]$として$[k_0;\cdots,k_n,\cdots]$
 
 上で示したことより$a_n=\frac{q'_n}{p'_n}$
 
@@ -868,7 +885,55 @@ $n=0$も
 \[|x-a_1|=x-[x]\leq 1=\frac{1}{q_1^2}\]
 $\epsilon(>0)$に対し$N\in\mathbb{N}$が$N>\frac{1}{\sqrt{\epsilon}}+1$を満たすとする.
 
-$n\geqq N$なら$q_n > \frac{1}{\sqrt{\epsilon}}$で$|x-a_n|<\epsilon$
+$n\geqq N$なら$q_n > \frac{1}{\sqrt{\epsilon}}$で$|x-a_n|\leqq \frac{1}{q_1^2}<\epsilon$
 
 つまり$\displaystyle\lim_{n\to \infty}a_n=x$
+
+(捕捉)
+
+上の答案は無理数の連分数展開が無限に続くことを既知としている.その証明をここに書く.
+
+$[k_0;k_1,k_2,\cdots,k_n]$が有理数なことを数学的帰納法で示す.ただし$k_i$は$i=0,\cdots, n$で整数で$k_i>0 \ (i>0)$
+
+i) $n=0$のとき
+
+$k_0\in\mathbb{Z}\subset \mathbb{Q}$
+で成立.
+
+ii) $n=m(\in\mathbb{N})$で成立すると仮定する.
+\[[k_0;k_1,k_2,\cdots ,k_{m+1}]=k_0+\frac{1}{[k_1;k_2,\cdots ,k_{m+1}]}\]
+帰納法の仮定より$[k_1;k_2,\cdots ,k_{m+1}]=\frac{q}{p} \ (p,q\in\mathbb{Z})$とおけ$[k_0;k_1,k_2,\cdots ,k_{m+1}]=\frac{k_0q+p}{q}$でこれは有理数.
+
+より$n=m+1$のときも成立.
+
+i)ii)より示された.
+
+つまり$x$の連分数展開が有限なら$x$は有理数.
+
+対偶を取り無理数の連分数展開は無限.
+
+(おまけ)
+
+有理数の連分数展開が有限の証明
+
+$p\in\mathbb{Z},q\in \mathbb{N}-\{0\}$に対し$\frac{p}{q}$の連分数展開が有限であることを$q$に関する数学的帰納法で示す.
+
+i) $q=1$のとき
+
+$\frac{p}{q}=p$で連分数展開は$[p;]$より成立.
+
+ii) $q=1,\cdots,m$で成立すると仮定する.
+
+$p$が$m+1$の倍数のとき$\frac{p}{m+1}=[\frac{p}{m+1};]$
+
+そうでないとき$p=(m+1)a+b$とおける. \ $(a\in\mathbb{Z} ,b=1,\cdots,m)$
+
+\[\frac{p}{m+1}=a+\frac{1}{\frac{m+1}{b}}\]
+帰納法の仮定から$\frac{m+1}{b}=[k_1;k_2,\cdots,k_n]$とおける.
+
+$\frac{p}{m+1}=[a;k_1,k_2,\cdots,k_n]$で連分数展開は有限.
+
+より$q=m+1$も成立.
+
+i)ii)より有理数の連分数展開が有限
 \end{document}
