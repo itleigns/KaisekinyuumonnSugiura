@@ -788,6 +788,160 @@ $AB=2AM,A'B'=2A'M'$で$2^{n+2}$個合わせてそれぞれ$2^{n+2}\tan\frac{\pi}
 \[\frac{1}{2^{n+2}\sin\frac{\pi}{ 2^{n+2}}}=\frac{\sin \frac{\pi}{4}}{2^n\sin\frac{\pi}{2^{n+2}}}\frac{1}{2\sqrt{2}}=\frac{\sin x}{2^n\sin\frac{x}{2^n}}b=b_n\]
 また$l=\frac{\frac{1}{\sqrt{2}}}{\frac{\pi}{4}}\cdot \frac{1}{2\sqrt{2}}=\frac{1}{\pi}$
 
+4)
+
+$\mathbb{Q}$から順序体$K$への同型写像$f$を探す.
+
+$x\in \mathbb{N}$に対し$f(x)=\begin{cases}
+0_K & x=0\\
+f(x-1)+1_K & x\neq 0\\ 
+\end{cases}$とする.
+
+$x,y\in\mathbb{N}$に対し$f(x+y)=f(x)+f(y)$を$y$に関する数学的帰納法で示す.
+
+i) $y=0$のとき
+\[f(x+0)=f(x)=f(x)+0_K=f(x)+f(0)\]
+より成立.
+
+ii) $y=k(\in\mathbb{N})$のとき成立すると仮定する.
+\[f(x+k+1)=f(x+1)+f(k)=f(x)+1_K+f(k)=f(x)+f(k+1)\]
+より$y=k+1$のときも成立.
+
+i)ii)より$f(x+y)=f(x)+f(y)$
+
+$x,y\in\mathbb{N}$に対し$f(xy)=f(x)f(y)$を$y$に関する数学的帰納法で示す.
+
+i) $y=0$のとき
+\[f(x0)=f(0)=0_K=f(x)0_K=f(x)f(0)\]
+より成立.
+
+ii) $y=k(\in\mathbb{N})$のとき成立すると仮定する.
+\[f(x(k+1))=f(xk)+f(x)=f(x)f(k)+f(x)=f(x)(f(k)+1_K)=f(x)f(k+1)\]
+より$y=k+1$のときも成立.
+
+i)ii)より$f(xy)=f(x)f(y)$
+
+$x\in\mathbb{N}-\{0\},y\in\mathbb{N}$に対し$f(y)< f(x+y)$を$x$に関する数学的帰納法で示す.
+
+i) $x=1$のとき
+
+$1_K > 0$より
+
+$f(y)<1_K+f(y)=f(1)+f(y)=f(1+y)$より成立.
+
+ii) $x=k(\in\mathbb{N}-\{0\})$のとき成立すると仮定する.
+
+$1_K > 0$より
+\[f(y) < f(k+y) < 1_K + f(k+y) = f(1) + f(k+y)  = f(k+1+y)\]
+より$x=k+1$のときも成立.
+
+i)ii)より$f(y) < f(x+y)$
+
+$x,y\in\mathbb{N}$に対し$x < y$なら$y-x\in\mathbb{N}-\{0\}$で$f(x) < f(x+y-x) = f(y)$
+
+$x=y$なら$f(x)=f(y)$
+
+$x>y$なら$x<y$のときと同様に$f(x)>f(y)$
+
+より$x\leqq y \Leftrightarrow f(x)\leqq f(y)$
+
+以上より$f$は自然数に対して演算を保存.
+
+$x\in \mathbb{Z}-\mathbb{N}$に対して$-x\in \mathbb{N}$で$f(x)=-f(-x)$と定義できる.
+
+$x,y\in\mathbb{Z}$に対し$f(x+y)=f(x)+f(y)$を示す.
+
+$x\geqq 0,y\geqq 0$は既に示した.
+
+$x\geqq 0,y\leqq 0,x+y\geqq 0$のとき$f(x)=f(x+y)+f(-y)=f(x+y)-f(y)$より成立.
+
+$x\geqq 0,y\leqq 0,x+y\leqq 0$のとき$f(y)=-f(-y)=-(f(-x-y)+f(x))=f(x+y)-f(x)$より成立.
+
+$x\leqq 0,y\geqq 0$は$x\geqq 0,y\leqq 0$のときと同様.
+
+$x\leqq 0,y\leqq 0$のとき$f(x)+f(y)=-(f(-x)+f(-y))=-f(-x-y)=f(x+y)$より成立.
+
+より$f(x+y)=f(x)+f(y)$
+
+次に$x,y\in\mathbb{Z}$に対し$f(xy)=f(x)f(y)$を示す.
+
+$x\geqq 0,y\geqq 0$は既に示した.
+
+$x\geqq 0,y\leqq 0$の時$f(xy) = -f(x(-y))=-(f(x)f(-y))=f(x)f(y)$より成立.
+
+$x\leqq 0,y\geqq 0$の時$f(xy) = -f((-x)y)=-(f(-x)f(y))=f(x)f(y)$より成立.
+
+$x\leqq 0,y\leqq 0$の時$f(xy) = f((-x)(-y))=f(-x)f(-y)=f(x)f(y)$より成立.
+
+より$f(xy)=f(x)f(y)$
+
+$x\in \mathbb{Z},x \leqq 0$とすると$0 \leqq -x$より$f(0)\leqq f(-x)=-f(x)$で$f(x)\leqq f(0)=0_K$に注意する.
+
+$x,y\in\mathbb{Z}$に対し$x\leqq y\Leftrightarrow f(x)\leqq f(y)$を示す.
+
+$x\geqq 0,y\geqq 0$は既に示した.
+
+$x\geqq 0,y\leqq 0$のとき
+$y\leqq x,f(y)\leqq f(x)$が常に成り立ち成立.
+
+$x\leqq 0,y\geqq 0$の時$x\geqq 0,y\leqq 0$のときと同様に成立.
+
+$x\leqq 0,y\leqq 0$のとき
+\[f(x)\leqq f(y)\Leftrightarrow -f(x)\geqq -f(y) \Leftrightarrow f(-x)\geqq f(-y) \Leftrightarrow -x \geqq -y \Leftrightarrow x\leqq y\]
+より成立.
+
+より$x\leqq y\Leftrightarrow f(x)\leqq f(y)$
+
+以上より$f$は整数に対して演算を保存.
+
+$x\in \mathbb{Q}$とすると$x=\frac{p}{q}$とおける.\ $(q\in \mathbb{N}-\{0\},p\in\mathbb{Z})$
+
+$q>0$なので$f(q)\neq 0_K$で$f(x) = \frac{f(p)}{f(q)}$と定義できる.
+
+$q,s\in \mathbb{N}-\{0\},p,r\in\mathbb{Z}$に対し
+\begin{align*}
+&\frac{p}{q}=\frac{r}{s}\\
+\Leftrightarrow & ps-qr=0\\
+\Leftrightarrow & f(ps-qr)=0_K\\
+\Leftrightarrow & \frac{f(ps-qr)}{f(qs)}=0_K \ (\because \frac{1_K}{f(qs)}\neq 0_K)\\
+\Leftrightarrow & \frac{f(p)f(s)-f(q)f(r)}{f(q)f(s)}=0_K\\
+\Leftrightarrow & \frac{f(p)}{f(q)}=\frac{f(r)}{f(s)}
+\end{align*}
+$\Leftarrow$から$f$がwell-definedなことが言え$\Rightarrow$から$f$が単射なことが言える.
+
+また$x\in\mathbb{Z}$に対し$x=\frac{x}{1}$で$\frac{f(x)}{f(1)}=\frac{f(x)}{1_K}=f(x)$なので$f$の有理数での定義は整数での定義と矛盾しない.
+
+$q,s\in \mathbb{N}-\{0\},p,r\in\mathbb{Z}$に対し
+\begin{align*}
+&f(\frac{p}{q}+\frac{r}{s})\\
+= & f(\frac{ps+qr}{qs})\\
+= & \frac{f(p)f(s)+f(q)f(r)}{f(q)f(s)}\\
+= & \frac{f(p)}{f(q)}+\frac{f(r)}{f(s)}\\
+= & f(\frac{p}{q})+f(\frac{r}{s})
+\end{align*}
+
+\begin{align*}
+&f(\frac{p}{q}\cdot\frac{r}{s})\\
+= & \frac{f(p)f(r)}{f(q)f(s)}\\
+= & f(\frac{p}{q})f(\frac{r}{s})
+\end{align*}
+
+\begin{align*}
+&\frac{p}{q}\leqq\frac{r}{s}\\
+\Leftrightarrow & ps-qr\leqq0\\
+\Leftrightarrow & f(ps-qr)\leqq 0_K\\
+\Leftrightarrow & \frac{f(ps-qr)}{f(qs)}\leqq 0_K \ (\because \frac{1_K}{f(qs)}> 0_K)\\
+\Leftrightarrow & \frac{f(p)f(s)-f(q)f(r)}{f(q)f(s)}\leqq 0_K\\
+\Leftrightarrow & \frac{f(p)}{f(q)}\leqq\frac{f(r)}{f(s)}
+\end{align*}
+以上より$f$は有理数に対して演算を保存.
+
+より$f$は$\mathbb{Q}$から$K$への準同型写像.
+
+$f$を$\mathbb{Q}$から$f(\mathbb{Q})$への関数に制限すると$f$の単射性から同型写像.
+
+つまり$f(\mathbb{Q})$は$\mathbb{Q}$と同型.
+
 9)
 
 $k_0+\frac{1}{k_1+\frac{1}{k_2+\cdots \frac{1}{k_n}}}$を$[k_0;k_1,k_2,\cdots,k_n]$と書く事にする.
