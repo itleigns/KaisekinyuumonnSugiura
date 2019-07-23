@@ -940,7 +940,140 @@ $q,s\in \mathbb{N}-\{0\},p,r\in\mathbb{Z}$に対し
 
 $f$を$\mathbb{Q}$から$f(\mathbb{Q})$への関数に制限すると$f$の単射性から同型写像.
 
-つまり$f(\mathbb{Q})$は$\mathbb{Q}$と同型.
+つまり$f(\mathbb{Q})$は$\mathbb{Q}$と同型な順序体.
+
+5)
+
+$K,K'$は実数の性質がすべて成り立つので実数と同じように扱えることに注意する.
+
+$K,K'$に対する自然数をそれぞれ$K_{\mathbb{N}},K'_{\mathbb{N}}$有理数をそれぞれ$K_{\mathbb{Q}},K'_{\mathbb{Q}}$とする.
+
+この$K_{\mathbb{Q}},K'_{\mathbb{Q}}$がそれぞれ4)の$\mathbb{Q}$に同型な順序体であることは後で示しまずはこれを仮定して示す.
+
+$K_{\mathbb{Q}} \cong \mathbb{Q} \cong K'_{\mathbb{Q}}$となり$K_{\mathbb{Q}}$から$K'_{\mathbb{Q}}$への同型写像$f$が存在.
+
+$f$を$K$に拡張することを考える.
+
+$x\in K$に対して定理3.9より$K_{\mathbb{Q}}$の数列で$x$に収束する$a_n$がある.
+
+$\epsilon \in K'_{\mathbb{Q}}$が$\epsilon > 0_{K'}$のときアルキメデスの原理から$N'\in K'_{\mathbb{N}}$で$\epsilon > \frac{1_{K'}}{N'}$となるものが存在.
+
+$f$は全単射なので$N\in K_\mathbb{Q}$で$f(N)=N'$となるものがただ1つ存在.$N' > 0_{K'}$より$N > 0_K$
+
+$a_n$は収束列なのでコーシー列でもあり$M\in\mathbb{N}$が存在し$n,m\geqq M$で$|a_n-a_m|< \frac{1_K}{N}$
+
+このとき$n,m\geqq M$で$|f(a_n)-f(a_m)|<\frac{1_{K'}}{f(N)}=\frac{1_{K'}}{N'}<\epsilon$
+
+つまり$f(a_n)$はコーシー列で収束する.その収束先を$f(x)$とする.
+
+この定義がwell-definedであることを言う.
+
+$K_{\mathbb{Q}}$の数列$a_n,b_n$が共に$x$に収束するとして$f(a_n),f(b_n)$の収束先が同じであることを言えばいい.
+
+$\epsilon ,N,N'$を上と同様に定義する.
+
+$a_n-b_n$は$0_{K}$に収束するので$M\in\mathbb{N}$が存在し$n\geqq M$で$|a_n-b_n|<\frac{1_K}{N}$
+
+$n\geqq M$で$|f(a_n)-f(b_n)|<\frac{1_{K'}}{N'}<\epsilon$
+
+より$\displaystyle \lim_{n\to\infty}f(a_n)-f(b_n)=0_{K'}$で$\displaystyle \lim_{n\to\infty}f(a_n)=\displaystyle \lim_{n\to\infty}f(b_n)$
+
+より$f$はwell-defined
+
+$K_{\mathbb{Q}}$の数列$a_n,b_n$がそれぞれ$a,b(\in K)$に収束するとして$a<b$なら$f(a_n),f(b_n)$の収束先$f(a),f(b)$は$f(a)<f(b)$を満たすことを言う.
+
+定理3.8を2度使い$a<x<y<b$となる$x,y\in K_{\mathbb{Q}}$が存在することが言える.
+
+$n\geqq M$で$|a_n-a|<x-a,|b_n-b|<b-y$となる$M\in\mathbb{N}$が存在.
+
+$n\geqq M$で$a_n<x<y<b_n$なので$f(a_n)<f(x)<f(y)<f(b_n)$
+
+より$n\to\infty$として$f(a)\leqq f(x)<f(y) \leqq f(b)$で示せた.
+
+特に$f$は単射.
+
+$a<b$なら$f(a)<f(b)$で$a=b$なら$f(a)=f(b)$で$b<a$なら$f(b)<f(a)$より$a\leqq b\Leftrightarrow f(a)\leqq f(b)$
+
+$K_{\mathbb{Q}}$の数列$a_n,b_n$がそれぞれ$a,b(\in K)$に収束するとすると$a_n+b_n$は$a+b$に$a_nb_n$は$ab$に収束する
+\[f(a_n+b_n)=f(a_n)+f(b_n),f(a_nb_n)=f(a_n)f(b_n)\]
+で$n\to\infty$とし
+\[f(a+b)=f(a)+f(b),f(ab)=f(a)f(b)\]
+以上より$f$は$K$から$K'$への同型写像.
+
+最後に4)で存在を示した$K$の含む$\mathbb{Q}$と同型な体が$K_{\mathbb{Q}}$であることを言う.
+
+以下$f$は4)で定義した$f$を表す.
+
+$f(\mathbb{N}) = K_{\mathbb{N}}$を言えばいい.
+
+$f(\mathbb{N})$が帰納的集合であることを言う.
+
+$f(0)=0_K$より$0_K\in f(\mathbb{N})$
+
+$x\in f(\mathbb{N})$なら$f(y) = x$となる$y\in\mathbb{N}$が存在.$f(y+1)=x+1_K$で$x+1_K\in f(\mathbb{N})$
+
+以上より$f(\mathbb{N})$が帰納的集合で$K_{\mathbb{N}}\subset f(\mathbb{N})$
+
+$A=\{n\in \mathbb{N}|f(n)\in K_{\mathbb{N}}\}$としこれが帰納的集合であることを言う.
+
+$f(0)=0_K\in K_{\mathbb{N}}$で$0\in A$
+
+$x\in A$のとき$f(x)\in K_{\mathbb{N}}$で$f(x+1)=f(x)+1_K\in K_{\mathbb{N}}$より$x+1\in A$
+
+より$A$は帰納的集合で$\mathbb{N}\subset A$
+
+つまり$n\in\mathbb{N}$で$f(n)\in K_{\mathbb{N}}$
+
+より$f(\mathbb{N}) \subset K_{\mathbb{N}}$
+
+以上より$f(\mathbb{N}) = K_{\mathbb{N}}$
+
+6)
+
+(IV)と仮定する.$a\in A,b\in B$より$a<b$
+
+$a < \frac{a+b}{2_K} < b$が言える.ただし$2_K=1_K+1_K$
+
+$\frac{a+b}{2_K}\in K$なので$\frac{a+b}{2_K}\in A \cup B$
+
+しかし$a$は$A$の最大元なので$\frac{a+b}{2_K}\notin A$
+
+$b$は$B$の最小元なので$\frac{a+b}{2_K}\notin B$
+
+より矛盾し(IV)となることはない.
+
+7)
+
+6)より連続の公理と順序体$K$の任意の切断$<A,B>$が(III)の形にならないことが同値であることを示せばいい.
+
+$\Rightarrow$
+
+$B\neq \emptyset$なので$b\in B$が存在.任意の$a\in A$に対し$a < b$なので$b$は$A$の上界.
+
+より$A$は上に有界で$A\neq \emptyset$なので$A$の上限$s\in K$が存在.$K=A\cup B$なので$s\in A$か$s\in B$
+
+$s \in A$と仮定する.$s$は$A$の上限なので特に上界で$a\in A$に対し$a\leqq s$より$s$は$A$の最大元.$A$に最大元が存在し(III)にはならない.
+
+$s\in B$と仮定する.$b\in B$とすると任意の$a\in A$に対し$a< b$で$b$は$A$の上界.より$S$が$A$の上限なことより$s\leqq b$で$s$は$B$の最小元.$B$に最小元が存在し(III)にならない.
+
+以上より示された.
+
+$\Leftarrow$
+
+ 上に有界な$K$の部分集合$S(\neq\emptyset)$を考える.$S$は上に有界なので$U(\subset K)$を$S$の上界の集合とすると$U\neq \emptyset$
+ 
+ $s\in S$が存在し$s-1_K\in K$で$s-1_K< s$より$s-1_K$は$S$の上界でない.より$D=\{x\in K|x\notin U\}$とすると$D\neq \emptyset$
+ 
+ $x\in D$とすると$s\in S$が存在し$x < s$で$u\in U$に対し$s\leqq u$なので$x < u$
+ 
+ $D\cup U = K,D\cap U=\emptyset$だ
+ 
+ より仮定から(III)にならなく$D$に最大元が存在するか$U$に最小元が存在する.
+ 
+ $D$に最大元が存在すると仮定する.最大元を$d$とすると$d\notin U$より$d < s$となる$s\in S$が存在.
+ $\frac{s+d}{2_K}<s$より$\frac{s+d}{2_K}\in D$で$\frac{s+d}{2_K}>d$より$d$が最大元なことに矛盾.より背理法から$D$に最大元は存在しない.
+ 
+ より$U$に最小元が存在する.つまり連続の公理が示された.
 
 9)
 
