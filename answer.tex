@@ -1075,6 +1075,95 @@ $\Leftarrow$
  
  より$U$に最小元が存在する.つまり連続の公理が示された.
 
+8)
+
+問題文で定義された$R$を$R$教科書での定義の$R$を$\mathbb{R}$と表す.解析入門では$\mathbb{Q}$は$\mathbb{R}$から定義されているのでそれに従う.つまりこの問題では$\mathbb{R}$の性質を用いて$R$を得る.
+
+$A$の要素は$\mathbb{Q}$のコーシー列だが$\mathbb{R}$の数列とみると収束列であることに注意する.
+
+$0_A$を$0_A=(0)$,$-(a_n)=(-a_n)$とすると$A$が問題文で与えられた演算で可換環になることは有理数が体で特に可換環であることから示せる.
+
+まず$R$の加算と乗算がwell-definedであることを言う.
+
+$(a_n),(a'_n)$が同値で$(b_n),(b'_n)$も同値であるとする.$A$の要素はコーシー列なので
+\[\lim_{n\to\infty}a_n=\lim_{n\to\infty}a'_n=a,\lim_{n\to\infty}b_n=\lim_{n\to\infty}b'_n=b \ (a,b\in\mathbb{R})\]
+とできる.定理2.5より
+\[\lim_{n\to\infty}((a_n+b_n)-(a'_n+b'_n))=(a+b)-(a+b)=0,\lim_{n\to\infty}(a_nb_n-a'_nb'_n)=ab-ab=0\]
+より$(a_n+b_n)$と$(a'_n+b'_n),(a_nb_n)$と$(a'_nb'_n)$はそれぞれ同値でwell-defined
+
+$A$が可換環なので$R$も可換環.
+
+$(e_n)$を$e_n=1$となる数列とすると明らかに$(e_n)\in A$
+
+$(a_n) \in A$が$[a_n]\neq [0]$としたとき$b_n=\begin{cases}
+1 & a_n = 0\\
+\frac{1}{a_n} & a_n\neq 0
+\end{cases}$とする.
+
+$\displaystyle \lim_{n\to\infty}a_n=a$とすると$[a_n]\neq [0]$より$a\neq 0$で$n\geqq M$で$|a_n-a|<|a|$となる$M\in\mathbb{N}$が存在.
+
+$n\geqq M$で$a_n \neq 0$より$b_n=\frac{1}{a_n}\xrightarrow[n\to\infty]{} \frac{1}{a}$で$(b_n)$も$\mathbb{R}$のコーシー列.$b_n\in\mathbb{Q}$より$(b_n)\in A$
+
+$a_nb_n=\begin{cases}
+0 & a_n = 0\\
+1 & a_n\neq 0
+\end{cases}$で$n\geqq M$で$a_nb_n=1=e_n$
+
+より$1_R=[e_n],[b_n]=[a_n]^{-1}$とすると$R$は(R-8),(R-9)を満たす.(R-10)は$\mathbb{Q}$の$1,0$が$1\neq 0$なことから$1_R\neq 0_R$で満たされる.
+
+$R$の$[a_n]\leqq [b_n]$は問題文の$[a_n]<[b_n]$または$[a_n]=[b_n]$が成り立つという意味であることに注意する.
+
+$[a_n]<[b_n]$なら$M(\in\mathbb{N}),\epsilon (>0)$が存在して$n\geqq M$で$a_n+\epsilon < b_n$より$n\to\infty$とし$\displaystyle \lim_{n\to\infty} a_n +\epsilon \leqq \lim_{n\to\infty}b_n$で$\displaystyle \lim_{n\to\infty} a_n < \lim_{n\to\infty}b_n$
+
+また$\displaystyle \lim_{n\to\infty} a_n=a, \lim_{n\to\infty}b_n=b$としたとき$a<b$なら
+$n\geqq M$で$|a_n-a|<\frac{b-a}{3},|b_n-b|<\frac{b-a}{3}$となる$M\in\mathbb{N}$が存在.
+
+$n\geqq M$で$a_n<a+\frac{b-a}{3},b-\frac{b-a}{3}<b_n$で特に$a_n+\frac{b-a}{3}<b_n$
+
+より$[a_n]<[b_n]$
+
+以上より\[[a_n]<[b_n] \Leftrightarrow \lim_{n\to\infty}a_n<\lim_{n\to\infty}b_n\]
+
+$[a_n]=[b_n]$なら$\displaystyle \lim_{n\to\infty}a_n = \lim_{n\to\infty}b_n$なので$R$の$<$はwell-defined
+
+$a_n \in A$に対し$\displaystyle \lim_{n\to\infty}a_n \in \mathbb{R}$で$\mathbb{R}$は順序体の性質を満たすので$R$も順序体の性質を満たす.
+
+$a,b\in R$を$a>0_R,b>0_R$とする.
+
+$\frac{b}{a}\in R$でこれの代表元を$(q_n) (\in A)$とする.$n,m\geqq M$で$|q_n-q_m|<\frac{1}{2}$となる$M\in\mathbb{N}$が存在.
+
+$n\geqq M$で$q_n < q_M+\frac{1}{2}$より$\displaystyle \lim_{n\to\infty} q_n \leqq q_M+\frac{1}{2} < q_M+1$
+
+$q_M+1\in\mathbb{Q}$で$\frac{p}{q}$とおける.($q\in\mathbb{N}-\{0\},p\in\mathbb{Z}$)
+
+$p\leqq 0$で$\displaystyle \lim_{n\to\infty} q_n < 0$で$\frac{b}{a} < 0_R\Leftrightarrow b < 0_Ra$
+
+$p>0$で$\displaystyle \lim_{n\to\infty} q_n < p$で$\frac{b}{a} < (p)\Leftrightarrow b < (p)a$だ.ただし$(p)$はすべての自然数に対して$p$を返す数列.
+
+$(p),0_R\in R_{\mathbb{N}}$よりアルキメデスの原理は成立.
+
+$(r_n)$を$R$のコーシー数列とする.$(r_{in})$を$r_i$の代表元の有理数列とする.
+
+$(r_{in})$の収束先を$d_i(\in\mathbb {R})$とする.
+
+$n\geqq M_i$で$|r_{in} - d_i|<\frac{1}{i+1}$となる$M_i\in\mathbb{N}$が存在.有理数列$(a_i)$を$a_i=r_{iM_i}$と定義する.
+
+$(r_n)$はコーシー列なので$\epsilon > 0$に対し$i,j\geqq M$で$|r_i-r_j| < \frac{\epsilon}{4_R}$となる$M\in\mathbb{N}$が存在.
+
+このとき$|(r_{in})-(r_{jn})|<\frac{\epsilon}{4_R}\Leftrightarrow |d_i-d_j|<\frac{\epsilon}{4}$
+
+$i,j\geqq max(M,\frac{4}{\epsilon})$で$|a_i-d_i|=|r_{iM_i}-d_i|<\frac{1}{i+1}<\frac{\epsilon}{4},|a_j-d_j|=|r_{jM_j}-d_j|<\frac{1}{j+1}<\frac{\epsilon}{4},|d_i-d_j|<\frac{\epsilon}{4}$
+
+$|a_i-a_j|<\frac{3\epsilon}{4}<\epsilon$で$(a_n)$はコーシー列で$(a_n)\in A$
+
+$i\geqq max(M,\frac{4}{\epsilon})$とし$|(r_{in})-(a_n)|$を考える.
+
+$n\geqq max(M_i,i)$で$|a_n-d_n|=|r_{nM_n}-d_n|<\frac{1}{n+1}<\frac{\epsilon}{4},|d_i-d_n|<\frac{\epsilon}{4},|r_{in}-d_i|<\frac{1}{i+1}<\frac{\epsilon}{4}$
+
+より$|a_n-r_{in}|<\frac{3\epsilon}{4}$で$n\to\infty$とし$\displaystyle |\lim_{n\to\infty}a_n - \lim_{n\to\infty} r_{in}| \leqq \frac{3\epsilon}{4}<\epsilon$つまり$|(a_n)-r_i|<\epsilon$
+
+より$(r_n)$は$[a_n]$に収束.つまり$R$のコーシー列は収束する.より連続の公理も満たされる.
+
 9)
 
 $k_0+\frac{1}{k_1+\frac{1}{k_2+\cdots \frac{1}{k_n}}}$を$[k_0;k_1,k_2,\cdots,k_n]$と書く事にする.
@@ -1223,4 +1312,86 @@ $\frac{p}{m+1}=[a;k_1,k_2,\cdots,k_n]$で連分数展開は有限.
 より$q=m+1$も成立.
 
 i)ii)より有理数の連分数展開が有限
+
+10)
+\[\sqrt{2}-1 = \frac{1}{2+(\sqrt{2}-1)}\]
+より$[a_0;a_1,\cdots ]$を$\sqrt{2}-1$の連分数展開とすると$a_0=0,a_1=2,a_n=a_{n-1}(n\geqq2)$
+
+つまり$a_n=\begin{cases}
+0 & n=0\\
+2 & n\neq 0
+\end{cases}$
+
+より$\sqrt{2}$の連分数展開は$\begin{cases}
+1 & n=0\\
+2 & n\neq 0
+\end{cases}$
+
+\[\sqrt{3}-1=\frac{1}{1+\frac{\sqrt{3}-1}{2}},\frac{\sqrt{3}-1}{2}=\frac{1}{2+(\sqrt{3}-1)}\]
+より$b_n,c_n$をそれぞれ$\sqrt{3}-1,\frac{\sqrt{3}-1}{2}$の連分数展開とすると
+\[b_n=\begin{cases}
+1 & n=1\\
+c_{n-1} & n > 1
+\end{cases},c_n = \begin{cases}
+2 & n=1\\
+b_{n-1} & n > 1
+\end{cases}\]
+より$b_1=1,b_2=2,b_n = b_{n-2} (n>2)$で$\sqrt{3}$の連分数展開は$\begin{cases}
+1 & n=0\\
+1 & nが正の奇数 \\
+2 & nが正の偶数
+\end{cases}$
+\[\sqrt{5}-2=\frac{1}{4+(\sqrt{5}-2)}\]
+より$d_n$を$\sqrt{5}-2$の連分数展開とすると$d_n=\begin{cases}
+4 & n=1\\
+d_{n-1} & n>1
+\end{cases}$
+
+つまり$d_n=4(n > 0)$で$\sqrt{5}$の連分数展開は$\begin{cases}
+2 & n=0\\
+4 & n\geq 0
+\end{cases}$
+\[\sqrt{6}-2=\frac{1}{2+\frac{\sqrt{6}-2}{2}},\frac{\sqrt{6}-2}{2}=\frac{1}{4+(\sqrt{6}-2)}\]
+より$e_n,f_n$を$\sqrt{6}-2,\frac{\sqrt{6}-2}{2}$の連分数展開とすると\[e_n=\begin{cases}
+2 & n=1\\
+f_{n-1} & n>1
+\end{cases},f_n=\begin{cases}
+4 & n=1\\
+e_{n-1} & n>1
+\end{cases}\]
+より$e_1=2,e_2=4,e_n = e_{n-2} (n>2)$で$\sqrt{6}$の連分数展開は$\begin{cases}
+2 & n=0\\
+2 & nが正の奇数 \\
+4 & nが正の偶数
+\end{cases}$
+\[\sqrt{7}-2=\frac{1}{1+\frac{\sqrt{7}-1}{3}},\frac{\sqrt{7}-1}{3}=\frac{1}{1+\frac{\sqrt{7}-1}{2}},\frac{\sqrt{7}-1}{2}=\frac{1}{1+\frac{\sqrt{7}-2}{3}},\frac{\sqrt{7}-2}{3}=\frac{1}{4+(\sqrt{7}-2)}\]
+より$g_n,h_n,k_n,l_n$を$\sqrt{7}-2,\frac{\sqrt{7}-1}{3},\frac{\sqrt{7}-1}{2},\frac{\sqrt{7}-2}{3}$の連分数展開とすると\[g_n=\begin{cases}
+1 & n=1\\
+h_{n-1} & n>1
+\end{cases},h_n=\begin{cases}
+1 & n=1\\
+k_{n-1} & n>1
+\end{cases},k_n=\begin{cases}
+1 & n=1\\
+l_{n-1} & n>1
+\end{cases},l_n=\begin{cases}
+4 & n=1\\
+g_{n-1} & n>1
+\end{cases}\]
+より$g_1=1,g_2=1,g_3 =1, g_4=4,g_{n}=g_{n-4} (n>4)$で$\sqrt{7}$の連分数展開は$\begin{cases}
+2 & n=0\\
+1 & nが正で4の倍数でない \\
+4 & nが正で4の倍数
+\end{cases}$
+
+11)
+
+成り立たない有理数が存在するとしそれを$a$とする.$\epsilon (>0)$が存在し$x\in\mathbb{R}$に対し$|x-a|<\epsilon$なら$x\in\mathbb{Q}$
+
+例えば$\sqrt{2}$は無理数なので無理数は存在し$p(\in \mathbb{R})$を無理数としてもいい.
+
+$\mathbb{Q}$は$\mathbb{R}$で稠密なので$|q-p|<\epsilon$を満たす$q\in\mathbb{Q}$が存在.
+
+$|(a+q-p)-a|=|q-p|<\epsilon$なので$a+q-p$は有理数.$a,q$は有理数で有理数は加算について閉じているので$p$も有理数となり矛盾.より背理法から示された.
+
 \end{document}
