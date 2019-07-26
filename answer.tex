@@ -790,157 +790,157 @@ $AB=2AM,A'B'=2A'M'$で$2^{n+2}$個合わせてそれぞれ$2^{n+2}\tan\frac{\pi}
 
 4)
 
-$\mathbb{Q}$から順序体$K$への同型写像$f$を探す.
+$\mathbb{Q}$から順序体$K$への同型写像$g$を探す.
 
-$x\in \mathbb{N}$に対し$f(x)=\begin{cases}
+$x\in \mathbb{N}$に対し$g(x)=\begin{cases}
 0_K & x=0\\
-f(x-1)+1_K & x\neq 0\\ 
+g(x-1)+1_K & x\neq 0\\ 
 \end{cases}$とする.
 
-$x,y\in\mathbb{N}$に対し$f(x+y)=f(x)+f(y)$を$y$に関する数学的帰納法で示す.
+$x,y\in\mathbb{N}$に対し$g(x+y)=g(x)+g(y)$を$y$に関する数学的帰納法で示す.
 
 i) $y=0$のとき
-\[f(x+0)=f(x)=f(x)+0_K=f(x)+f(0)\]
+\[g(x+0)=g(x)=g(x)+0_K=g(x)+g(0)\]
 より成立.
 
 ii) $y=k(\in\mathbb{N})$のとき成立すると仮定する.
-\[f(x+k+1)=f(x+1)+f(k)=f(x)+1_K+f(k)=f(x)+f(k+1)\]
+\[g(x+k+1)=g(x+1)+g(k)=g(x)+1_K+g(k)=g(x)+g(k+1)\]
 より$y=k+1$のときも成立.
 
-i)ii)より$f(x+y)=f(x)+f(y)$
+i)ii)より$g(x+y)=g(x)+g(y)$
 
-$x,y\in\mathbb{N}$に対し$f(xy)=f(x)f(y)$を$y$に関する数学的帰納法で示す.
+$x,y\in\mathbb{N}$に対し$g(xy)=g(x)g(y)$を$y$に関する数学的帰納法で示す.
 
 i) $y=0$のとき
-\[f(x0)=f(0)=0_K=f(x)0_K=f(x)f(0)\]
+\[g(x0)=g(0)=0_K=g(x)0_K=g(x)g(0)\]
 より成立.
 
 ii) $y=k(\in\mathbb{N})$のとき成立すると仮定する.
-\[f(x(k+1))=f(xk)+f(x)=f(x)f(k)+f(x)=f(x)(f(k)+1_K)=f(x)f(k+1)\]
+\[g(x(k+1))=g(xk)+g(x)=g(x)g(k)+g(x)=g(x)(g(k)+1_K)=g(x)g(k+1)\]
 より$y=k+1$のときも成立.
 
-i)ii)より$f(xy)=f(x)f(y)$
+i)ii)より$g(xy)=g(x)g(y)$
 
-$x\in\mathbb{N}-\{0\},y\in\mathbb{N}$に対し$f(y)< f(x+y)$を$x$に関する数学的帰納法で示す.
+$x\in\mathbb{N}-\{0\},y\in\mathbb{N}$に対し$g(y)< g(x+y)$を$x$に関する数学的帰納法で示す.
 
 i) $x=1$のとき
 
 $1_K > 0$より
 
-$f(y)<1_K+f(y)=f(1)+f(y)=f(1+y)$より成立.
+$g(y)<1_K+g(y)=g(1)+g(y)=g(1+y)$より成立.
 
 ii) $x=k(\in\mathbb{N}-\{0\})$のとき成立すると仮定する.
 
 $1_K > 0$より
-\[f(y) < f(k+y) < 1_K + f(k+y) = f(1) + f(k+y)  = f(k+1+y)\]
+\[g(y) < g(k+y) < 1_K + g(k+y) = g(1) + g(k+y)  = g(k+1+y)\]
 より$x=k+1$のときも成立.
 
-i)ii)より$f(y) < f(x+y)$
+i)ii)より$g(y) < g(x+y)$
 
-$x,y\in\mathbb{N}$に対し$x < y$なら$y-x\in\mathbb{N}-\{0\}$で$f(x) < f(x+y-x) = f(y)$
+$x,y\in\mathbb{N}$に対し$x < y$なら$y-x\in\mathbb{N}-\{0\}$で$g(x) < g(x+y-x) = g(y)$
 
-$x=y$なら$f(x)=f(y)$
+$x=y$なら$g(x)=g(y)$
 
-$x>y$なら$x<y$のときと同様に$f(x)>f(y)$
+$x>y$なら$x<y$のときと同様に$g(x)>g(y)$
 
-より$x\leqq y \Leftrightarrow f(x)\leqq f(y)$
+より$x\leqq y \Leftrightarrow g(x)\leqq g(y)$
 
-以上より$f$は自然数に対して演算を保存.
+以上より$g$は自然数に対して演算を保存.
 
-$x\in \mathbb{Z}-\mathbb{N}$に対して$-x\in \mathbb{N}$で$f(x)=-f(-x)$と定義できる.
+$x\in \mathbb{Z}-\mathbb{N}$に対して$-x\in \mathbb{N}$で$g(x)=-g(-x)$と定義できる.
 
-$x,y\in\mathbb{Z}$に対し$f(x+y)=f(x)+f(y)$を示す.
+$x,y\in\mathbb{Z}$に対し$g(x+y)=g(x)+g(y)$を示す.
 
 $x\geqq 0,y\geqq 0$は既に示した.
 
-$x\geqq 0,y\leqq 0,x+y\geqq 0$のとき$f(x)=f(x+y)+f(-y)=f(x+y)-f(y)$より成立.
+$x\geqq 0,y\leqq 0,x+y\geqq 0$のとき$g(x)=g(x+y)+g(-y)=g(x+y)-g(y)$より成立.
 
-$x\geqq 0,y\leqq 0,x+y\leqq 0$のとき$f(y)=-f(-y)=-(f(-x-y)+f(x))=f(x+y)-f(x)$より成立.
+$x\geqq 0,y\leqq 0,x+y\leqq 0$のとき$g(y)=-g(-y)=-(g(-x-y)+g(x))=g(x+y)-g(x)$より成立.
 
 $x\leqq 0,y\geqq 0$は$x\geqq 0,y\leqq 0$のときと同様.
 
-$x\leqq 0,y\leqq 0$のとき$f(x)+f(y)=-(f(-x)+f(-y))=-f(-x-y)=f(x+y)$より成立.
+$x\leqq 0,y\leqq 0$のとき$g(x)+g(y)=-(g(-x)+g(-y))=-g(-x-y)=g(x+y)$より成立.
 
-より$f(x+y)=f(x)+f(y)$
+より$g(x+y)=g(x)+g(y)$
 
-次に$x,y\in\mathbb{Z}$に対し$f(xy)=f(x)f(y)$を示す.
+次に$x,y\in\mathbb{Z}$に対し$g(xy)=g(x)g(y)$を示す.
 
 $x\geqq 0,y\geqq 0$は既に示した.
 
-$x\geqq 0,y\leqq 0$のとき$f(xy) = -f(x(-y))=-(f(x)f(-y))=f(x)f(y)$より成立.
+$x\geqq 0,y\leqq 0$のとき$g(xy) = -g(x(-y))=-(g(x)g(-y))=g(x)g(y)$より成立.
 
-$x\leqq 0,y\geqq 0$のとき$f(xy) = -f((-x)y)=-(f(-x)f(y))=f(x)f(y)$より成立.
+$x\leqq 0,y\geqq 0$のとき$g(xy) = -g((-x)y)=-(g(-x)g(y))=g(x)g(y)$より成立.
 
-$x\leqq 0,y\leqq 0$のとき$f(xy) = f((-x)(-y))=f(-x)f(-y)=f(x)f(y)$より成立.
+$x\leqq 0,y\leqq 0$のとき$g(xy) = g((-x)(-y))=g(-x)g(-y)=g(x)g(y)$より成立.
 
-より$f(xy)=f(x)f(y)$
+より$g(xy)=g(x)g(y)$
 
-$x\in \mathbb{Z},x \leqq 0$とすると$0 \leqq -x$より$f(0)\leqq f(-x)=-f(x)$で$f(x)\leqq f(0)=0_K$に注意する.
+$x\in \mathbb{Z},x \leqq 0$とすると$0 \leqq -x$より$g(0)\leqq g(-x)=-g(x)$で$g(x)\leqq g(0)=0_K$に注意する.
 
-$x,y\in\mathbb{Z}$に対し$x\leqq y\Leftrightarrow f(x)\leqq f(y)$を示す.
+$x,y\in\mathbb{Z}$に対し$x\leqq y\Leftrightarrow g(x)\leqq g(y)$を示す.
 
 $x\geqq 0,y\geqq 0$は既に示した.
 
 $x\geqq 0,y\leqq 0$のとき
-$y\leqq x,f(y)\leqq f(x)$が常に成り立ち成立.
+$y\leqq x,g(y)\leqq g(x)$が常に成り立ち成立.
 
 $x\leqq 0,y\geqq 0$のとき$x\geqq 0,y\leqq 0$のときと同様に成立.
 
 $x\leqq 0,y\leqq 0$のとき
-\[f(x)\leqq f(y)\Leftrightarrow -f(x)\geqq -f(y) \Leftrightarrow f(-x)\geqq f(-y) \Leftrightarrow -x \geqq -y \Leftrightarrow x\leqq y\]
+\[g(x)\leqq g(y)\Leftrightarrow -g(x)\geqq -g(y) \Leftrightarrow g(-x)\geqq g(-y) \Leftrightarrow -x \geqq -y \Leftrightarrow x\leqq y\]
 より成立.
 
-より$x\leqq y\Leftrightarrow f(x)\leqq f(y)$
+より$x\leqq y\Leftrightarrow g(x)\leqq g(y)$
 
-以上より$f$は整数に対して演算を保存.
+以上より$g$は整数に対して演算を保存.
 
 $x\in \mathbb{Q}$とすると$x=\frac{p}{q}$とおける.\ $(q\in \mathbb{N}-\{0\},p\in\mathbb{Z})$
 
-$q>0$なので$f(q)\neq 0_K$で$f(x) = \frac{f(p)}{f(q)}$と定義できる.
+$q>0$なので$g(q)\neq 0_K$で$g(x) = \frac{g(p)}{g(q)}$と定義できる.
 
 $q,s\in \mathbb{N}-\{0\},p,r\in\mathbb{Z}$に対し
 \begin{align*}
 &\frac{p}{q}=\frac{r}{s}\\
 \Leftrightarrow & ps-qr=0\\
-\Leftrightarrow & f(ps-qr)=0_K\\
-\Leftrightarrow & \frac{f(ps-qr)}{f(qs)}=0_K \ (\because \frac{1_K}{f(qs)}\neq 0_K)\\
-\Leftrightarrow & \frac{f(p)f(s)-f(q)f(r)}{f(q)f(s)}=0_K\\
-\Leftrightarrow & \frac{f(p)}{f(q)}=\frac{f(r)}{f(s)}
+\Leftrightarrow & g(ps-qr)=0_K\\
+\Leftrightarrow & \frac{g(ps-qr)}{g(qs)}=0_K \ (\because \frac{1_K}{g(qs)}\neq 0_K)\\
+\Leftrightarrow & \frac{g(p)g(s)-g(q)g(r)}{g(q)g(s)}=0_K\\
+\Leftrightarrow & \frac{g(p)}{g(q)}=\frac{g(r)}{g(s)}
 \end{align*}
-$\Leftarrow$から$f$がwell-definedなことが言え$\Rightarrow$から$f$が単射なことが言える.
+$\Leftarrow$から$g$がwell-definedなことが言え$\Rightarrow$から$g$が単射なことが言える.
 
-また$x\in\mathbb{Z}$に対し$x=\frac{x}{1}$で$\frac{f(x)}{f(1)}=\frac{f(x)}{1_K}=f(x)$なので$f$の有理数での定義は整数での定義と矛盾しない.
+また$x\in\mathbb{Z}$に対し$x=\frac{x}{1}$で$\frac{g(x)}{g(1)}=\frac{g(x)}{1_K}=g(x)$なので$g$の有理数での定義は整数での定義と矛盾しない.
 
 $q,s\in \mathbb{N}-\{0\},p,r\in\mathbb{Z}$に対し
 \begin{align*}
-&f(\frac{p}{q}+\frac{r}{s})\\
-= & f(\frac{ps+qr}{qs})\\
-= & \frac{f(p)f(s)+f(q)f(r)}{f(q)f(s)}\\
-= & \frac{f(p)}{f(q)}+\frac{f(r)}{f(s)}\\
-= & f(\frac{p}{q})+f(\frac{r}{s})
+&g(\frac{p}{q}+\frac{r}{s})\\
+= & g(\frac{ps+qr}{qs})\\
+= & \frac{g(p)g(s)+g(q)g(r)}{g(q)g(s)}\\
+= & \frac{g(p)}{g(q)}+\frac{g(r)}{g(s)}\\
+= & g(\frac{p}{q})+g(\frac{r}{s})
 \end{align*}
 
 \begin{align*}
-&f(\frac{p}{q}\cdot\frac{r}{s})\\
-= & \frac{f(p)f(r)}{f(q)f(s)}\\
-= & f(\frac{p}{q})f(\frac{r}{s})
+&g(\frac{p}{q}\cdot\frac{r}{s})\\
+= & \frac{g(p)g(r)}{g(q)g(s)}\\
+= & g(\frac{p}{q})g(\frac{r}{s})
 \end{align*}
 
 \begin{align*}
 &\frac{p}{q}\leqq\frac{r}{s}\\
 \Leftrightarrow & ps-qr\leqq0\\
-\Leftrightarrow & f(ps-qr)\leqq 0_K\\
-\Leftrightarrow & \frac{f(ps-qr)}{f(qs)}\leqq 0_K \ (\because \frac{1_K}{f(qs)}> 0_K)\\
-\Leftrightarrow & \frac{f(p)f(s)-f(q)f(r)}{f(q)f(s)}\leqq 0_K\\
-\Leftrightarrow & \frac{f(p)}{f(q)}\leqq\frac{f(r)}{f(s)}
+\Leftrightarrow & g(ps-qr)\leqq 0_K\\
+\Leftrightarrow & \frac{g(ps-qr)}{g(qs)}\leqq 0_K \ (\because \frac{1_K}{g(qs)}> 0_K)\\
+\Leftrightarrow & \frac{g(p)g(s)-g(q)g(r)}{g(q)g(s)}\leqq 0_K\\
+\Leftrightarrow & \frac{g(p)}{g(q)}\leqq\frac{g(r)}{g(s)}
 \end{align*}
-以上より$f$は有理数に対して演算を保存.
+以上より$g$は有理数に対して演算を保存.
 
-より$f$は$\mathbb{Q}$から$K$への準同型写像.
+より$g$は$\mathbb{Q}$から$K$への準同型写像.
 
-$f$を$\mathbb{Q}$から$f(\mathbb{Q})$への関数に制限すると$f$の単射性から同型写像.
+$g$を$\mathbb{Q}$から$g(\mathbb{Q})$への関数に制限すると$g$の単射性から同型写像.
 
-つまり$f(\mathbb{Q})$は$\mathbb{Q}$と同型な順序体.
+つまり$g(\mathbb{Q})$は$\mathbb{Q}$と同型な順序体.
 
 5)
 
@@ -1002,31 +1002,31 @@ $K_{\mathbb{Q}}$の数列$a_n,b_n$がそれぞれ$a,b(\in K)$に収束すると�
 
 最後に4)で存在を示した$K$の含む$\mathbb{Q}$と同型な体が$K_{\mathbb{Q}}$であることを言う.
 
-以下$f$は4)で定義した$f$を表す.
+以下$g$は4)で定義した$g$を表す.
 
-$f(\mathbb{N}) = K_{\mathbb{N}}$を言えばいい.
+$g(\mathbb{N}) = K_{\mathbb{N}}$を言えば$g$の整数,有理数への拡張の仕方から$g(\mathbb{Q}) = K_{\mathbb{Q}}$が言えるのでこれを言えばいい.
 
-$f(\mathbb{N})$が帰納的集合であることを言う.
+$g(\mathbb{N})$が帰納的集合であることを言う.
 
-$f(0)=0_K$より$0_K\in f(\mathbb{N})$
+$g(0)=0_K$より$0_K\in g(\mathbb{N})$
 
-$x\in f(\mathbb{N})$なら$f(y) = x$となる$y\in\mathbb{N}$が存在.$f(y+1)=x+1_K$で$x+1_K\in f(\mathbb{N})$
+$x\in g(\mathbb{N})$なら$g(y) = x$となる$y\in\mathbb{N}$が存在.$g(y+1)=x+1_K$で$x+1_K\in g(\mathbb{N})$
 
-以上より$f(\mathbb{N})$が帰納的集合で$K_{\mathbb{N}}\subset f(\mathbb{N})$
+以上より$g(\mathbb{N})$が帰納的集合で$K_{\mathbb{N}}\subset g(\mathbb{N})$
 
-$A=\{n\in \mathbb{N}|f(n)\in K_{\mathbb{N}}\}$としこれが帰納的集合であることを言う.
+$A=\{n\in \mathbb{N}|g(n)\in K_{\mathbb{N}}\}$としこれが帰納的集合であることを言う.
 
-$f(0)=0_K\in K_{\mathbb{N}}$で$0\in A$
+$g(0)=0_K\in K_{\mathbb{N}}$で$0\in A$
 
-$x\in A$のとき$f(x)\in K_{\mathbb{N}}$で$f(x+1)=f(x)+1_K\in K_{\mathbb{N}}$より$x+1\in A$
+$x\in A$のとき$g(x)\in K_{\mathbb{N}}$で$g(x+1)=g(x)+1_K\in K_{\mathbb{N}}$より$x+1\in A$
 
 より$A$は帰納的集合で$\mathbb{N}\subset A$
 
-つまり$n\in\mathbb{N}$で$f(n)\in K_{\mathbb{N}}$
+つまり$n\in\mathbb{N}$で$g(n)\in K_{\mathbb{N}}$
 
-より$f(\mathbb{N}) \subset K_{\mathbb{N}}$
+より$g(\mathbb{N}) \subset K_{\mathbb{N}}$
 
-以上より$f(\mathbb{N}) = K_{\mathbb{N}}$
+以上より$g(\mathbb{N}) = K_{\mathbb{N}}$
 
 6)
 
