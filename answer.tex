@@ -1393,5 +1393,80 @@ g_{n-1} & n>1
 $\mathbb{Q}$は$\mathbb{R}$で稠密なので$|q-p|<\epsilon$を満たす$q\in\mathbb{Q}$が存在.
 
 $|(a+q-p)-a|=|q-p|<\epsilon$なので$a+q-p$は有理数.$a,q$は有理数で有理数は加算について閉じているので$p$も有理数となり矛盾.より背理法から示された.
+\subsection*{$\S$4 $\mathbb{R}^n$と$\mathbb{C}$}
+1)
 
+i)を満たすことを言う.
+
+$A,B\in\mathbb{R}^n$に対し$B-A\in \mathbb{R}^n$が唯一定まることを言えばいいが$\mathbb{R}^n$が加群であることから明らか.
+
+ii)を満たすことを言う.
+
+$a,A\in\mathbb{R}^n$に対し$B-A=a$を満たす$B\in\mathbb{R}^n$が唯一存在することを言えばいい.$B=A+a$のときのみ成立するのでii)も満たす.
+
+iii)を満たすことを言う.
+
+$A,B,C\in\mathbb{R}^n$に対し$(B-A)+(C-B)=C-A$なので成立.
+
+以上より示された.
+
+2)
+
+$x,y\in\mathbb{R}^n$に対し
+\[|g(x)-g(y)|=|(f(x)-f(0))-(f(y)-f(0))|=|f(x)-f(y)|=|x-y|\]
+\[|g(x)|=|f(x)-f(0)|=|x-0|=|x|\]
+\[|g(y)|=|f(y)-f(0)|=|y-0|=|y|\]
+(4.15)より
+\[|g(x)-g(y)|^2=|g(x)|^2-2(g(x)|g(y))+|g(y)|^2\]
+\[|x-y|^2=|x|^2-2(x|y)+|y|^2\]
+以上より
+\[-2(g(x)|g(y))=-2(x|y)\Leftrightarrow (g(x)|g(y))=(x|y)\]
+$(g(x)|g(y))=(x|y)$と命題4.2を用いると$x,y\in\mathbb{R}^n$に対し
+\begin{align*}
+& (g(x+y)-g(x)-g(y)|g(x+y)-g(x)-g(y))\\
+=& (g(x+y)|g(x+y))+(g(x)|g(x))+(g(y)|g(y))-2(g(x)|g(x+y))-2(g(y)|g(x+y))+2(g(x)|g(y))\\
+=& (x+y|x+y)+(x|x)+(y|y)-2(x|x+y)-2(y|x+y)+2(x|y)\\
+=& ((x+y)-x-y|(x+y)-x-y)=(0|0)=0\\
+\end{align*}
+より命題4.2 4)より$g(x+y)-g(x)-g(y)=0$つまり$g(x+y)=g(x)+g(y)$
+
+$(g(x)|g(y))=(x|y)$と命題4.2を用いると$x\in\mathbb{R}^n,a\in\mathbb{R}$に対し
+\begin{align*}
+& (g(ax)-ag(x)|g(ax)-ag(x))\\
+=& (g(ax)|g(ax))+a^2(g(x)|g(x))-2a(g(x)|g(ax))\\
+=& (ax|ax)+a^2(x|x)-2a(x|ax) = (a^2+a^2-2a^2)(x|x)=0(x|x) =0\\
+\end{align*}
+より命題4.2 4)より$g(ax)-ag(x)=0$つまり$g(ax)=ag(x)$
+
+$e_i(\in \mathbb{R}^n)$を$i=1,\cdots,n$で以下のように定義する.
+\[e_{ij} = \begin{cases}
+1 & i=j\\
+0 & i\neq j
+\end{cases}\]
+$x(\in\mathbb{R}^n)$は
+\[x=\sum_{i=1}^nx_ie_i\]
+なので$g(x+y)=g(x)+g(y),g(ax)=ag(x)$を用いて
+\[g(x)=\sum_{i=1}^nx_ig(e_i)\]
+$A\in\mathbb{R}^{n\times n}$を以下のように定義する.
+\[A_{ij}=g(e_j)_i \ (i=1,\cdots,n,j=1,\cdots,n)\]
+以下が$j=1,\cdots ,n$で成り立つ.
+\[(Ax)_j = \sum_{i=1}^n A_{ji}x_i=\sum_{i=1}^nx_ig(e_i)_j=g(x)_j\]
+より$Ax=g(x)$また
+\[(A^tA)_{ij}=\sum_{k=1}^nA_{ki}A_{kj}=\sum_{k=1}^ng(e_i)_kg(e_j)_k=(g(e_i)|g(e_j))=(e_i|e_j)\]
+ここで$(e_i|e_j)=\begin{cases}
+1 & i = j\\
+0 & i\neq j
+\end{cases}$
+なので$(A^tA)_{ij}=\begin{cases}
+1 & i=j\\
+0 & i\neq j
+\end{cases}$
+
+つまり$A^tA=I_n$で$A$は直交行列.
+
+さらに$f(x)=g(x)+f(0)=Ax+f(0)$で$b=f(0)$とすると$f(x)=Ax+b$で示された.
+
+逆に$A(\in\mathbb{R}^{n\times n})$が直交行列で$b\in\mathbb{R}^n$のとき$f(x)=Ax+b$とすると$x,y\in\mathbb{R}^n$に対し
+\[|f(x)-f(y)|^2=|(Ax+b)-(Ay+b)|^2=|A(x-y)|^2=(x-y)^tA^tA(x-y)=(x-y)^tI_n(x-y)=(x-y)^t(x-y)=|x-y|^2\]
+つまり$|f(x)-f(y)|=|x-y|$で$f$は合同変換.
 \end{document}
