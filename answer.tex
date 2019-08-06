@@ -1469,4 +1469,539 @@ $A\in\mathbb{R}^{n\times n}$を以下のように定義する.
 逆に$A(\in\mathbb{R}^{n\times n})$が直交行列で$b\in\mathbb{R}^n$のとき$f(x)=Ax+b$とすると$x,y\in\mathbb{R}^n$に対し
 \[|f(x)-f(y)|^2=|(Ax+b)-(Ay+b)|^2=|A(x-y)|^2=(x-y)^tA^tA(x-y)=(x-y)^tI_n(x-y)=(x-y)^t(x-y)=|x-y|^2\]
 つまり$|f(x)-f(y)|=|x-y|$で$f$は合同変換.
+
+3)
+
+$x_1,\cdots,x_n$が1次独立なので$|x_1|\neq 0, |y_i|\neq 0 \ (i=2,\cdots,n)$に注意する.
+
+$1\leqq i\leqq k,1\leqq j\leqq k$で$(u_i|u_j)=\delta_{i,j}$が$k=1,\cdots ,n$で成り立つことを$k$に関する数学的帰納法で示す.
+
+i) $k=1$
+\[(u_1|u_1)=\frac{(x_1|x_1)}{|x_1|^2}=1\]
+より成立.
+
+ii) $k=l$での成立を仮定する. $(1\leqq l \leqq n-1)$
+
+$i=1,\cdots,l$で
+\[(y_{l+1}|u_{i})=(x_{l+1}|u_i)-\sum_{j=1}^l(x_{l+1}|u_j)(u_j|u_i)=(x_{l+1}|u_i)-\sum_{j=1}^l(x_{l+1}|u_j)\delta_{ji}=(x_{l+1}|u_i)-(x_{l+1}|u_i)=0\]
+より$(u_{l+1}|u_i)=\frac{(y_{l+1}|u_i)}{|y_{l+1}|}=0=\delta_{l+1,i}$
+
+また$(u_i|u_{l+1})=(u_{l+1}|u_i)=0=\delta_{i,l+1}$
+
+また$(u_{l+1}|u_{l+1})=\frac{(y_{l+1},y_{l+1})}{|y_{l+1}|^2}=1=\delta_{l+1,l+1}$
+
+帰納法の仮定と合わせて$1\leqq i\leqq l+1,1\leqq j\leqq l+1$で$(u_i|u_j)=\delta_{i,j}$
+
+以上より成立.
+$k=n$として示された.
+
+4)
+
+$x,y\in\mathbb{R}^n$に対し
+\begin{align*}|S_H(x)-S_H(y)|^2 &=|x-y-2\frac{(x-y|a)}{(a|a)}a|^2\\
+&=|x-y|^2-4\frac{(x-y|a)}{(a|a)}(x-y|a)+4\frac{(x-y|a)^2}{(a|a)^2}(a|a)\\&=
+|x-y|^2-4\frac{(x-y|a)^2}{|a|^2}+4\frac{(x-y|a)^2}{|a|^2}=|x-y|^2
+\end{align*}
+より$S_H$は$\mathbb{R}^n$の合同変換.
+
+$x\in\mathbb{R}^n$に対し
+\[(S_H(x)|a)=(x|a)-2((x|a)-c)=2c-(x|a)\]
+よって
+\[S_H^2(x)=S_H(x)-2((S_H(x)|a)-c)\frac{a}{(a|a)}=x-2((x|a)-c)\frac{a}{(a|a)}-2(c-(x|a))\frac{a}{(a|a)}=x\]
+つまり$S_H^2=1$
+
+5)
+$x\in\mathbb{R}^n$に対して
+\begin{align*}
+d(x,a)=d(x,b)&\Leftrightarrow |x-a|^2=|x-b|^2\\
+&\Leftrightarrow |x|^2-2(x|a)+|a|^2=|x|^2-2(x|b)+|b|^2\\
+&\Leftrightarrow (x|a)-(x|b)-\frac{|a|^2-|b|^2}{2}=0\\
+&\Leftrightarrow (a-b|x-\frac{a+b}{2})=0
+\end{align*}
+4)で$a\rightarrow a-b,c\rightarrow \frac{|a|^2-|b|^2}{2}$として
+\[S_H(a)=a-2\left ((a|a-b)-\frac{|a|^2-|b|^2}{2}\right )\frac{a-b}{(a-b|a-b)}=a-2\left (a-b|\frac{a-b}{2}\right )\frac{a-b}{(a-b|a-b)}=a-(a-b)=b\]
+
+6)
+
+$x,y\in\mathbb{R}^n$に対し$z\in\mathbb{R}^n$を変数と見て
+$d(z,x)=d(z,y)$は$xy$の垂直二等分超平面でこれを$H$とすると$|x|=|y|$より
+\[S_H(0)=0-2\left ((0|x-y)-\frac{|x|^2-|y|^2}{2}\right )\frac{x-y}{(x-y|x-y)}=0-0=0\]
+である.4)より$S_H$は合同変換なので2)より直交行列$A\in\mathbb{R}^{n\times n}$が存在し$Az+S_H(0)=S_H(z)$つまり$Az=S_H(z)$.また5)より$Ax=S_H(x)=y$
+
+$|b-a|=|b'-a'|$なので$A(b-a)=b'-a'$を満たす直交行列$A$が存在する.
+
+$g(x)=Ax-Aa+a'$とすると$g$は合同変換で$g(a)=a',g(b)=b'$
+
+$g(c)=c'$なら$g$が条件を満たす.$g(c)\neq c$のときを考える.
+
+$H'$を$c'g(c)$の垂直二等分超平面とする
+$g$は合同変換なので
+\[|g(c)-a'|=|c-a|=|c'-a'|\]
+\[|g(c)-b'|=|c-b|=|c'-b'|\]
+\[|g(c)|^2-2(g(c)|a')+|a'|^2=|c'|^2-2(c'|a')+|a'|^2\Leftrightarrow (c'-g(c)|a'-\frac{c'+g(c)}{2})=0\]
+$S_H'(a')=a'-2(c'-g(c)|a'-\frac{c'+g(c)}{2})\frac{a}{(a|a)}=a'$で同様に$S_H'(b')=b'$
+
+また5)より$S_H'(g(c))=c'$
+
+以上より$S_H'(g(a))=a',S_H'(g(b))=b',S_H'(g(c))=c'$
+
+$S_H',g$は合同変換なので$x,y\in\mathbb{R}^n$で
+\[|S_H'(g(x))-S_H'(g(y))=|g(x)-g(y)|=|x-y|\]
+つまり$S_H'(g(x))$は合同変換で示された.
+
+7)
+
+$\mathbb{R}^n$の独立な$n+1$個の点から等距離にある点が存在することを示す.
+
+$n+1$個の点を$a_1,\cdots,a_{n+1}$とする.
+$x\in\mathbb{R}^n$がこれらから等距離にある条件は
+\begin{align*}
+|x-a_i|=|x-a_{i+1}| &\Leftrightarrow |x-a_i|^2=|x-a_{i+1}|^2\\
+&\Leftrightarrow |x|^2 -2(x|a_i) + |a_i|^2 = |x|^2 -2(x|a_{i+1}) + |a_{i+1}|^2\\
+&\Leftrightarrow (x|a_i-a_{i+1}) = \frac{|a_i|^2-|a_{i+1}|^2}{2}
+\end{align*}
+が$i=1,\cdots,n$で成り立てばいい.
+
+つまり$A\in\mathbb{R}^{n\times n},c\in \mathbb{R}^n$を以下のように定義して
+\[A_{ij}=(a_i-a_{i+1})_j,c_i=\frac{|a_i|^2-|a_{i+1}|^2}{2}\]
+$Ax=c$であればいい.$\det A \neq 0$なら$A^{-1}$が存在し$x = A^{-1}c$に決まる.
+
+$\det A = 0$なら$Ay=0$となる$y\in\mathbb{R}^n$が存在するがこれは
+\[(a_1|y)=\cdots=(a_{n+1}|y)\]
+を意味する.つまり$a_1,\cdots,a_{n+1}$は以下の超平面上の点.
+\[\{z\in\mathbb{R}^n|(z|y)=(a_1|y)\}\]
+よって仮定に矛盾する.以上より示された.
+
+8)
+
+$0$と$b,c$は等距離にあるので
+\[(c-b|h-a)=(c-b|c+b)=|c|^2-|b|^2=0\]
+つまり$bc$は$ah$と直交する.
+
+同様に$ab$は$ch$と$ca$は$bh$と直交する.
+
+9)
+
+8)と同様に$\triangle{abc}$を平行移動して$o=0$とする.$r$を正の実数として$|a|=|b|=|c|=r$とおける.
+
+8)より$h=a+b+c$
+
+$d=\frac{o+h}{2}=\frac{a+b+c}{2}$とする.
+
+\[|d-\frac{b+c}{2}|=|\frac{a}{2}|=\frac{1}{2}|a|=\frac{r}{2}\]
+同様にして$|d-\frac{c+a}{2}|=|d-\frac{a+b}{2}|=\frac{r}{2}$
+
+$a$から$bc$に$b$から$ca$に$c$から$ab$に下ろした垂線の足をそれぞれ$a',b',c'$とする.
+
+$a'$は直線$bc$上の点なので$t\in\mathbb{R}$として$a'=(1-t)b+tc$とおける.$aa'$と$bc$は直交するので
+\[(c-b|(1-t)b+tc-a)=0\Leftrightarrow t=\frac{(c-b|a-b)}{|c-b|^2}\]
+より
+\begin{align*}
+|d-a'|^2 &= |\frac{a+b+c}{2}-(1-t)b-tc|^2\\
+&= \frac{1}{4}|a+(2t-1)b+(1-2t)c|^2\\
+&= \frac{1}{4}(|a|^2+(2t-1)^2|c-b|^2 - (4t-2)(a|c-b))\\
+&= \frac{1}{4}(|a|^2+(2t-1)(|c-b|^2(2t-1) - 2(a|c-b)))\\
+&= \frac{1}{4}(|a|^2+(2t-1)(2|c-b|^2t-(c-b|c-b+2a)))\\
+&= \frac{1}{4}(|a|^2+(2t-1)(2|c-b|^2t-(c-b|2a-2b))) \ (\because |b|=|c| \Leftrightarrow (c-b|c+b)=0)\\
+&=\frac{|a|^2}{4}=\frac{r^2}{4}
+\end{align*}
+より
+$|d-a'|=\frac{r}{2}$で同様にして$|d-b'|=|d-c'|=\frac{r}{2}$
+
+また
+\[|d-\frac{h+a}{2}|=\frac{|a|}{2}=\frac{r}{2}\]
+同様にして$|d-\frac{h+b}{2}|=|d-\frac{h+c}{2}|=\frac{r}{2}$
+
+以上より$\frac{a+b}{2},\frac{b+c}{2},\frac{c+a}{2},a',b',c',\frac{h+a}{2},\frac{h+b}{2},\frac{h+c}{2}$は$d$を中心とする半径$\frac{r}{2}$の円周上.
+
+10)
+
+一般に$B(a,r)\subset B(a',r')$なら$r' \geqq r+|a-a'|$を示す.$a=a'$なら明らかなので$a\neq a'$とする.
+
+$|a-(a+r\frac{a'-a}{|a'-a|})|=|r\frac{a'-a}{|a'-a|}|=r$なので$a+r\frac{a'-a}{|a'-a|}\in B(a,r)$
+
+仮定より$a+r\frac{a'-a}{|a'-a|}\in B(a',r')$で
+$|a'-(a+r\frac{a'-a}{|a'-a|})|\leqq r'$が成立.
+
+$|a'-(a+r\frac{a'-a}{|a'-a|})|=|\frac{(a'-a)}{|a'-a|}(r+|a'-a|)|=r+|a'-a|$
+
+より$r'\geqq r+|a'-a|$で示された.
+
+$B_i=(a_i,r_i)$とおける.
+
+$B_{i+1}\subset B_i$なので$r_i \geqq r_{i+1} + |a_{i+1}-a_i|\geqq r_{i+1}$で$r_i$は単調減少.また$r_i\geqq 0$より$r_i$は下に有界.より$r_i$は$r$に収束するとしていい.
+
+$r_i$は収束列なのでコーシー列でもあり$\epsilon > 0$に対して$j,k\geqq M$で$|r_j-r_k|<\epsilon $となる$M\in\mathbb{N}$が存在.
+
+$j\geqq k\geqq M$で$B_j\subset B_k$で
+\[r_k \geqq r_j + |a_j-a_k|\]
+より
+\[|a_j-a_k|\leqq r_k-r_j < \epsilon\]
+同様にして$k\geqq j\geqq M$で$|a_j-a_k| < \epsilon$
+
+以上より$j,k\geqq M$で$|a_j-a_k| < \epsilon$
+
+より$a_i$はコーシー列で収束列でもあり$a$に収束するとしていい.
+\[\bigcap_{m\in\mathbb{N}}B_m=B(a,r)\]
+を示す.
+
+$|x-a|>r$とする.
+
+$j\geqq M$で$|a_j-a|<\frac{|x-a|-r}{2}$
+
+$j\geqq M'$で$|r_j-r|<\frac{|x-a|-r}{2}$となる$M,M'\in\mathbb{N}$が存在.
+
+$j\geqq max(M,M')$で
+\[|x-a_j|\geqq |x-a|-|a-a_j|>|x-a|-\frac{|x-a|-r}{2}
+= r + \frac{|x-a|-r}{2} > r + |r_j-r| \geqq r_j
+\]
+より$x\notin B_j$で特に$\displaystyle x\notin \bigcap_{m\in\mathbb{N}}B_m$
+
+つまり$\displaystyle \bigcap_{m\in\mathbb{N}}B_m\subset B(a,r)$
+
+$|x-a|<r$とする.
+
+$j\geqq M$で$|a_j-a|<r - |x-a|$となる$M\in\mathbb{N}$が存在する.
+
+$j\geqq M$で
+\[|x-a_j| \leqq |x-a|-|a-a_j|<r\leqq r_j\]
+つまり
+$x\in B_j$
+
+$B_0\supset B_1 \supset \cdots \supset B_M $ なので$j\in\mathbb{N}$で常に$x\in B_j$
+
+より$\displaystyle x\in \bigcap_{m\in\mathbb{N}}B_m$
+
+$\displaystyle \{x\in\mathbb{R}^n| |x-a|<r\}\subset \bigcap_{m\in\mathbb{N}}B_m$
+
+$B_i$は閉集合なので$\displaystyle \bigcap_{m\in\mathbb{N}}B_m$も閉集合.
+
+より$\displaystyle \overline{\{x\in\mathbb{R}^n| |x-a|<r\}} = B(a,r) \subset \bigcap_{m\in\mathbb{N}}B_m$
+
+より$\displaystyle B(a,r) = \bigcap_{m\in\mathbb{N}}B_m$
+
+で$\displaystyle \bigcap_{m\in\mathbb{N}}B_m$は閉球.
+
+11)
+
+$\mathbb{R}^4$は加群なので$\mathbb{H}$も$(R1)-(R4)$を満たし$0_\mathbb{H}=(0,0,0,0)$.
+
+$(a_1,a_2,a_3,a_4),(b_1,b_2,b_3,b_4),(c_1,_2,c_3,c_4)\in\mathbb{H}$とする.
+\begin{align*}
+&(a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4) \\
+&= (a_1b_1-a_2b_2-a_3b_3-a_4b_4,a_1b_2+a_2b_1+a_3b_4-a_4b_3,a_1b_3+a_3b_1+a_4b_2-a_2b_4,a_1b_4+a_4b_1+a_2b_3-a_3b_2)\end{align*}
+\begin{align*}
+&(b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4) \\
+&= (b_1c_1-b_2c_2-b_3c_3-b_4c_4,b_1c_2+b_2c_1+b_3c_4-b_4c_3,b_1c_3+b_3c_1+b_4c_2-b_2c_4,b_1c_4+b_4c_1+b_2c_3-b_3c_2)\end{align*}
+より$((a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)$の第1成分は
+
+$
+(a_1b_1-a_2b_2-a_3b_3-a_4b_4)c_1-(a_1b_2+a_2b_1+a_3b_4-a_4b_3)c_2-(a_1b_3+a_3b_1+a_4b_2-a_2b_4)c_3-(a_1b_4+a_4b_1+a_2b_3-a_3b_2)c_4
+$
+
+$=a_1(b_1c_1-b_2c_2-b_3c_3-b_4c_4)
+-a_2(b_2c_1+b_1c_2-b_4c_3+b_3c_4)
+-a_3(b_3c_1+b_4c_2+b_1c_3-b_2c_4)
+-a_4(b_4c_1-b_3c_2+b_2c_3+b_1c_4)
+$
+
+$=a_1(b_1c_1-b_2c_2-b_3c_3-b_4c_4)-a_2(b_1c_2+b_2c_1+b_3c_4-b_4c_3)-a_3(b_1c_3+b_3c_1+b_4c_2-b_2c_4)-
+a_4(b_1c_4+b_4c_1+b_2c_3-b_3c_2)$
+
+で$(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4))$の第1成分と等しい.
+
+より$((a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)$の第2成分は
+
+$
+(a_1b_1-a_2b_2-a_3b_3-a_4b_4)c_2+(a_1b_2+a_2b_1+a_3b_4-a_4b_3)c_1+(a_1b_3+a_3b_1+a_4b_2-a_2b_4)c_4-(a_1b_4+a_4b_1+a_2b_3-a_3b_2)c_3
+$
+
+$=a_1(b_1c_2+b_2c_1+b_3c_4-b_4c_3)
+-a_2(b_2c_2-b_1c_1+b_4c_4+b_3c_3)
+-a_3(b_3c_2-b_4c_1-b_1c_4-b_2c_3)
+-a_4(b_4c_2+b_3c_1-b_2c_4+b_1c_3)
+$
+
+$=a_1(b_1c_2+b_2c_1+b_3c_4-b_4c_3)+
+a_2(b_1c_1-b_2c_2-b_3c_3-b_4c_4)+
+a_3(b_1c_4+b_4c_1+b_2c_3-b_3c_2)-
+a_4(b_1c_3+b_3c_1+b_4c_2-b_2c_4)$
+
+で$(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4))$の第2成分と等しい.
+
+より$((a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)$の第3成分は
+
+$
+(a_1b_1-a_2b_2-a_3b_3-a_4b_4)c_3+(a_1b_3+a_3b_1+a_4b_2-a_2b_4)c_1+(a_1b_4+a_4b_1+a_2b_3-a_3b_2)c_2-(a_1b_2+a_2b_1+a_3b_4-a_4b_3)c_4
+$
+
+$=a_1(b_1c_3+b_3c_1+b_4c_2-b_2c_4)
+-a_2(b_2c_3+b_4c_1-b_3c_2+b_1c_4)
+-a_3(b_3c_3-b_1c_1+b_2c_2+b_4c_4)
+-a_4(b_4c_3-b_2c_1-b_1c_2-b_3c_4)
+$
+
+$=a_1(b_1c_3+b_3c_1+b_4c_2-b_2c_4)+
+a_3(b_1c_1-b_2c_2-b_3c_3-b_4c_4)+
+a_4(b_1c_2+b_2c_1+b_3c_4-b_4c_3)-
+a_2(b_1c_4+b_4c_1+b_2c_3-b_3c_2)$
+
+$(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4))$の第3成分と等しい.
+
+$((a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)$の第4成分は
+
+$
+(a_1b_1-a_2b_2-a_3b_3-a_4b_4)c_4+(a_1b_4+a_4b_1+a_2b_3-a_3b_2)c_1+(a_1b_2+a_2b_1+a_3b_4-a_4b_3)c_3-(a_1b_3+a_3b_1+a_4b_2-a_2b_4)c_2
+$
+
+$=a_1(b_1c_4+b_4c_1+b_2c_3-b_3c_2)
+-a_2(b_2c_4-b_3c_1-b_1c_3-b_4c_2)
+-a_3(b_3c_4+b_2c_1-b_4c_3+b_1c_2)
+-a_4(b_4c_4-b_1c_1+b_3c_3+b_2c_2)
+$
+
+$=a_1(b_1c_4+b_4c_1+b_2c_3-b_3c_2)+
+a_4(b_1c_1-b_2c_2-b_3c_3-b_4c_4)+
+a_2(b_1c_3+b_3c_1+b_4c_2-b_2c_4)-a_3(b_1c_2+b_2c_1+b_3c_4-b_4c_3)$
+
+で$(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4))$の第4成分と等しい.
+
+以上より$((a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)=(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4))$で(R6)が成立.
+
+また
+
+$(a_1,a_2,a_3,a_4)((b_1,b_2,b_3,b_4)+(c_1,c_2,c_3,c_4))
+$
+
+$=(a_1,a_2,a_3,a_4)(b_1+c_1,b_2+c_2,b_3+c_3,b_4+c_4)$
+
+$=(a_1b_1+a_1c_1-a_2b_2-a_2c_2-a_3b_3-a_3c_3-a_4b_4-a_4c_4,
+a_1b_2+a_1c_2+a_2b_1+a_2c_1+a_3b_4+a_3c_4-a_4b_3-a_4c_3,
+a_1b_3+a_1c_3+a_3b_1+a_3c_1+a_4b_2+a_4c_2-a_2b_4-a_2c_4,
+a_1b_4+a_1c_4+a_4b_1+a_4c_1+a_2b_3+a_2c_3-a_3b_2-a_3c_2)$
+
+$=(a_1b_1-a_2b_2-a_3b_3-a_4b_4,
+a_1b_2+a_2b_1+a_3b_4-a_4b_3,
+a_1b_3+a_3b_1+a_4b_2-a_2b_4,
+a_1b_4+a_4b_1+a_2b_3-a_3b_2)+
+(a_1c_1-a_2c_2-a_3c_3-a_4c_4,
+a_1c_2+a_2c_1+a_3c_4-a_4c_3,
+a_1c_3+a_3c_1+a_4c_2-a_2c_4,
+a_1c_4+a_4c_1+a_2c_3-a_3c_2)$
+
+$=(a_1,a_2,a_3,a_4)(b_1,b_2,b_3,b_4)+(a_1,a_2,a_3,a_4)(c_1,c_2,c_3,c_4)$
+
+また
+
+$((a_1,a_2,a_3,a_4)+(b_1,b_2,b_3,b_4))(c_1,c_2,c_3,c_4)
+$
+
+$=(a_1+b_1,a_2+b_2,a_3+b_3,a_4+b_4)(c_1,c_2,c_3,c_4)$
+
+$=(a_1c_1+b_1c_1-a_2c_2-b_2c_2-a_3c_3-b_3c_3-a_4c_4-b_4c_4,
+a_1c_2+b_1c_2+a_2c_1+b_2c_1+a_3c_4+b_3c_4-a_4c_3-b_4c_3,
+a_1c_3+b_1c_3+a_3c_1+b_3c_1+a_4c_2+b_4c_2-a_2c_4-b_2c_4,
+a_1c_4+b_1c_4+a_4c_1+b_4c_1+a_2c_3+b_2c_3-a_3c_2-b_3c_2)$
+
+$=(a_1c_1-a_2c_2-a_3c_3-a_4c_4,
+a_1c_2+a_2c_1+a_3c_4-a_4c_3,
+a_1c_3+a_3c_1+a_4c_2-a_2c_4,
+a_1c_4+a_4c_1+a_2c_3-a_3c_2)+
+(b_1c_1-b_2c_2-b_3c_3-b_4c_4,
+b_1c_2+b_2c_1+b_3c_4-b_4c_3,
+b_1c_3+b_3c_1+b_4c_2-b_2c_4,
+b_1c_4+b_4c_1+b_2c_3-b_3c_2)$
+
+$=(a_1,a_2,a_3,a_4)(c_1,c_2,c_3,c_4)+
+(b_1,b_2,b_3,b_4)(c_1,c_2,c_3,c_4)$
+
+以上より(R7)も成立.
+
+$(a_1,a_2,a_3,a_4)(1,0,0,0)=(a_1,a_2,a_3,a_4)$
+
+よって(R8)は成立し$1_\mathbb{H}=(1,0,0,0)$
+
+$(a_1,a_2,a_3,a_4)(a_1,-a_2,-a_3,-a_4)$
+
+$=(a_1a_1+a_2a_2+a_3a_3+a_4a_4,
+-a_1a_2+a_2a_1-a_3a_4+a_4a_3,
+-a_1a_3+a_3a_1-a_4a_2+a_2a_4,
+-a_1a_4+a_4a_1-a_2a_3+a_3a_2)$
+
+$=(a_1^2+a_2^2+a_3^2+a_4^2,0,0,0)$
+
+より$(a_1,a_2,a_3,a_4)\neq (0,0,0,0)$で
+
+\[(a_1,a_2,a_3,a_4)(\frac{a_1}{a_1^2+a_2^2+a_3^2+a_4^2},-\frac{a_2}{a_1^2+a_2^2+a_3^2+a_4^2},-\frac{a_3}{a_1^2+a_2^2+a_3^2+a_4^2},-\frac{a_4}{a_1^2+a_2^2+a_3^2+a_4^2})=(1,0,0,0)=1_\mathbb{H}\]
+
+つまり(R9)は成立.
+
+$(1,0,0,0)\neq (0,0,0,0)$で(R10)は成立.
+
+以上より示された.
+
+12)
+
+代数学の基本定理より$x\in\mathbb{C},a_0,\cdots,a_n\in\mathbb{R}$で$a_n\neq 0$として
+\[\sum_{k=0}^na_kx^k= a_n(x-\alpha_1)\cdots (x-\alpha_n)\]
+となる$\alpha_1,\cdots ,\alpha_n\in\mathbb{C}$が存在する.
+
+\[f(x)=\sum_{k=0}^na_kx^k\]
+
+とすると$k\in\mathbb{N},p,q\in\mathbb{R}$で$f^{(k)}(p+qi)=\overline{f^{(k)}(p-qi)}$なので$f^{(k)}(p+qi)=0\Leftrightarrow f^{(k)}(p-qi)=0$
+
+よって$p+qi$と$p-qi$で$\alpha_j$に含まれる数は等しい.
+
+より$\beta_j,\gamma_j\in\mathbb{R},\gamma_j >0$として
+$\alpha_1=\beta_1+\gamma_1i,\alpha_2=\beta_1-\gamma_1i,\cdots ,\alpha_{2k-1}=\beta_k+\gamma_ki,\alpha_{2k}=\beta_k-\gamma_ki$で$\alpha_{2k+1},\cdots,\alpha_{n} \in\mathbb{R}$としていい.このとき
+\[f(x)=a_n(x^2-2\beta_1+\beta_1^2+\gamma_1^2)\cdots (x^2-2\beta_k+\beta_k^2+\gamma_k^2)(x-\alpha_{2k+1})\cdots (x-\alpha_n)\]
+
+ところで$x,a_j,b_j,c_j\in\mathbb{R}$で
+\[(\sum_{k=0}^n a_kx^k)(\sum_{k=0}^m b_kx^k)=\sum_{k=0}^{n+m} c_kx^k\]
+なら
+\[c_k = \sum_{i+j=k}a_ib_j\]である.
+$x\in K$でも$x^i\in K,b_j\in\mathbb{R}$より$x^ib_j=b_jx^i$なので
+\[(\sum_{k=0}^n a_kx^k)(\sum_{k=0}^m b_kx^k)=\sum_{k=0}^{n+m}\sum_{i+j=k}a_ix^ib_jx^j=\sum_{k=0}^{n+m}\sum_{i+j=k}a_ib_jx^{i+j}=\sum_{k=0}^{n+m}c_kx^{k}\]
+これを繰り返すと
+\[f(x)=a_n(x^2-2\beta_1+\beta_1^2+\gamma_1^2)\cdots (x^2-2\beta_k+\beta_k^2+\gamma_k^2)(x-\alpha_{2k+1})\cdots (x-\alpha_n)\]
+は$x\in K$でも成り立つ.
+
+ここで$x\in K$とすると$K$は有限次元なので$\{1,x,\cdots,x^n\}$が線形独立でなくなる$n$が存在しそのうち最小のものを取ると
+\[\sum_{k=0}^na_kx^k = 0_K\]
+となる$a_k\in\mathbb{R}$が存在し$a_n\neq 0$となる.よって
+\[a_n(x^2-2\beta_1+\beta_1^2+\gamma_1^2)\cdots (x^2-2\beta_k+\beta_k^2+\gamma_k^2)(x-\alpha_{2k+1})\cdots (x-\alpha_n)=0_K\]
+としていい($\alpha_j,\beta_j,\gamma_j\in\mathbb{R}$).
+
+$(x^2-2\beta_1+\beta_1^2+\gamma_1^2),\cdots ,(x^2-2\beta_k+\beta_k^2+\gamma_k^2),(x-\alpha_{2k+1}),\cdots ,(x-\alpha_n)$が全て$0_K$でないとすると(R9)を使いそれぞれの項の逆元を逆順に右から掛けると$a_n=0_K$となり矛盾する.
+
+よりいずれかは$0_K$になる.
+
+$x-\alpha=0_K$または$x^2-2\beta+\beta^2+\gamma^2 = 0_K$としていい($\alpha ,\beta, \gamma\in\mathbb{R},\gamma >0$).
+
+ところで
+\[I=\{x\in K|x^2\in\mathbb{R},x^2 < 0\}\]
+とする.$x-\alpha=0_K$なら$x\in\mathbb{R}$で$x^2-2\beta+\beta^2+\gamma^2 = 0_K$なら$(x-\beta)^2=-\gamma^2 < 0$で
+$x\notin \mathbb{R}$なら
+$x=y+z,y\in\mathbb{R},z\in I$とおける.
+
+$I$の要素$x$で$x^2=-1$となるものが存在しないとき
+
+$x^2-2\beta+\beta^2+\gamma^2 = 0_K$なら$(\frac{x-\beta}{\gamma})^2=-1$となり矛盾するので$x=\alpha\in\mathbb{R}$で$K=\mathbb{R}$
+
+$I$の要素$x$で$x^2=-1$となるものが存在するときその1つを$i$とすると$(-i)(-i)=(-1)(-1)ii=-1$で$-i$も満たす.これ以外に存在しないとすると
+
+$x^2-2\beta+\beta^2+\gamma^2 = 0_K$なら$\frac{x-\beta}{\gamma}=\pm i$で$x=\beta \pm \gamma i$
+
+$x-\alpha=0_K$も合わせて$x=y+zi \ (y,z\in\mathbb{R})$と表せる.逆に$1,i\in K$で$K$はベクトル空間なので$y,z\in\mathbb{R}$で$y+zi$は$K$の要素.よりこのとき
+$K$は$\mathbb{C}$と同型だ.
+
+$j\in K$で$j^2=-1,j\neq i,j\neq -i$が存在するとする.
+
+$a,b\in\mathbb{R}$として$a+bi=0_K$とする.
+
+$a=-bi$で$a^2=(-bi)^2=-b^2$だ.$a^2+b^2=0$なので$a=b=0$
+
+つまり$\{1,i\}$は1次独立.
+
+$a,b,c\in\mathbb{R}$として$a+bi+cj=0_K$とする.
+
+$a+bi=-cj$で$a^2-b^2+2abi=-c^2$
+
+$\{1,i\}$は1次独立なので$a^2-b^2+c^2=0,2ab=0$
+
+$b=0$なら$a^2+c^2=0$で$a=b=c=0$
+
+$b\neq 0$なら$a=0$で$c=\pm b$
+
+$a+bi+cj=b(i\pm j)$で$b\neq 0,i\neq j,i\neq -j$より$a+bi+cj\neq 0_K$で不適.
+
+以上より$a=b=c=0$で$\{1,i,j\}$は1次独立.
+
+$a,b,c,d\in\mathbb{R}$として$a+bi+cj+dij=0_K$とする.
+
+$d=0$なら$\{1,i,j\}$は1次独立なので$a=b=c=d=0$
+
+$d\neq 0$なら$a'=-\frac{a}{d},b'=-\frac{b}{d},c'=-\frac{c}{d}$として$ij=a'+b'i+c'j$
+\[-j=iij=a'i-b'+c'ij
+=a'i-b'+c'(a'+b'i+c'j)=-b'+a'c'+(a'+b'c')i+c'^2j
+\]
+$\{1,i,j\}$は1次独立なので$j$の係数を
+比較して$c'^2+1=0$となり$c'=-\frac{c}{d}\in\mathbb{R}$に矛盾し不適.
+
+以上より$a=b=c=d=0$で$\{1,i,j,ij\}$は1次独立.
+
+次に$ij\in K$で$\{1,ij\}$は1次独立なので$ij\notin\mathbb{R}$で$ij=x+y \ (x\in\mathbb{R},y\in I)$とおける.
+
+$y^2=e$とすると$e\in\mathbb{R}$で$e<0$
+
+$(ij-x)^2=e$なので$x^2 -e - 2ijx+ijij=0_K$
+
+両辺に$ji$を右から掛けて$(x^2-e)ji-2x+ij=0_K$
+
+$x^2-e > 0$なので$ji=\frac{2x}{x^2-e}-\frac{1}{x^2-e}ij$
+
+$X=\frac{2x}{x^2-e},Y=-\frac{1}{x^2-e}$として$ji=X+Yij$.
+\[-j=jii=Xi+Yiji=Xi+Yi(X+Yij)=X(1+Y)i-Y^2j\]
+なので$\{i,j\}$は1次独立だから
+\[X(1+Y)=0,Y\pm 1\]
+
+$Y=-1$または$X=0,Y=1$
+
+$X=0,Y=1$なら$ij=ji$で
+\[(i+j)(i-j)= i^2-j^2-ij+ji=-1-(-1)-(ij-ji)=0_K\]
+$i\neq j,i\neq -j$なので矛盾.
+
+より$Y=-1$で$ij+ji=X$
+
+このとき$x^2-e=1$で$e<0$より$-1<x<1$
+
+$X=\frac{2x}{x^2-e}=\frac{2x}{1}=2x$なので$-2<X<2$
+\[i\frac{Xi+2j}{\sqrt{4-X^2}}+\frac{Xi+2j}{\sqrt{4-X^2}}i=\frac{-2X+2(ij+ji)}{\sqrt{4-X^2}}=0_K\]
+$(\frac{Xi+2j}{\sqrt{4-X^2}})^2=-1$で
+$i\neq \frac{Xi+2j}{\sqrt{4-X^2}},i\neq -\frac{Xi+2j}{\sqrt{4-X^2}}$なので$j\rightarrow \frac{Xi+2j}{\sqrt{4-X^2}}$としてもよくこのとき$ij+ji=0_K$
+
+$ij=k$とすると$k^2=ijij=-iijj=-1$
+
+また$ik=iij=-j,jk=jij=-jji=i,ki=iji=-iij=j,kj=ijj=-i$
+
+$l^2=-1$とすると$a,b,c\in\mathbb{R}$として
+$l=ai+bj+ck$と表せることを示す.表せないと仮定して矛盾を導く.
+
+上と同様の議論で$l=\pm i$か$il+li=x \ x\in\mathbb{R}$
+
+$l=ai+bj+ck$と表せないので$il+li=x$
+
+同様にして$jl+lj=y,kl+lk=z \ y,z\in\mathbb{R}$
+
+\[z-lk=kl=ijl=i(y-lj)=iy-ilj=iy-(x-li)j=iy-xj+lij=yi-xj+lk\]
+
+より$k=ij$に注意し
+\[l=(-yi+xj+z)(2k)^{-1}=\frac{1}{2}(-yi+xj+z)(-ij)=
+-\frac{x}{2}i-\frac{y}{2}j-\frac{z}{2}k\]
+となり$l=ai+bj+ck$と表せないことに矛盾.
+
+背理法から$l=ai+bj+ck$とおける.
+
+$x^2-2\beta x+\beta^2+\gamma^2=0_K$なら$(\frac{(x-\beta)}{\gamma})^2=-1$で$\frac{(x-\beta)}{\gamma}=ai+bj+ck\Leftrightarrow x = \beta+\gamma ai+\gamma bj+\gamma ck$
+
+$x-\alpha=0_K$なら$x=\alpha$
+
+いずれの場合も$x=a+bi+cj+dk \ (a,b,c,d\in\mathbb{R})$とおける.
+
+逆に$1,i,j,ij\in K$で$K$はベクトル空間なので$a,b,c,d\in\mathbb{R}$で$a+bi+cj+dk$は$K$の要素.
+
+$\{1,i,j,k\}$は1次独立だから
+$a+bi+cj+dk$は$(a,b,c,d) \in\mathbb{H}$と1対1対応する.
+
+$(a_1+a_2i+a_3j+a_4k)(b_1+b_2i+b_3j+b_4k)
+=a_1b_1-a_2b_2-a_3b_3-a_4b_4+(a_1b_2+a_2b_1+a_3b_4-a_4b_3)i
+(a_1b_3+a_3b_1+a_4b_2-a_2b_4)j
+(a_1b_4+a_4b_1+a_2b_3-a_3b_2)k$
+
+$(a_1+a_2i+a_3j+a_4k)+(b_1+b_2i+b_3j+b_4k)=a_1+b_1+(a_2+b_2)i+(a_3+b_3)j+(a_4+b_4)k$
+
+なので$a+bi+cj+dk$から$(a,b,c,d)\in\mathbb{H}$への対応は同型写像.
+
+以上より$K=\mathbb{R},\mathbb{C},\mathbb{H}$
+のいずれかと同型である.
 \end{document}
