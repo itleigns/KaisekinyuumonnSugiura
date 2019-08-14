@@ -2004,4 +2004,171 @@ $(a_1+a_2i+a_3j+a_4k)+(b_1+b_2i+b_3j+b_4k)=a_1+b_1+(a_2+b_2)i+(a_3+b_3)j+(a_4+b_
 
 以上より$K=\mathbb{R},\mathbb{C},\mathbb{H}$
 のいずれかと同型である.
+
+\subsection*{$\S$5 級数}
+1)
+
+$r < 1$なら$\frac{1-r}{2}>0$で$\displaystyle \lim_{n\to\infty} \sqrt[n]{a_n}=r$なので$n\geqq n_0$で$|\sqrt[n]{a_n}-r|<\frac{1-r}{2}$となる$n_0\in\mathbb{N}$が存在する.
+
+$n\geqq n_0$で$\sqrt[n]{a_n} < r+ \frac{1-r}{2}=\frac{r+1}{2}$で$\frac{r+1}{2}<1$なので定理5.6 1)より$\sum a_n$は収束する.
+
+$r > 1$なら$\frac{r-1}{2}>0$で同様にして$n\geqq n_1$で$|\sqrt[n]{a_n}-r|<\frac{r-1}{2}$となる$n_1\in\mathbb{N}$が存在する.
+
+$n\geqq n_1$で$\sqrt[n]{a_n} > r- \frac{r-1}{2}=\frac{r+1}{2}$で$\frac{r+1}{2}>1$なので定理5.6 2)より$\sum a_n$は発散する.
+
+2)
+
+(i)
+$\sum \frac{2n^2}{n^3+1},\sum \frac{1}{n}$は共に正項級数で$n\geqq 1$で$\frac{2n^2}{n^3+1} > \frac{2n^2}{n^3+n^3} = \frac{1}{n}$
+
+例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので定理5.5より$\sum \frac{2n^2}{n^3+1}$は発散する.
+
+(ii)
+
+$n>0$で
+$\frac{\sqrt{n}}{1+n^2} < \frac{\sqrt{n}}{n^2} = \frac{1}{n^{\frac{3}{2}}}$
+
+定理V 2.5より $\displaystyle\sum_{n=1}^{\infty} \frac{1}{n^{\frac{3}{2}}}$は収束する.
+
+より定理5.5から$\sum \frac{\sqrt{n}}{1+n^2}$は収束する.
+
+(iii)
+
+$a > 1$のとき$x > 0$で$e^x > 1+x$なので$x\rightarrow \frac{\log a}{n}$として$a^{\frac{1}{n}}-1 > \frac{\log a}{n}$.
+
+例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので定理5.5より$\sum (a^{\frac{1}{n}}-1)$は発散する.
+
+$a = 1$なので$a^{\frac{1}{n}}-1=0$で$\sum (a^{\frac{1}{n}}-1)=0$で収束.
+
+$a < 1$のとき$b=\frac{1}{a}$として$b^{\frac{1}{n}} > \frac{\log b}{n} + 1$なので$n\geqq 1$で
+\[1-a^{\frac{1}{n}}  = 1-\frac{1}{b^{\frac{1}{n}}} > 1-\frac{1}{\frac{\log b}{n} + 1} =
+\frac{\frac{\log b}{n}}{\frac{\log b}{n} + 1}
+\geqq \frac{1}{n}\cdot\frac{\log b}{\log b+1}\]
+上と同様にして$\sum (1- a^{\frac{1}{n}})$は発散する.つまり$\sum (a^{\frac{1}{n}}-1)$は発散する.
+
+以上より$\begin{cases}
+発散する & a\neq 1\\
+収束する & a = 1
+\end{cases}$
+
+(iv)
+
+$b_n=\frac{1}{n^2},c_n = \frac{(-1)^n}{n}$とすると例5,例7より$\sum b_n,\sum c_n$は収束する.それぞれ$b,c\in\mathbb{R}$に収束するとする.
+
+$\epsilon > 0$に対して$M_1,M_2\in\mathbb{N}$が存在し
+\[n\geqq M_1\Rightarrow |\sum_{k=1}^nb_k - b| < \frac{\epsilon}{2} , n\geqq M_2\Rightarrow |\sum_{k=1}^nc_k - c| < \frac{\epsilon}{2} \]
+$n\geqq 2\max (M_1,M_2)+2$で$n$が偶数の時
+\begin{align*}
+|\sum_{k=2}^n a_k - (b+c)| &= |(\sum_{k=1}^{\frac{n}{2}} b_k - b)+(\sum_{k=1}^{\frac{n-2}{2}} c_k - c)|\\
+&\leqq |\sum_{k=1}^{\frac{n}{2}} b_k - b|+|\sum_{k=1}^{\frac{n-2}{2}} c_k - c| < \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon \ (\because \frac{n-2}{2} \geqq M_1,M_2)
+\end{align*}
+$n\geqq 2\max (M_1,M_2)+1$で$n$が奇数の時
+\begin{align*}
+|\sum_{k=2}^n a_k - (b+c)| &= |(\sum_{k=1}^{\frac{n-1}{2}} b_k - b)+(\sum_{k=1}^{\frac{n-1}{2}} c_k - c)|\\
+&\leqq |\sum_{k=1}^{\frac{n-1}{2}} b_k - b|+|\sum_{k=1}^{\frac{n-1}{2}} c_k - c| < \frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon \ (\because \frac{n-1}{2} \geqq M_1,M_2)
+\end{align*}
+以上より$n\geqq 2\max (M_1,M_2)+2$で$\displaystyle |\sum_{k=2}^na_k - (b+c)| < \epsilon$
+
+より$\sum a_n$は$b+c$に収束する.
+
+(v)
+
+$a_n=\frac{n}{2^n}$とすると$\sum a_n$は正項級数で
+\[\frac{a_{n+1}}{a_n}=\frac{n+1}{2n}=\frac{1+\frac{1}{n}}{2}\xrightarrow[n\to\infty]{}\frac{1}{2}\]
+よって定理5.7より$\sum a_n$は収束する.
+
+(vi)
+
+$a_n = \begin{cases}
+\frac{1}{n!} & nが奇数 \\
+-\frac{1}{n} & nが偶数　
+\end{cases}$とする.
+
+$b_n=\frac{1}{(2n-1)!}$とすると
+\[\frac{b_{n+1}}{b_n}=\frac{1}{2n(2n+1)}\xrightarrow[n\to\infty]{}0\]
+よって定理5.7より$\sum b_n$は収束する.収束値を$b$とする.
+
+$c_n=\frac{1}{2n}$とすると例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散する.$c_n$は正項級数なので正の無限大に発散する.
+
+$M > 0$に対して$N_1,N_2\in\mathbb{N}$が存在し
+\[n\geqq N_1 \Rightarrow |\sum_{k=1}^nb_k-b| < \frac{M}{2},n\geqq N_2 \Rightarrow \sum_{k=1}^nc_k > \frac{3M}{2}+b\]
+$n\geqq \max (2N_1-1,2N_2+1)$で$n$が奇数の時
+\[\sum_{k=1}^n a_k = \sum_{k=1}^{\frac{n+1}{2}} b_k - \sum_{k=1}^{\frac{n-1}{2}}c_k
+< (\frac{M}{2}+b) - (\frac{3M}{2}+b) < -M\]
+$n\geqq \max (2N_1,2N_2)$で$n$が奇数の時
+\[
+\sum_{k=1}^n a_k = \sum_{k=1}^{\frac{n}{2}} b_k - \sum_{k=1}^{\frac{n}{2}}c_k\\
+< (\frac{M}{2}+b) - (\frac{3M}{2}+b) < -M
+\]
+以上より$n\geqq \max (2N_1,2N_2+1)$で$\displaystyle\sum_{k=1}^n a_k < -M$
+より$1-\frac{1}{2}+\frac{1}{3!}-\frac{1}{4}+\cdots -\frac{1}{2n}+\frac{1}{(2n+1)!}-\cdots$は負の無限大に発散する.
+
+(vii)
+
+$x > 0$で$x >\log (1+x)$である.
+
+$n > 0$で$x\rightarrow n^{\frac{1}{4}}$として
+\[n^\frac{1}{4} > \log (1+n^\frac{1}{4}) >\log n^\frac{1}{4} = \frac{1}{4}\log n\]
+$a_n = (-1)^n\frac{\log n}{\sqrt{n}}$とする.
+
+$b_n=a_{2n+2}+a_{2n+3}$
+とする.
+
+\begin{align*}
+|b_n| &= |\frac{\log (2n+2)}{\sqrt{2n+2}}-\frac{\log (2n+3)}{\sqrt{2n+3}}|\\
+&=|\log (2n+2) (\frac{1}{\sqrt{2n+2}}-\frac{1}{\sqrt{2n+3}}) - \frac{\log \frac{2n+3}{2n+2}}{\sqrt{2n+3}}|\\
+&\leqq |\log (2n+2) (\frac{1}{\sqrt{2n+2}}-\frac{1}{\sqrt{2n+3}})| +| \frac{\log \frac{2n+3}{2n+2}}{\sqrt{2n+3}}|\\
+&= |\frac{\log (2n+2)}{\sqrt{2n+2}\sqrt{2n+3}(\sqrt{2n+2}+\sqrt{2n+3})}| +|\frac{\log (1+\frac{1}{2n+2})}{\sqrt{2n+3}}|\\
+& < |\frac{4(2n+2)^{\frac{1}{4}}}{\sqrt{2n+2}\sqrt{2n+3}(\sqrt{2n+2}+\sqrt{2n+3})}|+|\frac{1}{(2n+2)\sqrt{2n+3}}|\\
+& < 2(2n+2)^{-\frac{5}{4}}+(2n+2)^{-\frac{3}{2}}<\frac{2}{n^\frac{5}{4}}+\frac{1}{n^\frac{3}{2}}
+\end{align*}
+定理V 2.5より$\sum \frac{1}{n^{\frac{5}{4}}},\sum \frac{1}{n^{\frac{3}{2}}}$は収束する.
+
+命題5.3 1)より$\sum \frac{2}{n^\frac{5}{4}}+\frac{1}{n^\frac{3}{2}}$も収束し定理5.5より$b_n$は絶対収束し収束する.
+
+$\sum b_n = b$とする.
+
+$\epsilon > 0$に対して$n\geqq M_1$で$\displaystyle|\sum_{k=1}^nb_k-b|<\frac{\epsilon}{2}$となる$M_1\in\mathbb{N}$が存在する.
+
+$n>0$で
+\[|(-1)^n\frac{\log n}{\sqrt{n}}| = \frac{\log n}{\sqrt{n}} < \frac{n^{\frac{1}{4}}}{\sqrt{n}}=n^{-\frac{1}{4}}\xrightarrow[n\to \infty]{}0\]
+より$n\geqq M_2$で$|(-1)^n\frac{\log n}{\sqrt{n}}|<\frac{\epsilon}{2}$となる$M_2\in\mathbb{N}$が存在する.
+
+$n\geqq 2M_1+3$で$n$が奇数の時
+\[|\sum_{k=1}^na_k - b|=|\sum_{k=0}^{\frac{n-3}{2}}b_k - b| < \frac{\epsilon}{2}<\epsilon\]
+$n\geqq \max(2M_1+4,M_2)$で$n$が偶数の時
+\[|\sum_{k=1}^na_k - b|=|\sum_{k=0}^{\frac{n-4}{2}}b_k + (-1)^n\frac{\log n}{\sqrt{n}}- b| \leqq |\sum_{k=0}^{\frac{n-4}{2}}b_k- b|+|(-1)^n\frac{\log n}{\sqrt{n}}| <\frac{\epsilon}{2}+\frac{\epsilon}{2} = \epsilon\]
+
+以上より$n \geqq \max(2M_1+4,M_2)$で$|\sum a_n - b|<\epsilon$で$\sum a_n$は$b$に収束する.
+
+(viii)
+
+二項定理より$n \geqq 1$で
+\[(1+\frac{1}{n})^n =\sum_{k=0}^n\frac{\ _nC_k}{n^k} \geqq \frac{\ _nC_0}{n^0}+\frac{\ _nC_1}{n^1} = 2\]
+よって
+\[\frac{(1+n)^n}{n^{n+1}} = \frac{1}{n}(1+\frac{1}{n})^n \geqq \frac{2}{n}\]
+例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので定理5.5より$\sum \frac{(1+n)^n}{n^{n+1}}$は発散する.
+
+(ix)
+
+$a_n=\frac{3\cdot 5\cdots (2n+1)}{5\cdot 10\cdots 5n}$とする.
+\[\frac{a_{n+1}}{a_n}=\frac{2n+3}{5n+5}=\frac{2+\frac{3}{n}}{5+\frac{5}{n}}\xrightarrow[n\to\infty]{}\frac{2}{5}\]
+よって定理5.7より$\sum a_n$は収束する.
+
+(x)
+
+二項定理より$n \geqq 1$で
+\[(1+\frac{1}{n})^n =\sum_{k=0}^n\frac{\ _nC_k}{n^k} \geqq \frac{\ _nC_0}{n^0}+\frac{\ _nC_1}{n^1} = 2\]
+よって
+\[(\frac{n}{n+1})^{n^2}=(\frac{1}{(1+\frac{1}{n})^n})^{-n}\leqq 2^{-n}\]
+また
+\[\sum_{k=1}^n 2^{-k}=\frac{1}{2}\frac{1-(\frac{1}{2})^n}{1-\frac{1}{2}} =1-\frac{1}{2}^{n}\xrightarrow[n\to\infty]{}1\]
+で収束する.よって定理5.5より$\sum (\frac{n}{n+1})^{n^2}$は収束する.
+
+(xi)
+
+$n>e^2$で$n>1$より
+\[\frac{1}{n^{\log n}} < \frac{1}{n^2}\]
+例7より$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$は収束するので定理5.5より$\sum \frac{1}{n^{\log n}}$は収束する.
+
 \end{document}
