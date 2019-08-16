@@ -2038,7 +2038,7 @@ $a > 1$のとき$x > 0$で$e^x > 1+x$なので$x\rightarrow \frac{\log a}{n}$と
 
 例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので定理5.5より$\sum (a^{\frac{1}{n}}-1)$は発散する.
 
-$a = 1$なので$a^{\frac{1}{n}}-1=0$で$\sum (a^{\frac{1}{n}}-1)=0$で収束.
+$a = 1$のとき$a^{\frac{1}{n}}-1=0$で$\sum (a^{\frac{1}{n}}-1)=0$で収束.
 
 $a < 1$のとき$b=\frac{1}{a}$として$b^{\frac{1}{n}} > \frac{\log b}{n} + 1$なので$n\geqq 1$で
 \[1-a^{\frac{1}{n}}  = 1-\frac{1}{b^{\frac{1}{n}}} > 1-\frac{1}{\frac{\log b}{n} + 1} =
@@ -2074,7 +2074,7 @@ $n\geqq 2\max (M_1,M_2)+1$で$n$が奇数の時
 (v)
 
 $a_n=\frac{n}{2^n}$とすると$\sum a_n$は正項級数で
-\[\frac{a_{n+1}}{a_n}=\frac{n+1}{2n}=\frac{1+\frac{1}{n}}{2}\xrightarrow[n\to\infty]{}\frac{1}{2}\]
+\[\frac{a_{n+1}}{a_n}=\frac{n+1}{2n}=\frac{1+\frac{1}{n}}{2}\xrightarrow[n\to\infty]{}\frac{1}{2}<1\]
 よって定理5.7より$\sum a_n$は収束する.
 
 (vi)
@@ -2085,10 +2085,10 @@ $a_n = \begin{cases}
 \end{cases}$とする.
 
 $b_n=\frac{1}{(2n-1)!}$とすると
-\[\frac{b_{n+1}}{b_n}=\frac{1}{2n(2n+1)}\xrightarrow[n\to\infty]{}0\]
+\[\frac{b_{n+1}}{b_n}=\frac{1}{2n(2n+1)}\xrightarrow[n\to\infty]{}0<1\]
 よって定理5.7より$\sum b_n$は収束する.収束値を$b$とする.
 
-$c_n=\frac{1}{2n}$とすると例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散する.$c_n$は正項級数なので正の無限大に発散する.
+$c_n=\frac{1}{2n}$とすると例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので$\sum c_n$も発散する.$c_n$は正項級数なので正の無限大に発散する.
 
 $M > 0$に対して$N_1,N_2\in\mathbb{N}$が存在し
 \[n\geqq N_1 \Rightarrow |\sum_{k=1}^nb_k-b| < \frac{M}{2},n\geqq N_2 \Rightarrow \sum_{k=1}^nc_k > \frac{3M}{2}+b\]
@@ -2152,7 +2152,7 @@ $n\geqq \max(2M_1+4,M_2)$で$n$が偶数の時
 (ix)
 
 $a_n=\frac{3\cdot 5\cdots (2n+1)}{5\cdot 10\cdots 5n}$とする.
-\[\frac{a_{n+1}}{a_n}=\frac{2n+3}{5n+5}=\frac{2+\frac{3}{n}}{5+\frac{5}{n}}\xrightarrow[n\to\infty]{}\frac{2}{5}\]
+\[\frac{a_{n+1}}{a_n}=\frac{2n+3}{5n+5}=\frac{2+\frac{3}{n}}{5+\frac{5}{n}}\xrightarrow[n\to\infty]{}\frac{2}{5}<1\]
 よって定理5.7より$\sum a_n$は収束する.
 
 (x)
@@ -2160,7 +2160,7 @@ $a_n=\frac{3\cdot 5\cdots (2n+1)}{5\cdot 10\cdots 5n}$とする.
 二項定理より$n \geqq 1$で
 \[(1+\frac{1}{n})^n =\sum_{k=0}^n\frac{\ _nC_k}{n^k} \geqq \frac{\ _nC_0}{n^0}+\frac{\ _nC_1}{n^1} = 2\]
 よって
-\[(\frac{n}{n+1})^{n^2}=(\frac{1}{(1+\frac{1}{n})^n})^{-n}\leqq 2^{-n}\]
+\[(\frac{n}{n+1})^{n^2}=((1+\frac{1}{n})^n)^{-n}\leqq 2^{-n}\]
 また
 \[\sum_{k=1}^n 2^{-k}=\frac{1}{2}\frac{1-(\frac{1}{2})^n}{1-\frac{1}{2}} =1-\frac{1}{2}^{n}\xrightarrow[n\to\infty]{}1\]
 で収束する.よって定理5.5より$\sum (\frac{n}{n+1})^{n^2}$は収束する.
@@ -2171,4 +2171,169 @@ $n>e^2$で$n>1$より
 \[\frac{1}{n^{\log n}} < \frac{1}{n^2}\]
 例7より$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$は収束するので定理5.5より$\sum \frac{1}{n^{\log n}}$は収束する.
 
+3)
+
+$\sum a_n$が絶対収束するとき$\displaystyle \lim_{n\to\infty}a_n = 0$だ.
+
+よって$M\in\mathbb{N}$が存在し
+\[n\geqq M \Rightarrow |a_n| < 1\]
+$n\geqq M$で
+\[|a_n^2|<|a_n|\]
+なので定理5.5より$\sum |a_n|$が収束するとき$\sum |a_n^2|$も収束する.つまり$\sum a_n$が絶対収束するとき$\sum a_n^2$も絶対収束する.
+
+4)
+
+\[\sum a_n, a_{2n-1}=\frac{1}{\sqrt{n}}, a_{2n}=-\frac{1}{\sqrt{n}}\]
+が条件を満たすことを示す.
+
+$\displaystyle \lim_{n\to\infty}\frac{1}{\sqrt{n}}=0$なので$\epsilon > 0$に対して$M\in \mathbb{N}$が存在して
+\[n\geqq M\Rightarrow |\frac{1}{\sqrt{n}}| < \epsilon\]
+$n$が偶数のとき$\displaystyle \sum_{k=1}^n a_k = 0$
+
+$n$が奇数のとき$n \geqq 2M+1$で
+\[|\sum_{k=1}^n a_k| = \frac{1}{\sqrt{\frac{n-1}{2}}} < \epsilon\]
+以上より$n\geqq 2M+1$で$\displaystyle |\sum_{k=1}^n a_k| < \epsilon$
+
+より$\sum a_n$は収束する.
+
+$b_n = a_n^2$とする.$n$が偶数のとき
+\[\sum_{k=1}^n b_n = \sum_{k=1}^\frac{n}{2} \frac{2}{k}\]
+例4よりこれは発散する.
+
+部分列が発散するので$\sum b_n$も発散する.
+
+以上よりこれが例となる.
+
+5)
+
+$\displaystyle\lim_{n\to\infty} \frac{a_n}{b_n}=c$なので
+$n\geqq M$で$|\frac{a_n}{b_n}-c|< c$となる$M\in\mathbb{N}$が存在する.
+
+$b_n >0$なので$n\geqq M$で
+\[\frac{a_n}{b_n}<2c \Leftrightarrow a_n < 2cb_n\]
+$\sum b_n$が収束するとき命題5.3より$\sum 2cb_n$も収束し定理5.5より$\sum a_n$も収束する.
+
+$c\neq 0,+\infty$なので$\displaystyle\lim_{n\to\infty}
+\frac{b_n}{a_n}=\frac{1}{c}$で$\frac{1}{c}\neq 0,+\infty$
+
+より同様にして$\sum a_n$が収束するとき$\sum b_n$も収束する.
+
+以上より$\sum a_n,\sum b_n$は同時に収束,発散する.
+
+6)
+\[\frac{1-(-x^2)^n}{1+x^2}=\frac{1-(-x^2)^n}{1-(-x^2)} =\sum_{k=0}^{n-1} (-x^2)^k\]
+$I_n=\int_0^1\frac{(-x^2)^n}{1+x^2}dx$とすると両辺$0\sim 1$で積分し
+\[\int_0^1\frac{1}{1+x^2}dx-I_n=\sum_{k=0}^{n-1} (-1)^k\frac{1}{2k+1}\]
+$0<x<1$で$1+x^2>1$なので$0\sim 1$で積分し
+\[|I_n| \leqq \int_0^1|\frac{x^{2n}}{1+x^2}|dx<\int_0^1|x^{2n}|dx=\frac{1}{2n+1}\xrightarrow[n\to\infty]{}0\]
+よって$\displaystyle \lim_{n\to\infty}(\sum_{k=0}^n (-1)^k\frac{1}{2k+1}-\int_0^1\frac{1}{1+x^2}dx)=0\Leftrightarrow \lim_{n\to\infty}\sum_{k=0}^n (-1)^k\frac{1}{2k+1}=\int_0^1\frac{1}{1+x^2}dx$
+
+$x=\tan \theta$とすると$dx = (\tan^2\theta +1)d\theta$で$x:0\to 1$で$\theta :0\to \frac{\pi}{4}$なので
+\[\int_0^1\frac{1}{1+x^2}dx = \int_0^\frac{\pi}{4}\frac{1+\tan^2\theta}{1+\tan^2\theta}d\theta = \int_0^\frac{\pi}{4}1d\theta = \frac{\pi}{4}\]
+より$(与式)=\frac{\pi}{4}$
+
+7)
+
+(i)
+
+$|x|\leqq 1$で
+\[\frac{1}{1+2nx^{2n}} \geqq \frac{1}{1+2n}>\frac{1}{2} \frac{1}{1+n}\]
+例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので定理5.5より$\sum \frac{1}{1+2nx^{2n}}$は発散する.
+
+$|x| > 1$で
+\[\frac{1+2nx^{2n}}{1+2(n+1)x^{2(n+1)}}=\frac{\frac{1}{2nx^{2n}}+1}{\frac{1}{2nx^{2n}}+(1+\frac{1}{n})x^2}\xrightarrow[n\to\infty]{}\frac{1}{x^2} < 1\]
+より定理5.7より$\sum \frac{1}{1+2nx^{2n}}$は収束する.
+
+より条件は$|x|>1 \Leftrightarrow x<-1または1<x$
+
+(ii)
+
+$a_n = \frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n}(1-x^2)^n$
+\[\frac{|a_{n+1}|}{|a_n|}=\frac{2n+1}{2n+2}|1-x^2|=\frac{2+\frac{1}{n}}{2+\frac{2}{n}}|1-x^2|\xrightarrow[n\to\infty]{}\frac{2}{2}|1-x^2|=|1-x^2|\]
+よって$|1-x^2|< 1$で$\sum a_n$は絶対収束し収束する.
+\[\frac{2\cdot 4 \cdots (2n)}{3\cdot 5\cdots (2n+1)} < 1\]の両辺に$\frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n}$を掛けて
+\[\frac{1}{2n+1} < \frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n}\]
+なので$|1-x^2|>1$で
+\[|a_n|\geqq \frac{|1-x^2|^n}{2n+1}\]
+二項定理より$n\geqq 2$で
+\[|1-x^2|^n = ((|1-x^2|-1)+1)^n = \sum_{k=0}^n \ _nC_k (|1-x^2|-1)^k > 
+\ _nC_2 (|1-x^2|-1)^2 = \frac{n(n-1)}{2}(|1-x^2|-1)^2
+\]
+よって
+\[|a_n| > \frac{n(n-1)}{4n+2}(|1-x^2|-1)^2 \xrightarrow[n\to\infty]{} \infty\]
+で$\sum a_n$は発散する.
+
+$x=0$のとき$a_n>0$で
+\[\frac{a_{n+1}}{a_n}=\frac{2n+1}{2n+2}=1-\frac{1}{2n+2}>1-\frac{1}{n+1}=\frac{n}{n+1}\]
+例4より$\displaystyle \sum_{n=1}^\infty \frac{1}{n}$は発散するので$\sum a_n$も発散する.
+
+$1-x^2 = -1$のときを考える.
+
+$b_n=a_{2n}+a_{2n+1}$とする.
+\[b_n = \frac{1\cdot 3 \cdots (4n-1)}{2\cdot 4\cdots 4n}\frac{1}{4n+2}\]
+で$b_n>0$である.
+\[\frac{b_{n+1}}{b_n}=\frac{(4n+1)(4n+3)}{(4n+6)(4n+4)}\]
+\begin{align*}
+&(\frac{4n+1}{4n+4})^4=(1-\frac{3}{4n+4})^4\\
+&< (1-\frac{3}{4n+16})(1-\frac{3}{4n+13})(1-\frac{3}{4n+10})(1-\frac{3}{4n+7})\\
+&= \frac{4n+13}{4n+16}\frac{4n+10}{4n+13}\frac{4n+7}{4n+10}\frac{4n+4}{4n+7}=\frac{n+1}{n+4}\\
+&=\frac{n+1}{n+2}\frac{n+2}{n+3}\frac{n+3}{n+4}\\
+&=(1-\frac{1}{n+2})(1-\frac{1}{n+3})(1-\frac{1}{n+4})\\
+&< (1-\frac{1}{n+4})^3=(\frac{n+3}{n+4})^3
+\end{align*}
+同様にして
+\begin{align*}
+&(\frac{4n+3}{4n+6})^4=(1-\frac{3}{4n+6})^4\\
+&< (1-\frac{3}{4n+16})(1-\frac{3}{4n+13})(1-\frac{3}{4n+10})(1-\frac{3}{4n+7})\\
+&<(\frac{n+3}{n+4})^3
+\end{align*}
+よって
+\[\frac{b_{n+1}}{b_n}<(\frac{n+3}{n+4})^\frac{3}{2}\]
+定理V 2.5より$\frac{1}{n^{\frac{3}{2}}}$は収束するので$\frac{1}{(n+3)^{\frac{3}{2}}}$も収束する.よって定理5.5より$\sum b_n$も収束する.
+
+$\sum b_n=b$とする.
+
+$4k^2 > 4k^2-1\Leftrightarrow \frac{2k}{2k+1}>\frac{2k-1}{2k}$なので$k=1,\cdots ,n$で掛けて
+\[\frac{2\cdot 4 \cdots (2n)}{3\cdot 5\cdots (2n+1)}
+ > \frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n} \]
+両辺に$\frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n}$を掛けて
+\[\frac{1}{2n+1} > (\frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n})^2\]
+よって
+\[\frac{1\cdot 3 \cdots (2n-1)}{2\cdot 4\cdots 2n} < \frac{1}{\sqrt{2n+1}}\xrightarrow[n\to\infty]{}0\]
+より$\displaystyle \lim_{n\to\infty}|a_n| = 0$
+
+$n$が奇数のとき
+\[\sum_{k=0}^na_k = \sum_{k=0}^{\frac{n-1}{2}}b_k\xrightarrow[n\to\infty]{}b\]
+$n$が偶数のとき
+\[\sum_{k=0}^na_k = a_n+\sum_{k=0}^{\frac{n-2}{2}}b_n\xrightarrow[n\to\infty]{}0+b=b\]
+よりいずれの場合も$b$に収束するので$\sum a_n$は収束する.
+
+以上より収束する条件は$-\sqrt{2}\leqq x < 0$または$0<x\leqq\sqrt{2}$
+
+8)
+
+$S_n$を十進数表示で$9$が出てこない$n$桁の自然数の集合とし$s_{n,i}$を$S_n$の要素で$1$の位が$i$のものとする.
+
+$A=S_n,s_{n,i}$に対し
+\[
+sum(A) = \sum_{k\in A}\frac{1}{k}
+\]
+とする.
+
+$\sum sum(S_n)$は与えられた級数の部分列.与えられた級数が正項級数なことに注意する.
+
+$sum(S_1)=1+\frac{1}{2}+\cdots + \frac{1}{8}=\frac{2283}{840}$
+
+$n\geqq 2$で$i=0,\cdots ,8$で
+\[sum(s_{n,i})=\sum_{k\in S_{n-1}}
+\frac{1}{10k+i}\leqq \sum_{k\in S_{n-1}}\frac{1}{10k}=\frac{1}{10}sum(S_{n-1})\]
+よって
+\[sum(S_n)=\sum_{i=0}^8sum(s_{n-1,i})\leqq \frac{9}{10}sum(S_{n-1})\]
+これを繰り返し使い$sum(S_n)\leqq (\frac{9}{10})^{n-1}sum(S_1)$
+\[
+\sum_{k=1}^n sum(S_k)\leqq sum(S_1) \sum_{k=1}^n (\frac{9}{10})^{k-1}= sum(S_1)\frac{1-(\frac{9}{10})^n}{1-\frac{9}{10}}<10sum(S_1)
+\]
+よって$\sum sum(S_n)$は収束して収束する値$s$は
+\[s\leqq 10\frac{2283}{840} < 80\]
+よって与えられた級数は収束して収束する値は80より小さい.
 \end{document}
